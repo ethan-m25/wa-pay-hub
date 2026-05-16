@@ -130,7 +130,18 @@ def parse_salary_from_text(text: str):
     return None, None
 
 
+
+_CANADA_EXCL = [
+    "british columbia", "ontario, canada", "alberta, canada", "quebec, canada",
+    "toronto", "vancouver", "montreal", "calgary", "ottawa", "edmonton",
+    ", canada", "canada,", "remote - canada", "remote - alberta",
+    "remote - ontario", "remote - british columbia", "remote - quebec",
+]
+
 def is_wa_job(title: str, location: str, content: str) -> bool:
+    loc_low = location.lower()
+    if any(t in loc_low for t in _CANADA_EXCL):
+        return False
     combined = f"{title} {location} {content}".lower()
     return any(term in combined for term in WA_TERMS)
 

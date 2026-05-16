@@ -601,7 +601,7 @@ footer {
     <div class="logo-icon">
       <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><rect x="2" y="2" width="6" height="6" fill="white" opacity=".9"/><rect x="10" y="2" width="6" height="6" fill="white" opacity=".55"/><rect x="2" y="10" width="6" height="6" fill="white" opacity=".55"/><rect x="10" y="10" width="6" height="6" fill="white" opacity=".9"/></svg>
     </div>
-    <span class="logo-name">BC<strong>Pay</strong></span>
+    <span class="logo-name">WA<strong>Pay</strong></span>
     <span class="logo-badge">HUB</span>
   </a>
   <div class="nav-spacer"></div>
@@ -620,7 +620,7 @@ footer {
       <span>Dataset: <strong id="metaTotal">—</strong> job postings</span>
       <span><strong id="metaCompanies">—</strong> employers</span>
       <span>Updated daily</span>
-      <span>State of Washington State, Canada</span>
+      <span>Washington State</span>
     </div>
   </div>
 </div>
@@ -644,7 +644,7 @@ footer {
     <div class="section-header">
       <div class="section-kicker">Pay Range Transparency</div>
       <div class="section-title">How precisely are WA employers disclosing pay?</div>
-      <div class="section-desc">BC's Pay Transparency Law requires salary disclosure on every public job posting, with <strong>no cap on range width</strong>. The width of the disclosed range tells you how confidently an employer has defined the role's compensation — narrower is more informative for job seekers.</div>
+      <div class="section-desc">Washington's Pay Transparency Law requires salary disclosure on every public job posting, with <strong>no cap on range width</strong>. The width of the disclosed range tells you how confidently an employer has defined the role's compensation — narrower is more informative for job seekers.</div>
     </div>
 
     <div class="compliance-viz animate-in">
@@ -667,7 +667,7 @@ footer {
         <div class="cbl-item cbl-federal cbl-muted">
           <div class="cbl-label">Federal employers</div>
           <div class="cbl-num" id="pctFederal">—</div>
-          <div class="cbl-desc">Banks &amp; telecoms — governed by Canada Labour Code, not BC's Pay Transparency Law. Disclosures are voluntary.</div>
+          <div class="cbl-desc">Banks &amp; telecoms — some operate under federal law (FLSA), not Washington's Pay Transparency Law. Disclosures may be voluntary.</div>
         </div>
       </div>
     </div>
@@ -682,7 +682,7 @@ footer {
     <div class="section-header">
       <div class="section-kicker">Employer Profiles</div>
       <div class="section-title">Employers by salary range width</div>
-      <div class="section-desc">Each bubble is one employer (≥5 postings). Horizontal position = median salary range width. Vertical = share of postings with a precise range (≤$50k wide). Bubble size = number of postings. Federal employers (banks, telecoms) appear in the chart; their disclosures are voluntary under the Canada Labour Code.</div>
+      <div class="section-desc">Each bubble is one employer (≥5 postings). Horizontal position = median salary range width. Vertical = share of postings with a precise range (≤$50k wide). Bubble size = number of postings. Federal employers (banks, telecoms) appear in the chart; their disclosures are voluntary (not covered by state law).</div>
     </div>
 
     <div class="chart-card">
@@ -711,7 +711,7 @@ footer {
     <div class="section-header">
       <div class="section-kicker">Market Signals</div>
       <div class="section-title">Who's posting the widest ranges?</div>
-      <div class="section-desc">BC employers posting salary ranges wider than $50,000 — shown as a pay-planning signal, not a legal violation. There is no range width cap under the WA Pay Transparency Law. Federally regulated employers (banks, telecoms) are excluded — their disclosures are voluntary.</div>
+      <div class="section-desc">Washington employers posting salary ranges wider than $50,000 — shown as a pay-planning signal, not a legal violation. There is no range width cap under the WA Pay Transparency Law. Federally regulated employers (banks, telecoms) are excluded — their disclosures are voluntary.</div>
     </div>
 
     <div class="chart-card">
@@ -723,7 +723,7 @@ footer {
       </table>
       <div class="callout" style="margin-top:16px">
         <div class="callout-label">Largest non-compliant employers</div>
-        <p><strong>Deloitte Canada</strong> leads among provincially regulated employers in postings exceeding the $50k width limit. Banks and telecoms (RBC, BMO, TD, Telus, etc.) are federally regulated under the Canada Labour Code — their salary disclosures are voluntary and are excluded from this compliance analysis.</p>
+        <p><strong>Deloitte</strong> leads among Washington employers in postings exceeding the $50k width limit. Banks and telecoms (RBC, BMO, TD, Telus, etc.) are federally exempt from state pay transparency law — their salary disclosures are voluntary and are excluded from this compliance analysis.</p>
       </div>
     </div>
   </section>
@@ -795,7 +795,7 @@ footer {
         <div id="statsBody" class="stat-tiles" style="margin-top:12px"></div>
         <div class="callout" style="margin-top:16px">
           <div class="callout-label">What's a standard band?</div>
-          <p>Compensation research places a typical salary band at <strong>±15–25% of midpoint</strong> (30–50% spread ratio). BC's dataset is growing — these patterns will sharpen as more postings are scraped. The Ontario baseline (36% median spread) provides a useful benchmark for comparison.</p>
+          <p>Compensation research places a typical salary band at <strong>±15–25% of midpoint</strong> (30–50% spread ratio). Washington's dataset is growing — these patterns will sharpen as more postings are scraped. The national median (36% median spread) provides a useful benchmark for comparison.</p>
         </div>
       </div>
     </div>
@@ -808,7 +808,7 @@ footer {
   <div>
     <div class="skill-signal-cta-label">Skill × Salary Analysis</div>
     <h3>Which skills actually pay more?</h3>
-    <p>See how skills shift salaries above or below the category median — ranked across job categories from BC's legally-required Pay Transparency Law disclosures.</p>
+    <p>See how skills shift salaries above or below the category median — ranked across job categories from Washington's legally-required Pay Transparency Law disclosures.</p>
   </div>
   <a class="skill-signal-cta-btn" href="/skills.html">
     Explore Skill Signal
@@ -839,7 +839,7 @@ function toggleTheme(){
 
 /* ===== HELPERS ===== */
 const $ = id => document.getElementById(id);
-const fmt = (n, dec=0) => n == null ? '—' : n.toLocaleString('en-CA', {style:'currency', currency:'USD', maximumFractionDigits:dec, minimumFractionDigits:dec});
+const fmt = (n, dec=0) => n == null ? '—' : n.toLocaleString('en-US', {style:'currency', currency:'USD', maximumFractionDigits:dec, minimumFractionDigits:dec});
 const fmtK = n => n == null ? '—' : '$' + Math.round(n/1000) + 'k';
 const fmtPct = n => n == null ? '—' : Math.round(n) + '%';
 const getCSSVar = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
@@ -861,7 +861,7 @@ async function main() {
   const N = valid.length;
   const companies = new Set(valid.map(j => j.company)).size;
 
-  // Federally regulated employers — subject to Canada Labour Code, not WA Pay Transparency Law (WA RCW 49.58.110).
+  // Federally regulated employers — subject to federal employment law, not WA Pay Transparency Law (WA RCW 49.58.110).
   // Any wide ranges they post are voluntary disclosures, not violations.
   const FEDERAL_EMPLOYERS = new Set([
     'Bank of Montreal', 'RBC', 'TD Bank', 'CIBC', 'Scotiabank', 'Bank of Nova Scotia',

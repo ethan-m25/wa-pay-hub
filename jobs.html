@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>WA Pay Hub — Real Salary Ranges for Washington State Jobs</title>
-<meta name="description" content="Browse real salary ranges from WA job postings under the Pay Transparency Law (WA RCW 49.58.110, in force Nov 1, 2023). Free, updated daily. Research pay across tech, finance, healthcare, and more.">
+<meta name="description" content="Browse real salary ranges from WA job postings under the Pay Transparency Law (WA RCW 49.58.110, in force Jan 1, 2023). Free, updated daily. Research pay across tech, finance, healthcare, and more.">
 <meta name="keywords" content="Washington salary range, pay transparency Washington, Washington State jobs salary 2026, compensation Washington, Pay Transparency Law, Seattle salary data">
 <meta name="robots" content="index, follow">
 <link rel="icon" type="image/png" href="/favicon.png?v=2">
@@ -30,14 +30,14 @@
 {
   "@context": "https://schema.org",
   "@type": "Dataset",
-  "name": "BC Pay Transparency Salary Dataset",
+  "name": "WA Pay Transparency Salary Dataset",
   "description": "Aggregated salary ranges from publicly advertised WA job postings under the Pay Transparency Law, WA RCW 49.58.110 (effective January 1, 2023).",
   "url": "https://wa.payhub.fyi/",
   "license": "https://opensource.org/licenses/MIT",
   "creator": { "@type": "Organization", "name": "WA Pay Hub" },
   "temporalCoverage": "2023-11-01/..",
-  "spatialCoverage": { "@type": "Place", "name": "Washington State, Canada" },
-  "keywords": ["salary range", "pay transparency", "Washington State", "BC", "compensation", "job postings", "2023"],
+  "spatialCoverage": { "@type": "Place", "name": "Washington State, USA" },
+  "keywords": ["salary range", "pay transparency", "Washington State", "WA", "compensation", "job postings", "2023"],
   "distribution": [{
     "@type": "DataDownload",
     "encodingFormat": "application/json",
@@ -2126,7 +2126,7 @@ tbody tr:hover {
 <nav>
   <a class="logo" href="/">
     <div class="logo-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><rect x="2" y="2" width="6" height="6" fill="white" opacity=".9"/><rect x="10" y="2" width="6" height="6" fill="white" opacity=".55"/><rect x="2" y="10" width="6" height="6" fill="white" opacity=".55"/><rect x="10" y="10" width="6" height="6" fill="white" opacity=".9"/></svg></div>
-    <span class="logo-name">BC<strong>Pay</strong></span>
+    <span class="logo-name">WA<strong>Pay</strong></span>
     <span class="logo-badge">HUB</span>
   </a>
   <div class="nav-search">
@@ -2162,7 +2162,7 @@ tbody tr:hover {
   <div class="masthead-inner">
     <div class="masthead-grid">
       <div class="masthead-copy">
-        <div class="hero-eyebrow">B.C. · Pay Transparency Law 2023</div>
+        <div class="hero-eyebrow">Washington State · Pay Transparency Law</div>
         <div class="hero-kicker"><strong id="heroUpdated">Updated daily</strong><span>Public WA job postings only</span></div>
         <h2>Find WA jobs by <em>real disclosed pay.</em></h2>
         <p>Search public WA job postings with disclosed pay. Narrow by category, region, work mode, and midpoint, then open the original posting only when a role looks worth your time.</p>
@@ -2348,7 +2348,7 @@ tbody tr:hover {
         <strong>What "Compensation Range" means under WA Pay Transparency Law (effective Jan 1, 2026):</strong><br>
         ✅ <strong>Included:</strong> base wages (salary), commissions, guaranteed performance bonuses<br>
         <span class="comp-not-included">❌ <strong>Not required:</strong> discretionary bonuses, stock/equity, employer benefit contributions, vacation pay amounts</span><br>
-        <span style="font-size: var(--fs-sm);margin-top:4px;display:block">Source: <a href="https://www2.gov.bc.ca/gov/content/governments/about-the-bc-government/gender-equity/wage-or-salary-information-on-job-postings" target="_blank" rel="noopener" style="color:var(--accent)">BC Pay Transparency Law Job Posting Requirements ↗</a> — applies to all WA employers regardless of size</span>
+        <span style="font-size: var(--fs-sm);margin-top:4px;display:block">Source: <a href="https://lni.wa.gov/workers-rights/wages/salary-history" target="_blank" rel="noopener" style="color:var(--accent)">Washington Pay Transparency Law Requirements ↗</a> — applies to all WA employers regardless of size</span>
       </div>
       <div class="table-wrap">
         <table id="jobTable">
@@ -2356,7 +2356,7 @@ tbody tr:hover {
             <tr>
               <th onclick="setSort('role')">Role <span id="sort-role"></span></th>
               <th onclick="setSort('company')">Company <span id="sort-company"></span></th>
-              <th>Compensation Range <span id="compInfoBtn" title="What's disclosed under BC's Pay Transparency Law" style="cursor:pointer;opacity:.6;font-size:.8em" onclick="toggleCompNote()">ⓘ</span></th>
+              <th>Compensation Range <span id="compInfoBtn" title="What's disclosed under Washington's Pay Transparency Law" style="cursor:pointer;opacity:.6;font-size:.8em" onclick="toggleCompNote()">ⓘ</span></th>
               <th onclick="setSort('mid')">Midpoint <span id="sort-mid"></span></th>
               <th>Source</th>
               <th onclick="setSort('date')">Posted <span id="sort-date"></span></th>
@@ -2375,12 +2375,12 @@ tbody tr:hover {
 <!-- FOOTER -->
 <footer>
   <div>
-    <p>Compensation ranges aggregated from publicly advertised WA job postings under <strong><a href="https://www2.gov.bc.ca/gov/content/employment-business/employment-standards-advice/employment-standards/pay-transparency" target="_blank" rel="noopener" style="color:inherit">BC Pay Transparency Law job posting requirements</a></strong>. Data comes from public company career sites and job platforms; postings behind login walls are not included.</p>
+    <p>Compensation ranges aggregated from publicly advertised WA job postings under <strong><a href="https://lni.wa.gov/workers-rights/wages/salary-history" target="_blank" rel="noopener" style="color:inherit">Washington Pay Transparency Law job posting requirements</a></strong>. Data comes from public company career sites and job platforms; postings behind login walls are not included.</p>
   </div>
   <div class="footer-right">
     <button onclick="exportCSV()" class="law-tag" style="cursor:pointer;border:none;background:var(--green-dim);border:1px solid rgba(16,185,129,.25);color:var(--green)" hidden>⬇ Export CSV</button>
     <span class="update-tag" id="updateTag"><span class="dot"></span>Updated daily</span>
-    <a href="https://www.ola.org/en/legislative-business/bills/parliament-43/session-1/bill-149" target="_blank" rel="noopener" class="law-tag" style="text-decoration:none">⚖️ WA Pay Transparency Law (2024) ↗</a>
+    <a href="https://app.leg.wa.gov/RCW/default.aspx?cite=49.58" target="_blank" rel="noopener" class="law-tag" style="text-decoration:none">⚖️ WA Pay Transparency Law (2024) ↗</a>
   </div>
 </footer>
 
@@ -2636,16 +2636,16 @@ function buildCategoryChips() {
   });
 }
 const FALLBACK_JOBS = [
-  {id:1,role:"Account Executive, Enterprise Sales",tag:"sales",company:"Hootsuite",min:85000,max:110000,location:"Washington State, BC",src:"https://careers.hootsuite.com/job/?gh_jid=7678717",date:"2026-05-01"},
-  {id:2,role:"Account Executive, Mid-Market Sales",tag:"sales",company:"Hootsuite",min:57700,max:75000,location:"Seattle, BC",src:"https://careers.hootsuite.com/job/?gh_jid=7678795",date:"2026-05-01"},
-  {id:3,role:"Senior Account Executive, Enterprise Sales",tag:"sales",company:"Hootsuite",min:110000,max:130000,location:"Washington State, BC",src:"https://careers.hootsuite.com/job/?gh_jid=7678737",date:"2026-05-01"},
-  {id:4,role:"Solutions Architect",tag:"data",company:"Databricks",min:160000,max:214000,location:"Washington State, BC",src:"https://databricks.com/company/careers/open-positions/job?gh_jid=6679259002",date:"2026-04-22"},
-  {id:5,role:"Sales Manager, Mid-Market",tag:"sales",company:"Samsara",min:254000,max:279400,location:"Washington State, BC",src:"https://www.samsara.com/company/careers/roles/7560138?gh_jid=7560138",date:"2026-05-04"},
-  {id:6,role:"Senior/Principal Product Manager - Safety AI",tag:"pm",company:"Samsara",min:138550,max:179300,location:"Washington State, BC",src:"https://www.samsara.com/company/careers/roles/7736609?gh_jid=7736609",date:"2026-05-04"},
-  {id:7,role:"Sr. BT Support Specialist I",tag:"it",company:"Samsara",min:88825,max:114950,location:"Seattle, BC",src:"https://www.samsara.com/company/careers/roles/7739096?gh_jid=7739096",date:"2026-05-04"},
-  {id:8,role:"Sr. Security Engineer - Enterprise Security",tag:"it",company:"Samsara",min:132600,max:171600,location:"Seattle, BC",src:"https://www.samsara.com/company/careers/roles/7834975?gh_jid=7834975",date:"2026-05-04"},
-  {id:9,role:"Technical Support Engineer – Mobile Apps and Compliance",tag:"eng",company:"Samsara",min:86275,max:101500,location:"Washington State, BC",src:"https://www.samsara.com/company/careers/roles/7707091?gh_jid=7707091",date:"2026-05-04"},
-  {id:10,role:"Operations Enablement Lead",tag:"ops",company:"Affirm",min:102000,max:142000,location:"Washington State, BC",src:"https://job-boards.greenhouse.io/affirm/jobs/7685760003",date:"2026-04-08"},
+  {id:1,role:"Account Executive, Enterprise Sales",tag:"sales",company:"Hootsuite",min:85000,max:110000,location:"Washington State",src:"https://careers.hootsuite.com/job/?gh_jid=7678717",date:"2026-05-01"},
+  {id:2,role:"Account Executive, Mid-Market Sales",tag:"sales",company:"Hootsuite",min:57700,max:75000,location:"Seattle, WA",src:"https://careers.hootsuite.com/job/?gh_jid=7678795",date:"2026-05-01"},
+  {id:3,role:"Senior Account Executive, Enterprise Sales",tag:"sales",company:"Hootsuite",min:110000,max:130000,location:"Washington State",src:"https://careers.hootsuite.com/job/?gh_jid=7678737",date:"2026-05-01"},
+  {id:4,role:"Solutions Architect",tag:"data",company:"Databricks",min:160000,max:214000,location:"Washington State",src:"https://databricks.com/company/careers/open-positions/job?gh_jid=6679259002",date:"2026-04-22"},
+  {id:5,role:"Sales Manager, Mid-Market",tag:"sales",company:"Samsara",min:254000,max:279400,location:"Washington State",src:"https://www.samsara.com/company/careers/roles/7560138?gh_jid=7560138",date:"2026-05-04"},
+  {id:6,role:"Senior/Principal Product Manager - Safety AI",tag:"pm",company:"Samsara",min:138550,max:179300,location:"Washington State",src:"https://www.samsara.com/company/careers/roles/7736609?gh_jid=7736609",date:"2026-05-04"},
+  {id:7,role:"Sr. BT Support Specialist I",tag:"it",company:"Samsara",min:88825,max:114950,location:"Seattle, WA",src:"https://www.samsara.com/company/careers/roles/7739096?gh_jid=7739096",date:"2026-05-04"},
+  {id:8,role:"Sr. Security Engineer - Enterprise Security",tag:"it",company:"Samsara",min:132600,max:171600,location:"Seattle, WA",src:"https://www.samsara.com/company/careers/roles/7834975?gh_jid=7834975",date:"2026-05-04"},
+  {id:9,role:"Technical Support Engineer – Mobile Apps and Compliance",tag:"eng",company:"Samsara",min:86275,max:101500,location:"Washington State",src:"https://www.samsara.com/company/careers/roles/7707091?gh_jid=7707091",date:"2026-05-04"},
+  {id:10,role:"Operations Enablement Lead",tag:"ops",company:"Affirm",min:102000,max:142000,location:"Washington State",src:"https://job-boards.greenhouse.io/affirm/jobs/7685760003",date:"2026-04-08"},
 ];
 let JOBS = FALLBACK_JOBS;
 let SITE_META = null;
@@ -2665,7 +2665,7 @@ function normalizeJob(j, i) {
     company: j.company,
     min: j.min,
     max: j.max,
-    location: j.location || "Washington State, BC",
+    location: j.location || "Washington State",
     src: fullUrl,      // full URL for <a href>
     domain: domain,    // domain only for display label
     status: j.status || "active",
@@ -2715,7 +2715,7 @@ async function loadData() {
       SITE_META = d.meta || null;
       if (d.meta && d.meta.updated) {
         const dt = new Date(d.meta.updated);
-        const label = dt.toLocaleDateString("en-CA",{month:"short",day:"numeric",year:"numeric"});
+        const label = dt.toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric"});
         const utag = document.getElementById("updateTag");
         if (utag) utag.innerHTML = '<span class="dot"></span>Updated ' + label;
       }
@@ -2829,7 +2829,7 @@ const MAJOR_EMPLOYERS = [
   { name: "Scotiabank",         match: /scotiabank|bank of nova scotia/i,     federal: false },
   { name: "BMO",                match: /\bbmo\b|bank of montreal/i,           federal: false },
   { name: "CIBC",               match: /\bcibc\b/i,                           federal: false },
-  { name: "Bell Canada",        match: /bell canada|bell mobility|\bbell inc\b/i, federal: true },
+  { name: "Bell Canada",        match: /bell canada/i, federal: false },
   { name: "Rogers",             match: /rogers communications|rogers media/i, federal: true },
   { name: "Telus",              match: /\btelus\b/i,                          federal: true },
   { name: "Loblaws",            match: /loblaws|loblaw companies/i,           federal: false },
@@ -2936,7 +2936,7 @@ function renderCoverageCard(){
 
   const chipsHTML = noData.map(r=>{
     const tip = r.federal
-      ? 'Federal employer — WA Pay Transparency Law pay disclosure not required'
+      ? 'Federal employer — WA RCW 49.58.110 disclosure not required'
       : 'Not found in our dataset — may have no WA postings, may not disclose pay, or not yet scraped';
     return `<span class="cov-chip${r.federal?' federal':''}" title="${tip}">${r.name}${r.federal?' †':''}</span>`;
   }).join('');
@@ -2953,7 +2953,7 @@ function renderCoverageCard(){
     <div class="cov-rows">${rowsHTML}</div>
     <div class="cov-group-label">Not in our dataset</div>
     <div class="cov-chips">${chipsHTML}</div>
-    <div class="cov-footnote">† Federal employer — not covered by BC's Pay Transparency Law. Operates under Canada Labour Code. "Not in dataset" may mean: no active WA postings, pay not disclosed, or not yet scraped.</div>
+    <div class="cov-footnote">† Federal employer — not covered by Washington's Pay Transparency Law. May operate under federal law. "Not in dataset" may mean: no active WA postings, pay not disclosed, or not yet scraped.</div>
     ${fewNote}
   `;
   requestAnimationFrame(()=>{
@@ -2963,7 +2963,7 @@ function renderCoverageCard(){
 }
 function renderDiscovery(){
   const updatedText = SITE_META && SITE_META.updated
-    ? new Date(SITE_META.updated).toLocaleDateString("en-CA",{month:"short",day:"numeric"})
+    ? new Date(SITE_META.updated).toLocaleDateString("en-US",{month:"short",day:"numeric"})
     : "Latest refresh";
   const heroUpdated = document.getElementById("heroUpdated");
   const heroCount = document.getElementById("heroCount");
@@ -3612,7 +3612,7 @@ const _fedBadgeCache = new Map();
 function _getFedBadge(company) {
   if (_fedBadgeCache.has(company)) return _fedBadgeCache.get(company);
   const m = getFederalMatch(company);
-  const b = m ? `<span class="fed-row-badge" title="${m.name} is a federally regulated employer — WA Pay Transparency Law pay transparency rules do not apply">Fed. exempt</span>` : '';
+  const b = m ? `<span class="fed-row-badge" title="${m.name} is a federally regulated employer — WA RCW 49.58.110 does not apply">Fed. exempt</span>` : '';
   _fedBadgeCache.set(company, b);
   return b;
 }
@@ -3643,7 +3643,7 @@ function _jobRowHTML(j, isSmall) {
         </div>
         <div>
           <span class="company-name">${j.company}</span>${fedBadge}
-          <span class="row-company-meta">${j.location||"Washington State, BC"} ${wmBadge(j.work_mode)}</span>
+          <span class="row-company-meta">${j.location||"Washington State"} ${wmBadge(j.work_mode)}</span>
         </div>
         <div class="mobile-range-row">
           <div>
@@ -3676,7 +3676,7 @@ function _jobRowHTML(j, isSmall) {
           ${archived?'<span style="font-size: var(--fs-xs);color:var(--text3)">Archived</span>':''}
         </div>
       </td>
-      <td><span class="company-name">${j.company}</span>${fedBadge}<span class="row-company-meta">${j.location||"Washington State, BC"} ${wmBadge(j.work_mode)}</span></td>
+      <td><span class="company-name">${j.company}</span>${fedBadge}<span class="row-company-meta">${j.location||"Washington State"} ${wmBadge(j.work_mode)}</span></td>
       <td>
         <div class="range-nums"><span class="range-min">${fmt(j.min)}</span><span class="range-sep">–</span><span class="range-max">${fmt(j.max)}</span></div>
         <div class="range-spread-wrap">
@@ -4079,7 +4079,7 @@ function openJobDetail(id){
   document.getElementById("jdBody").innerHTML=`
     <div class="jd-role">${j.role}</div>
     <div class="jd-company">${j.company}</div>
-    <div class="jd-meta">${j.location||"Washington State, BC"} · Posted ${relDate(j.date)}</div>
+    <div class="jd-meta">${j.location||"Washington State"} · Posted ${relDate(j.date)}</div>
 
     <div class="jd-section">
       <div class="jd-section-title">Disclosed Compensation Range</div>
@@ -4116,7 +4116,7 @@ function openJobDetail(id){
         <div class="jd-similar-item" onclick="openJobDetail(${s.id})">
           <div style="min-width:0">
             <div class="jd-similar-role">${s.role}</div>
-            <div class="jd-similar-co">${s.company} · ${s.location||"Washington State, BC"}</div>
+            <div class="jd-similar-co">${s.company} · ${s.location||"Washington State"}</div>
             <div class="jd-similar-meta">${relDate(s.date)} · ${fmt(mid(s))} midpoint</div>
           </div>
           <div class="jd-similar-range">${fmt(s.min)}–${fmt(s.max)}</div>
