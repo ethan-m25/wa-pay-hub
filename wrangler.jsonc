@@ -1,0 +1,9 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "wa-pay-hub",
+  "compatibility_date": "2026-03-13",
+  "pages_build_output_dir": ".",
+  "vars": {
+    "APP_BASE_URL": "https://wa.payhub.fyi"
+  }
+}

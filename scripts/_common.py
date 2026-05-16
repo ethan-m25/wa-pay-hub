@@ -1,0 +1,303 @@
+#!/usr/bin/env python3
+"""
+wa-pay-hub/scripts/_common.py
+Shared utilities for all WA Pay Hub search scripts.
+
+WA RCW 49.58.110: employers with 15+ employees must include salary range,
+benefits, and other compensation in all job postings. Effective Jan 1, 2023.
+"""
+
+import atexit
+import json
+import os
+import re
+import signal
+import socket
+import sys
+import time
+import urllib.request
+from datetime import date, timedelta
+
+socket.setdefaulttimeout(20)
+
+EXA_API_KEY = os.environ.get("EXA_API_KEY", "d0d9614a-58d8-4166-9b27-4ae6b6e2761e")
+OLLAMA_API  = "http://127.0.0.1:11434/api/generate"
+MODEL       = "qwen2.5:14b"
+TODAY       = date.today().isoformat()
+SHARED_DIR  = os.path.expanduser("~/.openclaw/shared")
+OUTPUT_FILE = os.path.join(SHARED_DIR, f"wa-jobs-raw-{TODAY}.txt")
+DATA_FILE   = os.path.expanduser("~/wa-pay-hub/data/jobs.json")
+
+_UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+
+SKIP_PATTERNS = [
+    "glassdoor.com/Salary", "payscale.com", "salary.com",
+    "indeed.com/salary", "ziprecruiter.com/Salaries",
+    "linkedin.com/jobs/search", "linkedin.com/jobs/?",
+    "monster.com/jobs/search", "simplyhired.com/search",
+    "myworkdayjobs.com",
+    "newswire.com", "businesswire.com", "prnewswire.com",
+    "/press-release", "/newsroom/", "/investor-relations",
+    "/annual-report", "/media-advisory",
+    "talent.com/salary", "levels.fyi", "finance.yahoo.com",
+]
+
+_JOB_PAGE_MARKERS = [
+    "apply", "qualifications", "requirements", "responsibilities",
+    "salary range", "compensation range", "salary:", "we are looking",
+    "job description", "about the role", "what you will do",
+    "what we offer", "about you", "your responsibilities",
+    "minimum qualifications", "preferred qualifications",
+]
+
+
+def is_job_page(text: str) -> bool:
+    if not text or len(text) < 300:
+        return False
+    t = text.lower()
+    return sum(1 for m in _JOB_PAGE_MARKERS if m in t) >= 2
+
+
+WA_TERMS = [
+    "washington", "seattle", "bellevue", "redmond", "kirkland",
+    "tacoma", "spokane", "olympia", "bothell", "renton", "kent",
+    "everett", "federal way", "sammamish", "issaquah", "mercer island",
+    ", wa", "washington state", "puget sound", "eastside",
+]
+
+
+def make_logger(log_file):
+    log_dir = os.path.dirname(log_file)
+    if log_dir:
+        os.makedirs(log_dir, exist_ok=True)
+
+    def log(msg):
+        line = f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] {msg}"
+        print(line, flush=True)
+        with open(log_file, "a") as f:
+            f.write(line + "\n")
+
+    return log
+
+
+def acquire_lock(lock_file, log):
+    if os.path.exists(lock_file):
+        try:
+            with open(lock_file) as f:
+                old_pid = int(f.read().strip())
+            os.kill(old_pid, 0)
+            log(f"Another instance is already running (PID {old_pid}). Exiting.")
+            return False
+        except (OSError, ValueError):
+            log("Stale lock file — removing.")
+            os.remove(lock_file)
+
+    with open(lock_file, "w") as f:
+        f.write(str(os.getpid()))
+
+    def _release():
+        try:
+            os.remove(lock_file)
+        except OSError:
+            pass
+
+    atexit.register(_release)
+    signal.signal(signal.SIGTERM, lambda s, f: (_release(), sys.exit(1)))
+    return True
+
+
+def exa_search(query, num_results=10, start_date=None, log=None):
+    payload = {
+        "query": query,
+        "numResults": num_results,
+        "type": "auto",
+        "contents": {"text": {"maxCharacters": 2000}},
+    }
+    if start_date:
+        payload["startPublishedDate"] = start_date
+
+    req = urllib.request.Request(
+        "https://api.exa.ai/search",
+        data=json.dumps(payload).encode(),
+        method="POST",
+    )
+    req.add_header("x-api-key", EXA_API_KEY)
+    req.add_header("Content-Type", "application/json")
+    req.add_header("Accept", "application/json")
+    req.add_header("User-Agent", _UA)
+
+    try:
+        with urllib.request.urlopen(req, timeout=30) as r:
+            return json.loads(r.read())
+    except Exception as e:
+        if log:
+            log(f"  Exa error: {e}")
+        return None
+
+
+def fetch_html_text(url, timeout=15, user_agent=None, max_chars=4000,
+                    skip_workday=True, min_content_len=0):
+    if not url:
+        return None
+    if skip_workday and "myworkdayjobs.com" in url:
+        return None
+    try:
+        req = urllib.request.Request(url)
+        req.add_header("User-Agent", user_agent or _UA)
+        req.add_header("Accept-Language", "en-US,en;q=0.9")
+        with urllib.request.urlopen(req, timeout=timeout) as r:
+            html = r.read().decode("utf-8", errors="ignore")
+        html = re.sub(r'<script[^>]*>.*?</script>', ' ', html, flags=re.DOTALL | re.IGNORECASE)
+        html = re.sub(r'<style[^>]*>.*?</style>',  ' ', html, flags=re.DOTALL | re.IGNORECASE)
+        text = re.sub(r'<[^>]+>', ' ', html)
+        text = re.sub(r'\s+', ' ', text).strip()
+        return text[:max_chars] if len(text) >= min_content_len else None
+    except Exception:
+        return None
+
+
+EXTRACT_PROMPT = """\
+Extract ONE Washington State job posting from the text below.
+
+URL: {url}
+Search snippet (may be from a different but related job — DO NOT use for salary numbers): {snippet}
+Page text (authoritative — use THIS for all data including salary): {page_text}
+
+Today's date: {today}
+
+Return ONLY valid JSON in this exact format if a valid WA job with explicit USD salary range is found:
+{{"role":"Job Title","company":"Company Name","min":80000,"max":120000,"location":"Seattle, WA","source_url":"{url}","posted":"YYYY-MM-DD"}}
+
+Return ONLY the word null (no quotes, no JSON) if:
+- No explicit USD annual salary range with actual dollar numbers in the PAGE TEXT
+- Not a Washington State location (Seattle, Bellevue, Redmond, Kirkland, Tacoma, Spokane, remote-WA, etc.)
+- This is a salary guide / aggregator page / company careers homepage
+- Hourly rate only (do NOT convert hourly to annual)
+- URL is a search results page
+
+Rules:
+- min and max = annual USD integers extracted from PAGE TEXT ONLY (e.g. 90000)
+- NEVER use salary numbers from the snippet — only use page text salary data
+- location must be in Washington State (Seattle, Bellevue, Redmond, Kirkland, Tacoma, Spokane, Olympia, or remote roles that mention WA pay range)
+- posted = date visible in posting, or {today} if not shown
+- source_url = exact URL of this specific job posting"""
+
+
+def _call_ollama(prompt):
+    payload = json.dumps({
+        "model": MODEL,
+        "prompt": prompt,
+        "stream": False,
+        "options": {"temperature": 0, "num_predict": 256},
+    }).encode()
+    req = urllib.request.Request(OLLAMA_API, data=payload, method="POST")
+    req.add_header("Content-Type", "application/json")
+    with urllib.request.urlopen(req, timeout=90) as r:
+        return json.loads(r.read()).get("response", "").strip()
+
+
+def extract_job(url, snippet, page_text, log=None):
+    prompt = EXTRACT_PROMPT.format(
+        url=url,
+        snippet=(snippet or "")[:600],
+        page_text=(page_text or "")[:3000],
+        today=TODAY,
+    )
+
+    output = None
+    for attempt in range(2):
+        try:
+            output = _call_ollama(prompt)
+            break
+        except Exception as e:
+            if attempt == 0:
+                if log:
+                    log(f"  Ollama attempt 1 failed ({type(e).__name__}: {e}) — retrying in 5s")
+                time.sleep(5)
+            else:
+                if log:
+                    log(f"  Ollama failed after retry: {e}")
+                return None
+
+    if not output or re.match(r'^null$', output, re.IGNORECASE):
+        return None
+
+    m = re.search(r'\{[^{}]*"role"[^{}]*\}', output, re.DOTALL)
+    if not m:
+        return None
+
+    try:
+        job = json.loads(m.group())
+    except json.JSONDecodeError:
+        return None
+
+    for k in ("role", "company", "min", "max", "source_url"):
+        if k not in job:
+            return None
+
+    try:
+        val_min, val_max = int(job["min"]), int(job["max"])
+    except (ValueError, TypeError):
+        return None
+
+    if not (30_000 <= val_min <= 1_000_000) or val_min >= val_max:
+        return None
+
+    if not any(t in job.get("location", "").lower() for t in WA_TERMS):
+        return None
+
+    if page_text:
+        def _in_text(val):
+            s = str(val)
+            k = str(val // 1000)
+            return (
+                re.search(r'[,\s$]' + s[:3], page_text) is not None
+                or re.search(s.replace("000", "[,.]?000"), page_text) is not None
+                or re.search(rf'\b{k}[kK]\b', page_text) is not None
+            )
+        if not (_in_text(val_min) or _in_text(val_max)):
+            if log:
+                log(f"  Salary {val_min:,}–{val_max:,} not found in page text (snippet hallucination) — skip")
+            return None
+
+    return job
+
+
+def load_existing_keys():
+    try:
+        with open(DATA_FILE) as f:
+            db = json.load(f)
+        return {
+            f"{j['role'].lower().strip()}|{j['company'].lower().strip()}"
+            for j in db.get("jobs", [])
+        }
+    except Exception:
+        return set()
+
+
+def collect_candidates(queries, num_results, log, start_date=None, skip=None):
+    if skip is None:
+        skip = SKIP_PATTERNS
+    candidates = {}
+    for i, query in enumerate(queries, 1):
+        log(f"Exa [{i:2d}/{len(queries)}]: {query[:65]}...")
+        resp = exa_search(query, num_results=num_results, start_date=start_date, log=log)
+        if not resp:
+            continue
+        results = resp.get("results", [])
+        log(f"  → {len(results)} results")
+        for r in results:
+            url = r.get("url", "").strip()
+            if not url or url in candidates:
+                continue
+            if any(p in url for p in skip):
+                continue
+            candidates[url] = (r.get("text") or "")[:600]
+        time.sleep(1.5)
+    return candidates
+
+
+def write_job(output_file, job):
+    os.makedirs(os.path.dirname(output_file), exist_ok=True)
+    with open(output_file, "a") as f:
+        f.write(json.dumps(job, ensure_ascii=False) + "\n")

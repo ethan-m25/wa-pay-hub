@@ -1,0 +1,6 @@
+scripts/*.log
+scripts/.nightly-pipeline.lock
+data/jobs.json.bak
+*.pyc
+__pycache__/
+.DS_Store
