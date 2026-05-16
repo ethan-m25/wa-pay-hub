@@ -28,6 +28,18 @@ log "--- search-greenhouse.py ---"
 python3 "$SCRIPTS_DIR/search-greenhouse.py" >> "$LOG_FILE" 2>&1
 log "greenhouse done (exit $?)"
 
+log "--- search-lever.py ---"
+python3 "$SCRIPTS_DIR/search-lever.py" >> "$LOG_FILE" 2>&1
+log "lever done (exit $?)"
+
+log "--- search-workday.py ---"
+python3 "$SCRIPTS_DIR/search-workday.py" >> "$LOG_FILE" 2>&1
+log "workday done (exit $?)"
+
+log "--- search-ashby.py ---"
+python3 "$SCRIPTS_DIR/search-ashby.py" >> "$LOG_FILE" 2>&1
+log "ashby done (exit $?)"
+
 log "--- update-jobs.py ---"
 python3 "$SCRIPTS_DIR/update-jobs.py" >> "$LOG_FILE" 2>&1
 log "update done (exit $?)"
