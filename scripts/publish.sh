@@ -36,6 +36,10 @@ fi
 git commit -m "data: WA daily update $TODAY (+$NEW_TODAY new, $ACTIVE_COUNT active)"
 git push origin main
 
+# Deploy to Cloudflare Pages directly (covers case where GitHub auto-deploy isn't connected)
+export PATH="/Users/clawii/.npm-global/bin:$PATH"
+wrangler pages deploy . --project-name wa-pay-hub --branch main 2>&1 | tail -3 || true
+
 notify_discord "✅ WA Pay Hub updated [$TODAY]
 📊 +$NEW_TODAY new | $ACTIVE_COUNT active | $NEW_COUNT total
 🔄 Cloudflare Pages rebuilding (~2 min)
