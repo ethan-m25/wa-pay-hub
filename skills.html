@@ -191,6 +191,10 @@ footer { border-top:1px solid var(--rule); padding:32px 28px; max-width:1200px; 
 
 /* LOADING */
 #loadingOverlay { position:fixed; inset:0; background:var(--bg); z-index:9999; display:flex; align-items:center; justify-content:center; font-size:var(--fs-sm); color:var(--text3); font-family:var(--font-mono); letter-spacing:.04em; transition:opacity .3s; }
+
+.network-back{font-size:var(--fs-xs);color:var(--text3);font-family:var(--font-mono);}
+.network-back a{color:var(--text2);text-decoration:none;border-bottom:1px dotted var(--border2);transition:color .2s;}
+.network-back a:hover{color:var(--text);}
 </style>
 </head>
 <body>
@@ -302,7 +306,7 @@ footer { border-top:1px solid var(--rule); padding:32px 28px; max-width:1200px; 
     Skills extracted from job descriptions. Minimum 15 jobs per skill. Deviation from category median — not adjusted for seniority or firm size.
     · <a href="/">Browse all jobs →</a>
   </div>
-  <div style="font-size:var(--fs-xs);color:var(--text3);font-family:var(--font-mono)">wa.payhub.fyi</div>
+  <div class="network-back">wa.payhub.fyi &middot; Part of <a href="https://payhub.fyi">PayHub</a> &mdash; 5 jurisdictions</div>
 </footer>
 
 <script>

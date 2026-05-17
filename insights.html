@@ -586,6 +586,10 @@ footer {
 .badge-green { background: var(--green-dim); color: var(--green); }
 .badge-amber { background: var(--amber-dim); color: var(--amber); }
 .badge-neutral { background: var(--surface2); color: var(--text3); }
+
+.network-back{font-size:var(--fs-xs);color:var(--text3);font-family:var(--font-mono);}
+.network-back a{color:var(--text2);text-decoration:none;border-bottom:1px dotted var(--border2);transition:color .2s;}
+.network-back a:hover{color:var(--text);}
 </style>
 </head>
 <body>
@@ -822,7 +826,7 @@ footer {
     Analysis covers <span id="footerTotal">—</span> postings from <span id="footerCompanies">—</span> employers.
     All salary figures in USD. Updated daily. · <a href="/jobs.html">Browse all jobs →</a>
   </div>
-  <div style="font-size:var(--fs-xs);color:var(--text3);font-family:var(--font-mono)">wa.payhub.fyi</div>
+  <div class="network-back">wa.payhub.fyi &middot; Part of <a href="https://payhub.fyi">PayHub</a> &mdash; 5 jurisdictions</div>
 </footer>
 
 <script>
