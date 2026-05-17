@@ -365,6 +365,10 @@ nav {
 #userBtn { font-size: var(--fs-sm); padding:6px 12px; white-space:nowrap; }
 .load-more-btn { padding:10px 28px; background:var(--surface2); border:1px solid var(--border); border-radius:20px; font-size:var(--fs-sm); font-weight:600; color:var(--text2); cursor:pointer; transition:all var(--transition); }
 .load-more-btn:hover { background:var(--surface); border-color:var(--border2); color:var(--text); }
+.vs-sentinel-row td { padding:20px 0; border:none; text-align:center; }
+.vs-spinner { display:inline-block; width:18px; height:18px; border:2px solid var(--border); border-top-color:var(--accent); border-radius:50%; animation:vs-spin .7s linear infinite; opacity:0; transition:opacity .3s; }
+.vs-spinner.visible { opacity:1; }
+@keyframes vs-spin { to { transform:rotate(360deg); } }
 .nav-pill {
   font-size: var(--fs-sm); font-weight: 600; color: var(--text2);
   background: var(--surface2); border: 1px solid var(--border);
@@ -2355,7 +2359,7 @@ tbody tr:hover {
         <span style="font-size: var(--fs-sm);margin-top:4px;display:block">Source: <a href="https://lni.wa.gov/workers-rights/wages/salary-history" target="_blank" rel="noopener" style="color:var(--accent)">Washington Pay Transparency Law Requirements ↗</a> — applies to all WA employers regardless of size</span>
       </div>
       <div class="table-wrap">
-        <table id="jobTable">
+        <table id="jobTable" aria-rowcount="0">
           <thead>
             <tr>
               <th onclick="setSort('role')">Role <span id="sort-role"></span></th>
@@ -3608,11 +3612,55 @@ function renderTable(){
   updateActiveFilters();
 }
 
-// ===== PAGINATION & ROW RENDERING =====
+// ===== PAGINATION, VIRTUAL SCROLL & ROW RENDERING =====
 let _filteredData = [];
 let _currentPage = 1;
 const _PAGE_SIZE = 50;
 const _fedBadgeCache = new Map();
+
+// Virtual scroll / infinite scroll state
+const _VS_MAX_ROWS = 200;   // prune DOM when visible rows exceed this
+const _VS_KEEP_ROWS = 100;  // rows to retain after pruning
+let _vsTopPad = 0;          // total px height of pruned top rows
+let _vsObserver = null;     // IntersectionObserver instance
+let _vsIsLoading = false;   // guard against concurrent load triggers
+
+function _pruneTopRows(tbody) {
+  const rows = tbody.querySelectorAll('tr:not(#vsSpacer):not(#loadMoreRow)');
+  if (rows.length <= _VS_MAX_ROWS) return;
+  const toPrune = rows.length - _VS_KEEP_ROWS;
+  let prunedH = 0;
+  for (let i = 0; i < toPrune; i++) {
+    prunedH += rows[i].offsetHeight;
+    rows[i].remove();
+  }
+  _vsTopPad += prunedH;
+  let spacer = document.getElementById('vsSpacer');
+  if (!spacer) {
+    spacer = document.createElement('tr');
+    spacer.id = 'vsSpacer';
+    spacer.innerHTML = '<td colspan="7" style="padding:0;border:none"></td>';
+    tbody.insertBefore(spacer, tbody.firstChild);
+  }
+  spacer.firstChild.style.height = _vsTopPad + 'px';
+}
+
+function _setupVsObserver() {
+  if (_vsObserver) { _vsObserver.disconnect(); _vsObserver = null; }
+  const sentinel = document.getElementById('vsSentinel');
+  if (!sentinel) return;
+  _vsObserver = new IntersectionObserver(function(entries) {
+    if (entries[0].isIntersecting && !_vsIsLoading) {
+      const remaining = _filteredData.length - _PAGE_SIZE * _currentPage;
+      if (remaining > 0) {
+        const spinner = document.getElementById('vsSpinner');
+        if (spinner) spinner.classList.add('visible');
+        window._loadMoreJobs();
+      }
+    }
+  }, { rootMargin: '400px' });
+  _vsObserver.observe(sentinel);
+}
 
 function _getFedBadge(company) {
   if (_fedBadgeCache.has(company)) return _fedBadgeCache.get(company);
@@ -3701,29 +3749,41 @@ function _jobRowHTML(j, isSmall) {
 }
 
 function _loadMoreRow(remaining) {
-  return `<tr id="loadMoreRow"><td colspan="7" style="text-align:center;padding:16px 0 20px"><button class="load-more-btn" onclick="window._loadMoreJobs()">Show ${Math.min(_PAGE_SIZE, remaining)} more · ${remaining} remaining</button></td></tr>`;
+  return `<tr id="loadMoreRow" class="vs-sentinel-row"><td colspan="7"><span id="vsSpinner" class="vs-spinner"></span><span id="vsSentinel" style="display:inline-block;width:1px;height:1px;vertical-align:middle"></span></td></tr>`;
 }
 
 function _renderJobPage() {
+  _vsTopPad = 0;
+  _vsIsLoading = false;
   const isSmall = window.innerWidth < 700;
   const visible = _filteredData.slice(0, _PAGE_SIZE * _currentPage);
   const remaining = _filteredData.length - visible.length;
-  document.getElementById("tableBody").innerHTML =
+  const tbody = document.getElementById('tableBody');
+  tbody.innerHTML =
     visible.map(j => _jobRowHTML(j, isSmall)).join('') +
     (remaining > 0 ? _loadMoreRow(remaining) : '');
+  const table = document.getElementById('jobTable');
+  if (table) table.setAttribute('aria-rowcount', _filteredData.length);
+  _setupVsObserver();
 }
 
 window._loadMoreJobs = function() {
+  if (_vsIsLoading) return;
+  _vsIsLoading = true;
   const isSmall = window.innerWidth < 700;
   const prevEnd = _PAGE_SIZE * _currentPage;
   _currentPage++;
   const newRows = _filteredData.slice(prevEnd, _PAGE_SIZE * _currentPage);
   const remaining = _filteredData.length - _PAGE_SIZE * _currentPage;
+  const tbody = document.getElementById('tableBody');
   const lmr = document.getElementById('loadMoreRow');
   if (lmr) lmr.remove();
-  document.getElementById('tableBody').insertAdjacentHTML('beforeend',
+  tbody.insertAdjacentHTML('beforeend',
     newRows.map(j => _jobRowHTML(j, isSmall)).join('') +
     (remaining > 0 ? _loadMoreRow(remaining) : ''));
+  _pruneTopRows(tbody);
+  _vsIsLoading = false;
+  _setupVsObserver();
 };
 function _animateCount(el, target, formatFn) {
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -4843,5 +4903,6 @@ function presetFilter(opts = {}) {
   });
 })();
 </script>
+<script src="/assets/pretext.min.js"></script>
 </body>
 </html>
