@@ -73,6 +73,12 @@ SEED_TENANTS = [
     ("pwc.wd3.myworkdayjobs.com",           "pwc",          "Global_Experienced_Careers", "PwC"),
     ("accenture.wd3.myworkdayjobs.com",     "accenture",    "AccentureCareers",        "Accenture"),
     ("deloitte.wd1.myworkdayjobs.com",      "deloitte",     "ExternalCareers",         "Deloitte"),
+    # Aerospace / defense (Renton/Everett HQ)
+    ("boeing.wd1.myworkdayjobs.com",        "boeing",       "EXTERNAL_CAREERS",        "Boeing"),
+    # Education / public sector
+    ("uw.wd5.myworkdayjobs.com",            "uw",           "UWHires",                 "University of Washington"),
+    # Software / cloud (Seattle offices)
+    ("adobe.wd5.myworkdayjobs.com",         "adobe",        "external_experienced",    "Adobe"),
 ]
 
 
@@ -89,6 +95,9 @@ KNOWN_COMPANY_OVERRIDES = {
     "premera":      "Premera Blue Cross",
     "providence":   "Providence Health",
     "seagen":       "Seagen (Pfizer Oncology)",
+    "boeing":       "Boeing",
+    "uw":           "University of Washington",
+    "adobe":        "Adobe",
     "salesforce":   "Salesforce",
     "accenture":    "Accenture",
     "deloitte":     "Deloitte",
