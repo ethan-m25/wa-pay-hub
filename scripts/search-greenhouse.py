@@ -138,12 +138,21 @@ _CANADA_EXCL = [
     "remote - ontario", "remote - british columbia", "remote - quebec",
 ]
 
+_REMOTE_TERMS = ("remote", "distributed", "virtual", "anywhere", "work from", "wfh")
+
 def is_wa_job(title: str, location: str, content: str) -> bool:
     loc_low = location.lower()
     if any(t in loc_low for t in _CANADA_EXCL):
         return False
-    combined = f"{title} {location} {content}".lower()
-    return any(term in combined for term in WA_TERMS)
+    # Exclude DC explicitly before "washington" check
+    if "washington, dc" in loc_low or "washington dc" in loc_low:
+        return False
+    if any(t in loc_low for t in WA_TERMS):
+        return True
+    # Remote/unspecified jobs are WA-eligible
+    if not loc_low or any(r in loc_low for r in _REMOTE_TERMS):
+        return True
+    return False
 
 
 def fetch_company_jobs(slug: str, company_name_override=None):

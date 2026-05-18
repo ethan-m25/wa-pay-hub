@@ -83,23 +83,23 @@
   --text: #14202B;
   --text2: #445364;
   --text3: #748294;
-  --accent: #006994;
-  --accent-dim: rgba(0,105,148,.06);
-  --accent-border: rgba(0,105,148,.18);
+  --accent: #10B981;
+  --accent-dim: rgba(16,185,129,.06);
+  --accent-border: rgba(16,185,129,.18);
   --green: #1D6C49;
   --green-dim: rgba(29,108,73,.08);
   --amber: #9A6A14;
   --amber-dim: rgba(154,106,20,.10);
-  --red: #006994;
-  --red-dim: rgba(0,105,148,.08);
+  --red: #10B981;
+  --red-dim: rgba(16,185,129,.08);
   --cyan: #0F5E87;
   --purple: #6A4AA3;
   --chart-grid: rgba(213,220,229,.92);
   --nav-bg: #F8FAFC;
   --modal-overlay: rgba(20,32,43,.42);
   --input-bg: #F8FAFC;
-  --dot-color: rgba(0,105,148,.05);
-  --rule-accent: #006994;
+  --dot-color: rgba(16,185,129,.05);
+  --rule-accent: #10B981;
   --masthead-bg: #18222D;
   --masthead-text: #F5F7FA;
 }
@@ -116,15 +116,15 @@
   --text: #E6EDF3;
   --text2: #8D96A0;
   --text3: #545D68;
-  --accent: #E8445A;
-  --accent-dim: rgba(232,68,90,.10);
-  --accent-border: rgba(232,68,90,.28);
+  --accent: #10B981;
+  --accent-dim: rgba(16,185,129,.10);
+  --accent-border: rgba(16,185,129,.28);
   --green: #3FB950;
   --green-dim: rgba(63,185,80,.10);
   --amber: #D29922;
   --amber-dim: rgba(210,153,34,.10);
-  --red: #E8445A;
-  --red-dim: rgba(232,68,90,.10);
+  --red: #10B981;
+  --red-dim: rgba(16,185,129,.10);
   --cyan: #39C5CF;
   --purple: #BC8CFF;
   --chart-grid: rgba(48,54,61,.9);
@@ -148,6 +148,7 @@ body {
   transition: background var(--transition), color var(--transition);
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  padding-bottom: 36px; /* clearance for fixed footer bar */
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -594,7 +595,7 @@ td { padding: 13px 11px; vertical-align: middle; overflow: hidden; }
   letter-spacing: .06em; white-space: nowrap; text-transform: uppercase;
   border-left: 2px solid currentColor;
 }
-.tag-eng   { background: rgba(0,105,148,.09);   color: var(--accent); }
+.tag-eng   { background: rgba(16,185,129,.09);   color: var(--accent); }
 .tag-data  { background: rgba(0,95,135,.09);    color: var(--cyan);   }
 .tag-fin   { background: rgba(16,110,60,.09);   color: var(--green);  }
 .tag-pm    { background: rgba(155,106,0,.09);   color: var(--amber);  }
@@ -780,7 +781,7 @@ tbody tr:hover .range-width-bar { opacity: 1; }
   padding: 2px 8px; border-radius: 4px; cursor: pointer;
   transition: color var(--transition), background var(--transition); white-space: nowrap;
 }
-.cov-item-badge:hover { color: var(--accent); background: rgba(0,105,148,.13); }
+.cov-item-badge:hover { color: var(--accent); background: rgba(16,185,129,.13); }
 .cov-chips { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 12px; }
 .cov-chip {
   font-size: 11px; color: var(--text3); background: var(--surface);
@@ -1222,16 +1223,21 @@ tr.selected-row { background: var(--accent-dim) !important; border-left: 3px sol
 .role-link { cursor:pointer; transition:opacity var(--transition); }
 .role-link:hover { opacity:.72; }
 
-/* ===== FOOTER — newspaper dateline ===== */
+/* ===== FOOTER — fixed slim bar ===== */
 footer {
-  border-top: 3px solid var(--text);
-  padding: 28px;
-  max-width: 1320px; margin: 0 auto;
-  display: flex; justify-content: space-between;
-  align-items: flex-start; flex-wrap: wrap; gap: 14px;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 90;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: 0 16px;
+  height: 36px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px;
 }
-footer p { font-family: var(--font-sans); font-size: var(--fs-sm); color: var(--text3); line-height: 1.6; }
-footer a { color: var(--accent); text-decoration: none; }
+footer p { display: none; }
+footer a { color: var(--text3); text-decoration: none; font-size: 11px; }
+footer a:hover { color: var(--accent); }
 .footer-right { display:flex; align-items:center; gap:10px; flex-shrink:0; }
 .law-tag {
   font-family: var(--font-mono);
@@ -1316,7 +1322,7 @@ footer a { color: var(--accent); text-decoration: none; }
 .masthead .btn-primary:hover {
   opacity: 1;
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(0,105,148,.30);
+  box-shadow: 0 6px 20px rgba(16,185,129,.30);
 }
 .masthead-grid {
   display: grid;
@@ -1462,12 +1468,12 @@ footer a { color: var(--accent); text-decoration: none; }
   position: relative;
   padding: 10px 12px 10px 14px;
   margin: 0 -12px;
-  background: rgba(0,105,148,.06);
+  background: rgba(16,185,129,.06);
   border-left: 2px solid var(--accent);
   border-radius: 0 6px 6px 0;
 }
 .sstat.featured .sstat-num { color: var(--accent); }
-[data-theme="dark"] .sstat.featured { background: rgba(0,105,148,.09); }
+[data-theme="dark"] .sstat.featured { background: rgba(16,185,129,.09); }
 .sstat-num {
   font-family: var(--font-mono);
   font-size: clamp(1.5rem, 2.5vw, 2.25rem); font-weight: 600;
@@ -2380,17 +2386,17 @@ tbody tr:hover {
   </main>
 </div>
 
-<!-- FOOTER -->
+<!-- FOOTER — fixed slim bar (accessible regardless of scroll depth) -->
 <footer>
-  <div>
-    <p>Compensation ranges aggregated from publicly advertised WA job postings under <strong><a href="https://lni.wa.gov/workers-rights/wages/salary-history" target="_blank" rel="noopener" style="color:inherit">Washington Pay Transparency Law job posting requirements</a></strong>. Data comes from public company career sites and job platforms; postings behind login walls are not included.</p>
+  <div style="display:flex;align-items:center;gap:12px;min-width:0;overflow:hidden">
+    <a href="https://app.leg.wa.gov/RCW/default.aspx?cite=49.58.110" target="_blank" rel="noopener" style="white-space:nowrap;font-size:11px;font-family:var(--font-mono);color:var(--text3);text-decoration:none;letter-spacing:.04em" title="Washington RCW 49.58.110">⚖️ WA RCW 49.58</a>
+    <span style="color:var(--border);user-select:none">|</span>
+    <span style="font-size:11px;color:var(--text3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">WA salary data · public postings</span>
   </div>
   <div class="footer-right">
-    <button onclick="exportCSV()" class="law-tag" style="cursor:pointer;border:none;background:var(--green-dim);border:1px solid rgba(16,185,129,.25);color:var(--green)" hidden>⬇ Export CSV</button>
-    <span class="update-tag" id="updateTag"><span class="dot"></span>Updated daily</span>
-    <a href="https://app.leg.wa.gov/RCW/default.aspx?cite=49.58" target="_blank" rel="noopener" class="law-tag" style="text-decoration:none">⚖️ WA Pay Transparency Law (2024) ↗</a>
+    <span class="update-tag" id="updateTag" style="padding:3px 8px;font-size:10px"><span class="dot"></span>Updated daily</span>
+    <a href="https://payhub.fyi" style="font-size:11px;font-family:var(--font-mono);color:var(--text3);text-decoration:none;white-space:nowrap">PayHub ↗</a>
   </div>
-  <div class="network-back" style="width:100%;margin-top:12px;padding-top:12px;border-top:1px solid var(--border)">wa.payhub.fyi &middot; Part of <a href="https://payhub.fyi">PayHub</a> &mdash; 5 jurisdictions</div>
 </footer>
 
 <!-- AUTH MODAL -->
@@ -3629,9 +3635,12 @@ function _pruneTopRows(tbody) {
   const rows = tbody.querySelectorAll('tr:not(#vsSpacer):not(#loadMoreRow)');
   if (rows.length <= _VS_MAX_ROWS) return;
   const toPrune = rows.length - _VS_KEEP_ROWS;
+  const firstKept = rows[toPrune];
+  // Snapshot scroll anchor before any DOM changes
+  const anchorBefore = firstKept ? firstKept.getBoundingClientRect().top : 0;
   let prunedH = 0;
   for (let i = 0; i < toPrune; i++) {
-    prunedH += rows[i].offsetHeight;
+    prunedH += rows[i].getBoundingClientRect().height;
     rows[i].remove();
   }
   _vsTopPad += prunedH;
@@ -3639,10 +3648,15 @@ function _pruneTopRows(tbody) {
   if (!spacer) {
     spacer = document.createElement('tr');
     spacer.id = 'vsSpacer';
-    spacer.innerHTML = '<td colspan="7" style="padding:0;border:none"></td>';
+    spacer.innerHTML = '<td colspan="7" style="padding:0;border:0;line-height:0"><div id="vsSpacerDiv"></div></td>';
     tbody.insertBefore(spacer, tbody.firstChild);
   }
-  spacer.firstChild.style.height = _vsTopPad + 'px';
+  document.getElementById('vsSpacerDiv').style.height = _vsTopPad + 'px';
+  // Re-anchor so the first kept row stays at the same visual position
+  if (firstKept) {
+    const anchorAfter = firstKept.getBoundingClientRect().top;
+    if (anchorAfter !== anchorBefore) window.scrollBy(0, anchorAfter - anchorBefore);
+  }
 }
 
 function _setupVsObserver() {
@@ -3943,7 +3957,7 @@ function exportCSV(){
 
 // ===== JOB DETAIL PANEL =====
 const CAT_LABELS = Object.fromEntries(Object.entries(CAT_META).map(([k,v])=>[k,v.label]));
-const CAT_COLORS = {eng:"#006994",data:"#0095D5",fin:"#10b981",pm:"#f59e0b",sales:"#8B5CF6",hr:"#00A0B2",ops:"#707070",legal:"#C87000",it:"#2060D0",exec:"#D04040",other:"#808080"};
+const CAT_COLORS = {eng:"#10B981",data:"#0095D5",fin:"#10b981",pm:"#f59e0b",sales:"#8B5CF6",hr:"#00A0B2",ops:"#707070",legal:"#C87000",it:"#2060D0",exec:"#D04040",other:"#808080"};
 
 let _jdCurrentId = null;
 let _jdSwipe = { active:false, dragging:false, startX:0, startY:0, deltaX:0 };

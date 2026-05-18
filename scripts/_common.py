@@ -59,10 +59,11 @@ def is_job_page(text: str) -> bool:
 
 
 WA_TERMS = [
-    "washington", "seattle", "bellevue", "redmond", "kirkland",
+    "seattle", "bellevue", "redmond", "kirkland",
     "tacoma", "spokane", "olympia", "bothell", "renton", "kent",
     "everett", "federal way", "sammamish", "issaquah", "mercer island",
     ", wa", "washington state", "puget sound", "eastside",
+    # Note: "washington" alone removed — matches "Washington, DC"
 ]
 
 
