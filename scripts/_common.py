@@ -32,6 +32,8 @@ TODAY       = date.today().isoformat()
 SHARED_DIR  = os.path.expanduser("~/.openclaw/shared")
 OUTPUT_FILE = os.path.join(SHARED_DIR, f"wa-jobs-raw-{TODAY}.txt")
 DATA_FILE   = os.path.expanduser("~/wa-pay-hub/data/jobs.json")
+CURRENCY    = "USD"  # ISO 4217
+REGION      = "WA"
 
 _UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
 
@@ -352,6 +354,8 @@ def collect_candidates(queries, num_results, log, start_date=None, skip=None):
 
 
 def write_job(output_file, job):
+    job.setdefault("currency", CURRENCY)
+    job.setdefault("region",   REGION)
     os.makedirs(os.path.dirname(output_file), exist_ok=True)
     with open(output_file, "a") as f:
         f.write(json.dumps(job, ensure_ascii=False) + "\n")
