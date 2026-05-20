@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -38,12 +38,12 @@
 [data-theme="dark"] {
   --bg: #0D1117; --bg2: #161B22; --surface: #1C2128; --surface2: #22272E;
   --border: #30363D; --border2: #484F58;
-  --text: #E6EDF3; --text2: #8D96A0; --text3: #545D68;
+  --text: #E6EDF3; --text2: #b1c0d2; --text3: #7f91a6;
   --accent: #E8445A; --accent-dim: rgba(232,68,90,.10); --accent-border: rgba(232,68,90,.28);
   --green: #3FB950; --green-dim: rgba(63,185,80,.10); --green-mid: rgba(63,185,80,.22);
   --amber: #D29922; --amber-dim: rgba(210,153,34,.10);
   --red: #E8445A; --red-dim: rgba(232,68,90,.10);
-  --nav-bg: #0D1117; --masthead-bg: #E6EDF3; --masthead-text: #0D1117;
+  --nav-bg: #0D1117; --masthead-bg: #E6EDF3; --masthead-text: #f2f7fb;
   --chart-grid: rgba(48,54,61,.9); --rule: #30363D;
 }
 * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
@@ -195,9 +195,45 @@ footer { border-top:1px solid var(--rule); padding:32px 28px; max-width:1200px; 
 .network-back{font-size:var(--fs-xs);color:var(--text3);font-family:var(--font-mono);}
 .network-back a{color:var(--text2);text-decoration:none;border-bottom:1px dotted var(--border2);transition:color .2s;}
 .network-back a:hover{color:var(--text);}
+/* ===== PayHub hub design-language unification (v2) ===== */
+[data-theme="dark"]{
+  --bg:#05080c; --bg2:#0a1119;
+  --surface:rgba(255,255,255,.042); --surface2:rgba(255,255,255,.072);
+  --border:rgba(255,255,255,.09); --border2:rgba(255,255,255,.16);
+  --text:#f2f7fb; --text2:#b1c0d2; --text3:#7f91a6;
+  --nav-bg:rgba(6,10,15,.80); --masthead-bg:rgba(7,11,18,.42); --masthead-text:#f2f7fb; --input-bg:#0d141d;
+}
+[data-theme="dark"] body{ background:var(--bg); }
+[data-theme="dark"] nav{backdrop-filter:blur(16px) saturate(160%);-webkit-backdrop-filter:blur(16px) saturate(160%);}
+[data-theme="dark"] .masthead{color:#f2f7fb;border-bottom:1px solid rgba(255,255,255,.08);}
+[data-theme="dark"] .masthead h1,[data-theme="dark"] .masthead h2{color:#f2f7fb}
+[data-theme="dark"] .masthead-kicker{color:#ff5a70;opacity:.84;}
+[data-theme="dark"] .masthead-sub,[data-theme="dark"] .masthead p{color:var(--text2);opacity:1;}
+[data-theme="dark"] .masthead-meta,[data-theme="dark"] .hero-stat{color:rgba(255,255,255,.78);}
+[data-theme="dark"] .meta-chip{color:var(--text2);background:rgba(255,255,255,.072);border-color:rgba(255,255,255,.16);}
+#themeBtn{display:none!important}
+.hero{border-bottom:1px solid rgba(255,255,255,.08) !important}
+.salary-focus-bar{background:rgba(9,13,20,.975) !important;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+thead th,.results-header{background:#0a0e16 !important}
+.ph-sky{position:fixed;inset:0;z-index:-2;pointer-events:none;
+  background:radial-gradient(ellipse 72% 52% at 80% -8%,rgba(232,68,90,.12),transparent 60%),
+    radial-gradient(ellipse 62% 46% at 10% 3%,rgba(63,217,138,.055),transparent 58%),var(--bg);}
+:root{--ph-region-code:"WA";--ph-orb-bg-x:18.0%;--ph-orb-bg-y:23.6%;--ph-orb-pin-x:24.0%;--ph-orb-pin-y:23.6%;--ph-orb-rotate:15.1deg;--ph-orb-label-rotate:-15.1deg;}
+.ph-orb{position:fixed;z-index:-1;pointer-events:none;
+  width:128vh;height:128vh;max-width:1500px;max-height:1500px;
+  left:84%;top:48%;transform:translate(-50%,-50%) rotate(var(--ph-orb-rotate,0deg));border-radius:50%;
+  background:url(https://payhub.fyi/assets/globe-bg.svg) var(--ph-orb-bg-x,50%) var(--ph-orb-bg-y,50%)/cover no-repeat;opacity:.52;
+  -webkit-mask:radial-gradient(circle at 50% 50%,#000 58%,transparent 73%);
+          mask:radial-gradient(circle at 50% 50%,#000 58%,transparent 73%);}
+.ph-orb::before{content:"";position:absolute;inset:0;border-radius:50%;
+  border:1px solid rgba(170,212,246,.5);
+  box-shadow:inset 0 0 140px -4px rgba(128,188,238,.42),0 0 80px 5px rgba(128,188,238,.2);}
+.ph-orb::after{content:var(--ph-region-code,"");position:absolute;left:var(--ph-orb-pin-x,50%);top:var(--ph-orb-pin-y,50%);transform:translate(-50%,-50%) rotate(var(--ph-orb-label-rotate,0deg));font:700 10px/1 var(--font-mono, var(--mono, monospace));letter-spacing:.08em;color:#f2f7fb;background:rgba(232,68,90,.24);border:1px solid rgba(255,118,136,.72);border-radius:999px;padding:6px 7px;box-shadow:0 0 0 5px rgba(232,68,90,.10),0 0 24px rgba(232,68,90,.45),0 0 42px rgba(128,188,238,.20);text-shadow:0 1px 8px rgba(0,0,0,.65);}
+@media(max-width:760px){.ph-orb{left:78%;top:66%;width:104vh;height:104vh}.ph-orb::after{font-size:9px;padding:5px 6px}}
 </style>
 </head>
 <body>
+<div class="ph-sky" aria-hidden="true"></div><div class="ph-orb" data-region="WA" aria-hidden="true"></div>
 <div id="loadingOverlay">Loading salary data…</div>
 
 <nav>
@@ -317,8 +353,7 @@ function toggleTheme(){
   localStorage.setItem('oph-theme', document.documentElement.getAttribute('data-theme'));
 }
 (function(){
-  const saved = localStorage.getItem('oph-theme');
-  if(saved) document.documentElement.setAttribute('data-theme', saved);
+  document.documentElement.setAttribute('data-theme', 'dark');
 })();
 
 const $ = id => document.getElementById(id);

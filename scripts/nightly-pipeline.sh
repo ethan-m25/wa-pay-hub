@@ -39,10 +39,41 @@ log "workday done (exit $?)"
 log "--- search-ashby.py ---"
 python3 "$SCRIPTS_DIR/search-ashby.py" >> "$LOG_FILE" 2>&1
 log "ashby done (exit $?)"
+log "--- search-amazon.py ---"
+python3 "$SCRIPTS_DIR/search-amazon.py" >> "$LOG_FILE" 2>&1
+log "amazon done (exit $?)"
+log "--- search-successfactors.py ---"
+python3 "$SCRIPTS_DIR/search-successfactors.py" >> "$LOG_FILE" 2>&1
+log "successfactors done (exit $?)"
+log "--- search-google.py ---"
+python3 "$SCRIPTS_DIR/search-google.py" >> "$LOG_FILE" 2>&1
+log "google done (exit $?)"
+log "--- search-browser.py ---"
+python3 "$SCRIPTS_DIR/search-browser.py" >> "$LOG_FILE" 2>&1
+log "browser done (exit $?)"
+
 
 log "--- update-jobs.py ---"
 python3 "$SCRIPTS_DIR/update-jobs.py" >> "$LOG_FILE" 2>&1
 log "update done (exit $?)"
+log "--- monitor-employers ---"
+python3 "$HOME/shared-scripts/hub_monitor_employers.py" --hub "$(basename $(dirname $SCRIPTS_DIR) | sed 's/-pay-hub//')" >> "$LOG_FILE" 2>&1
+log "monitor-employers done (exit $?)"
+log "--- normalize-companies ---"
+python3 "$HOME/shared-scripts/hub_normalize_companies.py" --hub "$(basename $REPO_DIR 2>/dev/null || basename $(dirname $SCRIPTS_DIR))" >> "$LOG_FILE" 2>&1
+log "normalize done (exit $?)"
+
+log "--- healthcheck ---"
+python3 "$HOME/shared-scripts/hub_pipeline_healthcheck.py" --hub "wa" >> "$LOG_FILE" 2>&1
+log "healthcheck done (exit $?)"
+log "--- salary-qa ---"
+python3 "$HOME/shared-scripts/hub_salary_qa.py" --hub "wa" --dry-run >> "$LOG_FILE" 2>&1
+log "salary-qa done (exit $?)"
+
+
+log "--- archive-jobs ---"
+python3 "$HOME/shared-scripts/hub_archive_jobs.py" --hub "wa" --limit 50 >> "$LOG_FILE" 2>&1
+log "archive done (exit $?)"
 
 log "--- publish.sh ---"
 bash "$SCRIPTS_DIR/publish.sh" >> "$LOG_FILE" 2>&1

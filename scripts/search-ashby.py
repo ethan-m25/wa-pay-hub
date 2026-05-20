@@ -30,6 +30,7 @@ from _common import (
 )
 
 LOG_FILE  = os.path.expanduser("~/wa-pay-hub/scripts/ashby.log")
+REGION_CODE = "wa"
 LOCK_FILE = os.path.expanduser("~/wa-pay-hub/scripts/.ashby.lock")
 
 log = make_logger(LOG_FILE)
@@ -173,6 +174,25 @@ def _fetch_job_salary(slug, job_id):
     return _parse_salary_text(re.sub(r'\s+', ' ', plain))
 
 
+REMOTE_CLAIMED_FILE = os.path.expanduser("~/.openclaw/remote-claimed.json")
+
+
+def _load_remote_claimed():
+    try:
+        with open(REMOTE_CLAIMED_FILE) as f:
+            return json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        return {}
+
+
+def _save_remote_claimed(data):
+    os.makedirs(os.path.dirname(REMOTE_CLAIMED_FILE), exist_ok=True)
+    tmp = REMOTE_CLAIMED_FILE + ".tmp"
+    with open(tmp, "w") as f:
+        json.dump(data, f)
+    os.replace(tmp, REMOTE_CLAIMED_FILE)
+
+
 def _is_wa(location_str, is_remote=False):
     loc = (location_str or "").lower()
     if any(t in loc for t in _NON_WA_TERMS):
@@ -236,6 +256,7 @@ def main():
 
     existing_keys = load_existing_keys()
     seen_keys = set(existing_keys)
+    remote_claimed = _load_remote_claimed()
     os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
 
     all_slugs = list(SEED_SLUGS) + [(s, s.replace("-", " ").title()) for s in sorted(extra_slugs)]
@@ -273,6 +294,13 @@ def main():
             key = f"{title.lower()}|{company_display.lower()}"
             if key in seen_keys:
                 continue
+
+            if is_remote:
+                if key in remote_claimed and remote_claimed[key] != REGION_CODE:
+                    log(f"  [SKIP remote dupe] {title[:50]} (claimed by {remote_claimed[key]})")
+                    continue
+                remote_claimed[key] = REGION_CODE
+                _save_remote_claimed(remote_claimed)
 
             salary = _parse_salary(job.get("compensationTierSummary", ""))
             if not salary:

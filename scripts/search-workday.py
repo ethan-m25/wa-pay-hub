@@ -34,6 +34,8 @@ from _common import (
 LOG_FILE      = os.path.expanduser("~/wa-pay-hub/scripts/workday.log")
 LOCK_FILE     = os.path.expanduser("~/wa-pay-hub/scripts/.workday.lock")
 LOOKBACK_DATE = (date.today() - timedelta(days=60)).isoformat() + "T00:00:00.000Z"
+LARGE_TENANT_THRESHOLD = 500
+REGION_SEARCH_TEXT = "Washington"
 
 log = make_logger(LOG_FILE)
 
@@ -133,6 +135,12 @@ SALARY_RE = [
     re.compile(r'\$([\d]+(?:\.\d+)?)[kK]\s*[-–—]\s*\$([\d]+(?:\.\d+)?)[kK]', re.IGNORECASE),
     re.compile(r'(?:pay|salary|compensation|base|wage|range|annual)[^$\n]{0,60}\$?([\d,]{5,})\s*[-–—to]+\s*\$?([\d,]{5,})', re.IGNORECASE),
     re.compile(r'salary\s+range\s*:\s*([\d,]+)\s*[-–—]\s*([\d,]+)', re.IGNORECASE),
+    re.compile(r'between\s+\$\s*([\d,]+)(?:\.\d+)?\s+and\s+\$\s*([\d,]+)', re.IGNORECASE),
+    re.compile(r'\$\s*([\d,]+)(?:\.\d+)?\s+(?:and|to)\s+\$\s*([\d,]+)\s+per\s+year', re.IGNORECASE),
+]
+
+SITEMAP_SOURCES = [
+    ("https://boeing.wd1.myworkdayjobs.com/en-US/EXTERNAL_CAREERS/siteMap.xml", "Boeing"),
 ]
 
 _WD_URL_RE = re.compile(
@@ -204,9 +212,9 @@ def discover_tenants():
     return list(discovered.values()), candidate_urls
 
 
-def wd_list_jobs(host, company_id, tenant, offset=0, limit=10):
+def wd_list_jobs(host, company_id, tenant, offset=0, limit=10, search_text=""):
     url = f"https://{host}/wday/cxs/{company_id}/{tenant}/jobs"
-    body = json.dumps({"appliedFacets": {}, "limit": limit, "offset": offset, "searchText": ""})
+    body = json.dumps({"appliedFacets": {}, "limit": limit, "offset": offset, "searchText": search_text})
     cmd = [
         "curl", "-s", "--max-time", "20",
         "-X", "POST", url,
@@ -415,6 +423,46 @@ def extract_salary(text):
     return None
 
 
+def fetch_sitemap_jobs(sitemap_url):
+    """Fetch job URLs from a Workday siteMap.xml (no auth required)."""
+    import xml.etree.ElementTree as ET
+    cmd = ["curl", "-s", "--max-time", "20", "-H", "Accept: application/xml",
+           "-A", UA, sitemap_url]
+    try:
+        result = subprocess.run(cmd, capture_output=True, timeout=25)
+        if result.returncode != 0 or not result.stdout:
+            return []
+        root = ET.fromstring(result.stdout)
+    except Exception:
+        return []
+    ns = {"ns": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+    return [loc.text for loc in root.findall(".//ns:loc", ns) if loc.text]
+
+
+def extract_location_from_html(text, external_path=""):
+    if not text:
+        return parse_location("", external_path)
+    ld_blocks = re.findall(
+        r'<script[^>]+type=["\']application/ld\+json["\'][^>]*>(.*?)</script>',
+        text, re.DOTALL | re.IGNORECASE
+    )
+    for block in ld_blocks:
+        try:
+            data = json.loads(block)
+            if isinstance(data, list):
+                data = data[0]
+            loc = data.get("jobLocation")
+            if isinstance(loc, list):
+                loc = loc[0]
+            addr = (loc or {}).get("address", {})
+            locality = (addr.get("addressLocality") or "").strip()
+            if locality:
+                return locality
+        except Exception:
+            continue
+    return parse_location("", external_path)
+
+
 def main():
     if not acquire_lock(LOCK_FILE, log):
         return 1
@@ -455,6 +503,15 @@ def main():
                 break
             if total > 0:
                 known_total = total
+            if offset == 0 and known_total > LARGE_TENANT_THRESHOLD and not use_search_text:
+                use_search_text = REGION_SEARCH_TEXT
+                max_pages = 9999
+                log(f"  Large tenant ({known_total} jobs) → retrying with searchText='{use_search_text}'")
+                postings, total = wd_list_jobs(host, company_id, tenant, 0, limit, use_search_text)
+                if not postings:
+                    break
+                if total > 0:
+                    known_total = total
             log(f"  API offset={offset}: {len(postings)} postings (total={total})")
             for p in postings:
                 if is_washington(p.get("locationsText", ""), p.get("externalPath", "")):
@@ -518,9 +575,113 @@ def main():
 
         time.sleep(60)
 
+    direct_fallback_found = 0
+    fallback_candidates = [
+        (url, meta)
+        for url, meta in candidate_urls.items()
+        if meta["host"] in failed_hosts
+    ][:30]
+    if fallback_candidates:
+        log(
+            f"\n── Direct Workday URL fallback ({len(fallback_candidates)} candidates "
+            f"from {len(failed_hosts)} failed hosts) ──"
+        )
+    for index, (url, meta) in enumerate(fallback_candidates, 1):
+        host = meta["host"]
+        company_id = meta["company_id"]
+        tenant = meta["tenant"]
+        external_path = meta["external_path"]
+        fallback_company = meta["fallback_company"]
+        log(f"  [fallback {index}/{len(fallback_candidates)}] {host}")
+        html = fetch_job_html_from_url(url)
+        if not html:
+            continue
+        salary = extract_salary(html)
+        if not salary:
+            continue
+        title = extract_title_from_html(html)
+        if not title:
+            continue
+        company_name = extract_company_from_html(html) or fallback_company or format_tenant_name(company_id, tenant)
+        key = f"{title.lower()}|{company_name.lower()}"
+        if key in seen_keys:
+            continue
+        location = extract_location_from_html(html, external_path)
+        if not is_washington(location, external_path):
+            continue
+        val_min, val_max = salary
+        job = {
+            "role": title,
+            "company": company_name,
+            "min": val_min,
+            "max": val_max,
+            "location": location,
+            "source_url": url,
+            "posted": extract_posted_from_html(html),
+            "source_platform": "workday",
+        }
+        write_job(OUTPUT_FILE, job)
+        seen_keys.add(key)
+        total_found += 1
+        direct_fallback_found += 1
+        log(f"  → DIRECT FOUND: {title[:50]} @ {company_name} ${val_min:,}–${val_max:,} [{location}]")
+        time.sleep(0.4)
+
+    sitemap_found = 0
+    if SITEMAP_SOURCES:
+        log(f"\n── siteMap.xml fallback for 422-blocked companies ({len(SITEMAP_SOURCES)} sources) ──")
+    for sitemap_url, sitemap_company in SITEMAP_SOURCES:
+        log(f"  Fetching siteMap: {sitemap_company}")
+        job_urls = fetch_sitemap_jobs(sitemap_url)
+        if not job_urls:
+            log(f"    → no URLs returned")
+            continue
+        wa_urls = [u for u in job_urls if any(t in u.lower() for t in
+                   ["seattle", "renton", "bellevue", "redmond", "kirkland",
+                    "tukwila", "-wa-", "washington-united-states"])]
+        if not wa_urls:
+            wa_urls = job_urls
+        log(f"    → {len(job_urls)} total, {len(wa_urls)} plausibly WA — checking each")
+        for job_url in wa_urls[:50]:
+            html = fetch_job_html_from_url(job_url)
+            if not html:
+                continue
+            salary = extract_salary(html)
+            if not salary:
+                continue
+            title = extract_title_from_html(html)
+            if not title:
+                continue
+            company_name = extract_company_from_html(html) or sitemap_company
+            key = f"{title.lower()}|{company_name.lower()}"
+            if key in seen_keys:
+                continue
+            ext_path = "/" + job_url.split("/job/", 1)[-1] if "/job/" in job_url else ""
+            location = extract_location_from_html(html, ext_path)
+            if not is_washington(location, ext_path):
+                continue
+            val_min, val_max = salary
+            job = {
+                "role": title,
+                "company": company_name,
+                "min": val_min,
+                "max": val_max,
+                "location": location,
+                "source_url": job_url,
+                "posted": extract_posted_from_html(html),
+                "source_platform": "workday",
+            }
+            write_job(OUTPUT_FILE, job)
+            seen_keys.add(key)
+            total_found += 1
+            sitemap_found += 1
+            log(f"    → SITEMAP FOUND: {title[:50]} @ {company_name} ${val_min:,}–${val_max:,} [{location}]")
+            time.sleep(0.4)
+        log(f"    → {sitemap_company}: done")
+
     log(
         f"\n=== WA Workday scraper complete: {total_found} new jobs "
-        f"(api_failures={api_failures}) ==="
+        f"(api_failures={api_failures}, direct_fallback={direct_fallback_found}, sitemap={sitemap_found}) ==="
     )
     return 0
 

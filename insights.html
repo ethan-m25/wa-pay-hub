@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -45,7 +45,7 @@
   --text: #14202B;
   --text2: #445364;
   --text3: #748294;
-  --accent: #006994;
+  --accent: #e8445a;
   --accent-dim: rgba(0,105,148,.06);
   --accent-border: rgba(0,105,148,.18);
   --green: #1D6C49;
@@ -73,9 +73,9 @@
   --border: #30363D;
   --border2: #484F58;
   --text: #E6EDF3;
-  --text2: #8D96A0;
-  --text3: #545D68;
-  --accent: #E8445A;
+  --text2: #b1c0d2;
+  --text3: #7f91a6;
+  --accent: #e8445a;
   --accent-dim: rgba(232,68,90,.10);
   --accent-border: rgba(232,68,90,.28);
   --green: #3FB950;
@@ -89,7 +89,7 @@
   --red-mid: rgba(232,68,90,.22);
   --nav-bg: #0D1117;
   --masthead-bg: #E6EDF3;
-  --masthead-text: #0D1117;
+  --masthead-text: #f2f7fb;
   --chart-grid: rgba(48,54,61,.9);
   --rule: #30363D;
   --scatter-ok: #5B9BF8;
@@ -590,9 +590,46 @@ footer {
 .network-back{font-size:var(--fs-xs);color:var(--text3);font-family:var(--font-mono);}
 .network-back a{color:var(--text2);text-decoration:none;border-bottom:1px dotted var(--border2);transition:color .2s;}
 .network-back a:hover{color:var(--text);}
+
+/* ===== PayHub hub design-language unification (v2) ===== */
+[data-theme="dark"]{
+  --bg:#05080c; --bg2:#0a1119;
+  --surface:rgba(255,255,255,.042); --surface2:rgba(255,255,255,.072);
+  --border:rgba(255,255,255,.09); --border2:rgba(255,255,255,.16);
+  --text:#f2f7fb; --text2:#b1c0d2; --text3:#7f91a6;
+  --nav-bg:rgba(6,10,15,.80); --masthead-bg:rgba(7,11,18,.42); --masthead-text:#f2f7fb; --input-bg:#0d141d;
+}
+[data-theme="dark"] body{ background:var(--bg); }
+[data-theme="dark"] nav{backdrop-filter:blur(16px) saturate(160%);-webkit-backdrop-filter:blur(16px) saturate(160%);}
+[data-theme="dark"] .masthead{color:#f2f7fb;border-bottom:1px solid rgba(255,255,255,.08);}
+[data-theme="dark"] .masthead h1,[data-theme="dark"] .masthead h2{color:#f2f7fb}
+[data-theme="dark"] .masthead-kicker{color:#ff5a70;opacity:.84;}
+[data-theme="dark"] .masthead-sub,[data-theme="dark"] .masthead p{color:var(--text2);opacity:1;}
+[data-theme="dark"] .masthead-meta,[data-theme="dark"] .hero-stat{color:rgba(255,255,255,.78);}
+[data-theme="dark"] .meta-chip{color:var(--text2);background:rgba(255,255,255,.072);border-color:rgba(255,255,255,.16);}
+#themeBtn{display:none!important}
+.hero{border-bottom:1px solid rgba(255,255,255,.08) !important}
+.salary-focus-bar{background:rgba(9,13,20,.975) !important;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+thead th,.results-header{background:#0a0e16 !important}
+.ph-sky{position:fixed;inset:0;z-index:-2;pointer-events:none;
+  background:radial-gradient(ellipse 72% 52% at 80% -8%,rgba(232,68,90,.12),transparent 60%),
+    radial-gradient(ellipse 62% 46% at 10% 3%,rgba(63,217,138,.055),transparent 58%),var(--bg);}
+:root{--ph-region-code:"WA";--ph-orb-bg-x:18.0%;--ph-orb-bg-y:23.6%;--ph-orb-pin-x:24.0%;--ph-orb-pin-y:23.6%;--ph-orb-rotate:15.1deg;--ph-orb-label-rotate:-15.1deg;}
+.ph-orb{position:fixed;z-index:-1;pointer-events:none;
+  width:128vh;height:128vh;max-width:1500px;max-height:1500px;
+  left:84%;top:48%;transform:translate(-50%,-50%) rotate(var(--ph-orb-rotate,0deg));border-radius:50%;
+  background:url(https://payhub.fyi/assets/globe-bg.svg) var(--ph-orb-bg-x,50%) var(--ph-orb-bg-y,50%)/cover no-repeat;opacity:.52;
+  -webkit-mask:radial-gradient(circle at 50% 50%,#000 58%,transparent 73%);
+          mask:radial-gradient(circle at 50% 50%,#000 58%,transparent 73%);}
+.ph-orb::before{content:"";position:absolute;inset:0;border-radius:50%;
+  border:1px solid rgba(170,212,246,.5);
+  box-shadow:inset 0 0 140px -4px rgba(128,188,238,.42),0 0 80px 5px rgba(128,188,238,.2);}
+.ph-orb::after{content:var(--ph-region-code,"");position:absolute;left:var(--ph-orb-pin-x,50%);top:var(--ph-orb-pin-y,50%);transform:translate(-50%,-50%) rotate(var(--ph-orb-label-rotate,0deg));font:700 10px/1 var(--font-mono, var(--mono, monospace));letter-spacing:.08em;color:#f2f7fb;background:rgba(232,68,90,.24);border:1px solid rgba(255,118,136,.72);border-radius:999px;padding:6px 7px;box-shadow:0 0 0 5px rgba(232,68,90,.10),0 0 24px rgba(232,68,90,.45),0 0 42px rgba(128,188,238,.20);text-shadow:0 1px 8px rgba(0,0,0,.65);}
+@media(max-width:760px){.ph-orb{left:78%;top:66%;width:104vh;height:104vh}.ph-orb::after{font-size:9px;padding:5px 6px}}
 </style>
 </head>
 <body>
+<div class="ph-sky" aria-hidden="true"></div><div class="ph-orb" data-region="WA" aria-hidden="true"></div>
 
 <div id="loadingOverlay">
   <div class="loading-spinner"></div>
@@ -618,8 +655,8 @@ footer {
 <div class="masthead">
   <div class="masthead-inner">
     <div class="masthead-kicker">Pay Intelligence · WA RCW 49.58.110</div>
-    <h1>What WA employers are actually <em>disclosing.</em></h1>
-    <div class="masthead-sub">Analysis of <span id="mastheadCount">3,000+</span> salary disclosures from WA job postings under the WA Pay Transparency Law, effective January 1, 2023.</div>
+    <h1>See what WA employers <em>disclose.</em></h1>
+    <div class="masthead-sub">Analysis of <span id="mastheadCount">211</span> salary disclosures from WA job postings under the WA Pay Transparency Law, effective January 1, 2023.</div>
     <div class="masthead-meta">
       <span>Dataset: <strong id="metaTotal">—</strong> job postings</span>
       <span><strong id="metaCompanies">—</strong> employers</span>
@@ -648,7 +685,7 @@ footer {
     <div class="section-header">
       <div class="section-kicker">Pay Range Transparency</div>
       <div class="section-title">How precisely are WA employers disclosing pay?</div>
-      <div class="section-desc">Washington's Pay Transparency Law requires salary disclosure on every public job posting, with <strong>no cap on range width</strong>. The width of the disclosed range tells you how confidently an employer has defined the role's compensation — narrower is more informative for job seekers.</div>
+      <div class="section-desc">Washington's Pay Transparency Law requires salary disclosure in covered public job postings, with <strong>no cap on range width</strong>. The width of the disclosed range tells you how confidently an employer has defined the role's compensation — narrower is more informative for job seekers.</div>
     </div>
 
     <div class="compliance-viz animate-in">
@@ -669,9 +706,9 @@ footer {
           <div class="cbl-desc">Range width &gt; $50k — may reflect multiple seniority levels or unsettled pay planning.</div>
         </div>
         <div class="cbl-item cbl-federal cbl-muted">
-          <div class="cbl-label">Federal employers</div>
+          <div class="cbl-label">National/remote mix</div>
           <div class="cbl-num" id="pctFederal">—</div>
-          <div class="cbl-desc">Banks &amp; telecoms — some operate under federal law (FLSA), not Washington's Pay Transparency Law. Disclosures may be voluntary.</div>
+          <div class="cbl-desc">National or remote postings — may not be clearly attributable to this state's posting rule. Disclosures are kept as market signals.</div>
         </div>
       </div>
     </div>
@@ -686,7 +723,7 @@ footer {
     <div class="section-header">
       <div class="section-kicker">Employer Profiles</div>
       <div class="section-title">Employers by salary range width</div>
-      <div class="section-desc">Each bubble is one employer (≥5 postings). Horizontal position = median salary range width. Vertical = share of postings with a precise range (≤$50k wide). Bubble size = number of postings. Federal employers (banks, telecoms) appear in the chart; their disclosures are voluntary (not covered by state law).</div>
+      <div class="section-desc">Each bubble is one employer (≥5 postings). Horizontal position = median salary range width. Vertical = share of postings with a precise range (≤$50k wide). Bubble size = number of postings. National or remote postings appear in the chart as market signals, not compliance findings.</div>
     </div>
 
     <div class="chart-card">
@@ -694,7 +731,7 @@ footer {
         <div class="legend">
           <div class="legend-item"><div class="legend-dot" style="background:var(--scatter-ok)"></div>Mostly precise ranges</div>
           <div class="legend-item"><div class="legend-dot" style="background:var(--accent)"></div>Broad-range postings present</div>
-          <div class="legend-item"><div class="legend-dot" style="background:var(--text3);opacity:.5"></div>Mostly federal employers</div>
+          <div class="legend-item"><div class="legend-dot" style="background:var(--text3);opacity:.5"></div>National/remote mix</div>
         </div>
         <div style="font-size:var(--fs-xs);color:var(--text3)">Hover any bubble for details · Bubble size = posting count</div>
       </div>
@@ -715,19 +752,19 @@ footer {
     <div class="section-header">
       <div class="section-kicker">Market Signals</div>
       <div class="section-title">Who's posting the widest ranges?</div>
-      <div class="section-desc">Washington employers posting salary ranges wider than $50,000 — shown as a pay-planning signal, not a legal violation. There is no range width cap under the WA Pay Transparency Law. Federally regulated employers (banks, telecoms) are excluded — their disclosures are voluntary.</div>
+      <div class="section-desc">Washington employers posting salary ranges wider than $50,000 — shown as a pay-planning signal, not a legal violation. There is no range width cap under the WA Pay Transparency Law. National or remote postings are retained as disclosure signals rather than compliance findings.</div>
     </div>
 
     <div class="chart-card">
-      <div class="chart-card-title">Top non-compliant employers</div>
-      <div class="chart-card-sub">Regulated postings (upper ≤$200k) with range width &gt;$50k. Count of non-compliant job postings.</div>
+      <div class="chart-card-title">Top wide-range employers</div>
+      <div class="chart-card-sub">Postings with range width &gt;$50k. Count of wide-range job postings.</div>
       <table class="mini-table">
-        <thead><tr><th>Employer</th><th>Non-compliant posts</th><th>Median width</th></tr></thead>
+        <thead><tr><th>Employer</th><th>Wide-range posts</th><th>Median width</th></tr></thead>
         <tbody id="nonCompliantBody"></tbody>
       </table>
       <div class="callout" style="margin-top:16px">
-        <div class="callout-label">Largest non-compliant employers</div>
-        <p><strong>Deloitte</strong> leads among Washington employers in postings exceeding the $50k width limit. Banks and telecoms (RBC, BMO, TD, Telus, etc.) are federally exempt from state pay transparency law — their salary disclosures are voluntary and are excluded from this compliance analysis.</p>
+        <div class="callout-label">Largest wide-range employers</div>
+        <p><strong>Deloitte</strong> leads among Washington employers in postings with ranges wider than $50k. National or remote postings may not be clearly attributable to this state's posting rule, so they are shown as disclosure signals rather than compliance findings.</p>
       </div>
     </div>
   </section>
@@ -746,10 +783,10 @@ footer {
     <div class="two-col">
       <div class="chart-card">
         <div class="chart-card-title">Absolute width distribution</div>
-        <div class="chart-card-sub">Regulated postings only (upper ≤$200k). Red line = $50k compliance limit.</div>
+        <div class="chart-card-sub">Tracked postings. Red line = $50k range-width reference.</div>
         <div class="legend" id="histLegend1">
-          <div class="legend-item"><div class="legend-dot" style="background:var(--green);opacity:.7"></div>Within limit (≤$50k)</div>
-          <div class="legend-item"><div class="legend-dot" style="background:var(--amber)"></div>Exceeds limit (&gt;$50k)</div>
+          <div class="legend-item"><div class="legend-dot" style="background:var(--green);opacity:.7"></div>≤$50k reference</div>
+          <div class="legend-item"><div class="legend-dot" style="background:var(--amber)"></div>&gt;$50k reference</div>
         </div>
         <svg id="histSvg1" class="histogram-svg" viewBox="0 0 400 200" preserveAspectRatio="xMidYMid meet"></svg>
       </div>
@@ -811,7 +848,7 @@ footer {
 <div class="skill-signal-cta">
   <div>
     <div class="skill-signal-cta-label">Skill × Salary Analysis</div>
-    <h3>Which skills actually pay more?</h3>
+    <h3>Which skills show higher pay?</h3>
     <p>See how skills shift salaries above or below the category median — ranked across job categories from Washington's legally-required Pay Transparency Law disclosures.</p>
   </div>
   <a class="skill-signal-cta-btn" href="/skills.html">
@@ -837,8 +874,7 @@ function toggleTheme(){
   localStorage.setItem('oph-theme', document.documentElement.getAttribute('data-theme'));
 }
 (function(){
-  const saved = localStorage.getItem('oph-theme');
-  if(saved) document.documentElement.setAttribute('data-theme', saved);
+  document.documentElement.setAttribute('data-theme', 'dark');
 })();
 
 /* ===== HELPERS ===== */
@@ -865,7 +901,7 @@ async function main() {
   const N = valid.length;
   const companies = new Set(valid.map(j => j.company)).size;
 
-  // Federally regulated employers — subject to federal employment law, not WA Pay Transparency Law (WA RCW 49.58.110).
+  // National or remote postings may not be attributable to WA RCW 49.58.110.
   // Any wide ranges they post are voluntary disclosures, not violations.
   const FEDERAL_EMPLOYERS = new Set([
     'Bank of Montreal', 'RBC', 'TD Bank', 'CIBC', 'Scotiabank', 'Bank of Nova Scotia',
@@ -1016,7 +1052,7 @@ async function main() {
 
   // ─── SECTION 4: NON-COMPLIANCE LEADERS (platform chart moved to admin.html) ───
 
-  // Non-compliant leaders
+  // Wide-range leaders
   const ncByCompany = {};
   nonCompliant.forEach(j => {
     const co = normCompany(j.company);
@@ -1482,7 +1518,7 @@ function drawCompanyScatter(entries, opts) {
   const rad = t => Math.max(mob ? 2.5 : 2, Math.min(mob ? 7 : 6, Math.sqrt(t) * (mob ? 0.72 : 0.62)));
 
   const GREEN = getCSSVar('--scatter-ok');  // blue for compliant
-  const RED   = getCSSVar('--accent');      // site red for non-compliant
+  const RED   = getCSSVar('--accent');      // site red for Wide-range
   const GRAY  = getCSSVar('--text3');
   const AMBER = getCSSVar('--amber');
 
@@ -1615,7 +1651,7 @@ function drawCompanyScatter(entries, opts) {
 
     <!-- Quadrant labels -->
     <text x="${M.l+8}" y="${M.t+18}" class="sc-ql" fill="${GREEN}" opacity=".55">${mob?'▲ Compliant':'▲ Narrow &amp; compliant'}</text>
-    <text x="${(txPx+6).toFixed(1)}" y="${M.t+PH-10}" class="sc-ql" fill="${RED}" opacity=".55">${mob?'▼ Non-compliant':'▼ Wide &amp; non-compliant'}</text>
+    <text x="${(txPx+6).toFixed(1)}" y="${M.t+PH-10}" class="sc-ql" fill="${RED}" opacity=".55">${mob?'▼ Wide-range':'▼ Wide range'}</text>
 
     <!-- Size legend -->
     ${sizeLegend}
@@ -1640,7 +1676,7 @@ function drawCompanyScatter(entries, opts) {
     dot.addEventListener('pointerenter', () => {
       const cls = dot.dataset.c;
       const cc = cls === 'compliant' ? getCSSVar('--green') : cls === 'noncompliant' ? getCSSVar('--amber') : getCSSVar('--text3');
-      const cl = cls === 'compliant' ? 'Mostly compliant' : cls === 'noncompliant' ? 'Non-compliant jobs present' : 'Majority exempt (>$200k)';
+      const cl = cls === 'compliant' ? 'Mostly precise' : cls === 'noncompliant' ? 'Wide-range jobs present' : 'High-salary bucket (>$200k)';
       const nc = parseInt(dot.dataset.nc) || 0;
       tt.innerHTML = `<div class="ctt-name">${dot.dataset.n}</div>
         <div class="ctt-cls" style="color:${cc}">${cl}</div>
@@ -1648,7 +1684,7 @@ function drawCompanyScatter(entries, opts) {
           <span class="ctt-lbl">Postings</span><span class="ctt-val">${dot.dataset.t}</span>
           <span class="ctt-lbl">Median width</span><span class="ctt-val">${dot.dataset.m}%</span>
           <span class="ctt-lbl">Compliance rate</span><span class="ctt-val">${dot.dataset.r}</span>
-          ${nc > 0 ? `<span class="ctt-lbl">Non-compliant</span><span class="ctt-val" style="color:${getCSSVar('--amber')}">${nc} jobs</span>` : ''}
+          ${nc > 0 ? `<span class="ctt-lbl">Wide-range</span><span class="ctt-val" style="color:${getCSSVar('--amber')}">${nc} jobs</span>` : ''}
         </div>`;
       tt.style.display = 'block';
     });
