@@ -1,0 +1,288 @@
+{
+  "generated": "2026-05-20",
+  "categories": {
+    "Sales": {
+      "cat_median": 115000,
+      "n_jobs": 7,
+      "skills": []
+    },
+    "Product": {
+      "cat_median": 203750,
+      "n_jobs": 12,
+      "skills": []
+    },
+    "Engineering": {
+      "cat_median": 200000,
+      "n_jobs": 105,
+      "skills": [
+        {
+          "skill": "distributed systems",
+          "median": 253500,
+          "n": 6,
+          "dev": 26.8
+        },
+        {
+          "skill": "algorithms",
+          "median": 253500,
+          "n": 6,
+          "dev": 26.8
+        },
+        {
+          "skill": "data structures",
+          "median": 253500,
+          "n": 6,
+          "dev": 26.8
+        },
+        {
+          "skill": "query processing",
+          "median": 253500,
+          "n": 6,
+          "dev": 26.8
+        },
+        {
+          "skill": "software engineering",
+          "median": 253500,
+          "n": 6,
+          "dev": 26.8
+        },
+        {
+          "skill": "large-scale systems",
+          "median": 253500,
+          "n": 6,
+          "dev": 26.8
+        },
+        {
+          "skill": "cloud architecture",
+          "median": 217550,
+          "n": 3,
+          "dev": 8.8
+        },
+        {
+          "skill": "software",
+          "median": 213000,
+          "n": 5,
+          "dev": 6.5
+        },
+        {
+          "skill": "optimization",
+          "median": 213000,
+          "n": 2,
+          "dev": 6.5
+        },
+        {
+          "skill": "parallelization",
+          "median": 213000,
+          "n": 2,
+          "dev": 6.5
+        },
+        {
+          "skill": "compilers",
+          "median": 213000,
+          "n": 2,
+          "dev": 6.5
+        },
+        {
+          "skill": "edge",
+          "median": 213000,
+          "n": 2,
+          "dev": 6.5
+        },
+        {
+          "skill": "cloud",
+          "median": 211275,
+          "n": 2,
+          "dev": 5.6
+        },
+        {
+          "skill": "genai",
+          "median": 205750,
+          "n": 2,
+          "dev": 2.9
+        },
+        {
+          "skill": "google cloud",
+          "median": 205750,
+          "n": 2,
+          "dev": 2.9
+        },
+        {
+          "skill": "python",
+          "median": 192500,
+          "n": 5,
+          "dev": -3.7
+        },
+        {
+          "skill": "kubernetes",
+          "median": 192500,
+          "n": 3,
+          "dev": -3.7
+        },
+        {
+          "skill": "storage",
+          "median": 179000,
+          "n": 2,
+          "dev": -10.5
+        },
+        {
+          "skill": "engineer",
+          "median": 179000,
+          "n": 2,
+          "dev": -10.5
+        },
+        {
+          "skill": "c++",
+          "median": 179000,
+          "n": 2,
+          "dev": -10.5
+        },
+        {
+          "skill": "systems",
+          "median": 179000,
+          "n": 2,
+          "dev": -10.5
+        },
+        {
+          "skill": "distributed",
+          "median": 179000,
+          "n": 2,
+          "dev": -10.5
+        },
+        {
+          "skill": "engineering",
+          "median": 129262,
+          "n": 6,
+          "dev": -35.4
+        },
+        {
+          "skill": "automation",
+          "median": 123716,
+          "n": 6,
+          "dev": -38.1
+        },
+        {
+          "skill": "industrial_engineering",
+          "median": 113683,
+          "n": 4,
+          "dev": -43.2
+        },
+        {
+          "skill": "excel",
+          "median": 113683,
+          "n": 4,
+          "dev": -43.2
+        },
+        {
+          "skill": "data_analysis",
+          "median": 113683,
+          "n": 4,
+          "dev": -43.2
+        },
+        {
+          "skill": "project_management",
+          "median": 113683,
+          "n": 4,
+          "dev": -43.2
+        }
+      ]
+    },
+    "Other": {
+      "cat_median": 163420,
+      "n_jobs": 31,
+      "skills": []
+    },
+    "Security": {
+      "cat_median": 153264,
+      "n_jobs": 3,
+      "skills": []
+    },
+    "Data & Analytics": {
+      "cat_median": 198300,
+      "n_jobs": 24,
+      "skills": [
+        {
+          "skill": "technical program management",
+          "median": 200000,
+          "n": 4,
+          "dev": 0.9
+        },
+        {
+          "skill": "python",
+          "median": 200000,
+          "n": 5,
+          "dev": 0.9
+        },
+        {
+          "skill": "bigquery",
+          "median": 200000,
+          "n": 4,
+          "dev": 0.9
+        },
+        {
+          "skill": "google data center",
+          "median": 200000,
+          "n": 4,
+          "dev": 0.9
+        },
+        {
+          "skill": "program management",
+          "median": 200000,
+          "n": 4,
+          "dev": 0.9
+        },
+        {
+          "skill": "sql",
+          "median": 200000,
+          "n": 5,
+          "dev": 0.9
+        }
+      ]
+    },
+    "Management": {
+      "cat_median": 200000,
+      "n_jobs": 18,
+      "skills": [
+        {
+          "skill": "technical program management",
+          "median": 200000,
+          "n": 2,
+          "dev": 0.0
+        },
+        {
+          "skill": "python",
+          "median": 200000,
+          "n": 2,
+          "dev": 0.0
+        },
+        {
+          "skill": "bigquery",
+          "median": 200000,
+          "n": 2,
+          "dev": 0.0
+        },
+        {
+          "skill": "google data center",
+          "median": 200000,
+          "n": 2,
+          "dev": 0.0
+        },
+        {
+          "skill": "program management",
+          "median": 200000,
+          "n": 3,
+          "dev": 0.0
+        },
+        {
+          "skill": "sql",
+          "median": 200000,
+          "n": 2,
+          "dev": 0.0
+        }
+      ]
+    },
+    "Operations": {
+      "cat_median": 149000,
+      "n_jobs": 4,
+      "skills": []
+    }
+  }
+}
