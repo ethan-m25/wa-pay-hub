@@ -1,8 +1,8 @@
 {
   "meta": {
-    "built_at": "2026-05-21T09:23:25.338769+00:00",
-    "total_jobs": 432,
-    "enriched": 54
+    "built_at": "2026-05-22T09:13:30.309549+00:00",
+    "total_jobs": 456,
+    "enriched": 71
   },
   "jobs": {
     "copy-of-commercial-s-spacex-65682545": {
@@ -893,6 +893,24 @@
       "red_flags": [],
       "work_mode_derived": "remote"
     },
+    "migration-architect--google-54956730": {
+      "summary": "Owns cloud migration architecture for North America, designing solutions and advising on operational practices for customer-facing roles.",
+      "key_skills": [
+        "cloud",
+        "migration",
+        "architect",
+        "google"
+      ],
+      "core_skills": [
+        "cloud architecture",
+        "migration strategy",
+        "technical stakeholder engagement"
+      ],
+      "seniority_signal": "senior",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "hybrid"
+    },
     "technical-lead--ai-m-google-54956731": {
       "summary": "Owns outcomes and decision making, solving ambiguous problems and influencing stakeholders with deep expertise in domain.",
       "key_skills": [
@@ -1094,6 +1112,26 @@
       "red_flags": [],
       "work_mode_derived": "remote"
     },
+    "tooling-policy-speci-google-54956731": {
+      "summary": "Drives policy and legal content standards for Google's products while ensuring compliance and safety across platforms.",
+      "key_skills": [
+        "policy",
+        "legal",
+        "content",
+        "standards",
+        "tooling"
+      ],
+      "core_skills": [
+        "policy",
+        "legal",
+        "content",
+        "standards"
+      ],
+      "seniority_signal": "mid",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "hybrid"
+    },
     "developer-marketing--google-54956731": {
       "summary": "Drives marketing programs with cross-functional stakeholders and mentors junior team members",
       "key_skills": [
@@ -1137,6 +1175,305 @@
       "role_type": "ic",
       "red_flags": [],
       "work_mode_derived": "remote"
+    },
+    "senior-security-engi-google-54956732": {
+      "summary": "Senior Security Engineer works on Chrome Product Security to manage vulnerability management, security incident response, and security updates.",
+      "key_skills": [
+        "security",
+        "engineering",
+        "chrome",
+        "product",
+        "security"
+      ],
+      "core_skills": [
+        "security",
+        "engineering"
+      ],
+      "seniority_signal": "senior",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "remote"
+    },
+    "developer-relations--google-54956732": {
+      "summary": "Collaborates with developers at conferences and online, advocates for developers' interests internally at Google, writes sample code and client libraries, participates in developer forums and support queues to troubleshoot coding problems.",
+      "key_skills": [
+        "javascript",
+        "python",
+        "sql",
+        "bigquery",
+        "business intelligence",
+        "business data visualization",
+        "storytelling with data",
+        "online content production"
+      ],
+      "core_skills": [
+        "developer relations",
+        "open source contributions",
+        "public speaking",
+        "technical problem solving"
+      ],
+      "seniority_signal": "mid",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "hybrid"
+    },
+    "modular-data-center--google-54956732": {
+      "summary": "Drives design and integration of high-density modular data center products while bridging structural engineering and electrical/thermal systems.",
+      "key_skills": [
+        "modular data center",
+        "product engineering",
+        "delivery"
+      ],
+      "core_skills": [
+        "facility design",
+        "construction"
+      ],
+      "seniority_signal": "mid",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "onsite"
+    },
+    "senior-staff-softwar-google-54956732": {
+      "summary": "Senior software engineer working on Google Cloud Compute projects, developing and maintaining scalable software solutions for massive data scale.",
+      "key_skills": [
+        "google cloud",
+        "software engineering",
+        "ai/ml",
+        "distributed systems",
+        "data structures",
+        "algorithms",
+        "cloud computing",
+        "distributed computing"
+      ],
+      "core_skills": [
+        "software engineering",
+        "ai/ml",
+        "distributed systems",
+        "cloud computing"
+      ],
+      "seniority_signal": "senior",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "onsite"
+    },
+    "networking-infrastru-google-54956732": {
+      "summary": "Networking Infrastructure Consultant works with engineering teams to optimize hardware and equipment for production of innovative products through strategic supplier relationships and cost management.",
+      "key_skills": [
+        "networking",
+        "infrastructure",
+        "consultant"
+      ],
+      "core_skills": [
+        "networking",
+        "infrastructure"
+      ],
+      "seniority_signal": "senior",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "unknown"
+    },
+    "senior-ux-researcher-google-54956732": {
+      "summary": "Drives user research and insights to improve product development through qualitative and quantitative methods.",
+      "key_skills": [
+        "ux research",
+        "analytics",
+        "insights",
+        "measurement"
+      ],
+      "core_skills": [
+        "research methods",
+        "qualitative research",
+        "mixed-methods",
+        "synthesizing insights"
+      ],
+      "seniority_signal": "senior",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "hybrid"
+    },
+    "system-debug-enginee-google-54956732": {
+      "summary": "System Debug Engineer at Google Cloud focuses on troubleshooting and optimizing AI infrastructure systems through automation and observability practices.",
+      "key_skills": [
+        "cloud",
+        "ai",
+        "infrastructure",
+        "debugging",
+        "systems",
+        "automation",
+        "observability",
+        "reliability"
+      ],
+      "core_skills": [
+        "systems_automation",
+        "infrastructure_design",
+        "reliability_engineering",
+        "observability"
+      ],
+      "seniority_signal": "mid",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "hybrid"
+    },
+    "director--els-supply-google-54956732": {
+      "summary": "Directs ELS Supply Expansion Investment Plan to manage infrastructure capacity for Google's growth",
+      "key_skills": [
+        "director",
+        "els",
+        "supply",
+        "expansion",
+        "investment",
+        "plan"
+      ],
+      "core_skills": [
+        "technical",
+        "program",
+        "management"
+      ],
+      "seniority_signal": "director",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "unknown"
+    },
+    "senior-data-center-c-google-54956732": {
+      "summary": "Senior Data Center Controls Engineer works on critical infrastructure projects to ensure mission critical systems operate 24/7 with no failures.",
+      "key_skills": [
+        "data center",
+        "controls",
+        "engineering"
+      ],
+      "core_skills": [
+        "critical infrastructure",
+        "mission critical systems"
+      ],
+      "seniority_signal": "senior",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "remote"
+    },
+    "social-support-lead--google-54956732": {
+      "summary": "Social Support Lead drives progress, solves problems, and mentors junior team members while applying deep expertise in Trust and Safety operations.",
+      "key_skills": [
+        "social support",
+        "trust and safety",
+        "compute",
+        "google cloud",
+        "ai",
+        "machine learning",
+        "data science",
+        "software engineering"
+      ],
+      "core_skills": [
+        "incident management",
+        "policy",
+        "crisis communications",
+        "stakeholder management"
+      ],
+      "seniority_signal": "mid",
+      "role_type": "manager",
+      "red_flags": [],
+      "work_mode_derived": "hybrid"
+    },
+    "interaction-designer-google-54956732": {
+      "summary": "Interaction Designer transforms complex tasks into intuitive user experiences for billions of people through user-centered design methods and cross-functional collaboration.",
+      "key_skills": [
+        "interaction design",
+        "ux design",
+        "visual design",
+        "prototyping",
+        "advertising"
+      ],
+      "core_skills": [
+        "user-centered design",
+        "cross-functional collaboration"
+      ],
+      "seniority_signal": "mid",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "hybrid"
+    },
+    "data-center-engineer-google-54956732": {
+      "summary": "Drives progress, solves problems, and mentors junior team members with deeper expertise in data center mechanical systems",
+      "key_skills": [
+        "data center",
+        "mechanical engineering"
+      ],
+      "core_skills": [
+        "mechanical system analysis",
+        "engineering software"
+      ],
+      "seniority_signal": "mid",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "hybrid"
+    },
+    "research-scientist---google-54956732": {
+      "summary": "Research Scientist sets up large-scale tests and deploys promising ideas quickly and broadly, managing deadlines and deliverables while applying the latest theories to develop new and improved products, processes, or technologies.",
+      "key_skills": [
+        "machine learning",
+        "natural language processing",
+        "computer vision",
+        "recommendation systems",
+        "pattern recognition",
+        "artificial intelligence",
+        "large language models",
+        "generative ai"
+      ],
+      "core_skills": [
+        "machine learning",
+        "natural language processing",
+        "computer vision",
+        "artificial intelligence"
+      ],
+      "seniority_signal": "staff",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "remote"
+    },
+    "threat-analyst--mand-google-54956732": {
+      "summary": "Threat Analyst delivers tailored intelligence solutions for high-priority clients by building client relationships and working closely with stakeholders to scope priorities and define requirements.",
+      "key_skills": [
+        "threat intelligence",
+        "cyber security",
+        "network forensics",
+        "risk assessment",
+        "security risk assessments",
+        "physical security",
+        "adversarial cyber actors",
+        "tactics techniques procedures"
+      ],
+      "core_skills": [
+        "cyber security",
+        "threat intelligence",
+        "network forensics",
+        "risk assessment"
+      ],
+      "seniority_signal": "mid",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "remote"
+    },
+    "staff-software-engin-google-40968326": {
+      "summary": "Develops next-generation technologies for Google's infrastructure and distributed systems, focusing on large-scale systems and cloud computing.",
+      "key_skills": [
+        "software engineering",
+        "distributed systems",
+        "distributed computing",
+        "large-scale systems",
+        "infrastructure",
+        "ai/ml",
+        "cloud computing",
+        "google compute engine"
+      ],
+      "core_skills": [
+        "distributed systems",
+        "large-scale systems",
+        "distributed computing",
+        "infrastructure"
+      ],
+      "seniority_signal": "staff",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "onsite"
     }
   }
 }
