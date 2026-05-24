@@ -1,8 +1,8 @@
 {
   "meta": {
-    "built_at": "2026-05-23T09:16:39.970098+00:00",
-    "total_jobs": 469,
-    "enriched": 85
+    "built_at": "2026-05-24T09:12:43.475997+00:00",
+    "total_jobs": 470,
+    "enriched": 99
   },
   "jobs": {
     "copy-of-commercial-s-spacex-65682545": {
@@ -348,6 +348,30 @@
       "red_flags": [],
       "work_mode_derived": "hybrid"
     },
+    "software-engineer--g-google-90616026": {
+      "summary": "Software engineer develops next-generation technologies that change how billions of users connect, explore, and interact with information and one another",
+      "key_skills": [
+        "c++",
+        "full stack",
+        "java",
+        "python",
+        "golang",
+        "javascript",
+        "typescript",
+        "html",
+        "css"
+      ],
+      "core_skills": [
+        "c++",
+        "full stack",
+        "java",
+        "python"
+      ],
+      "seniority_signal": "mid",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "remote"
+    },
     "customer-engineer--d-google-90616026": {
       "summary": "Owns outcomes and decision making for customer engineering in data management and retail using Google Cloud solutions",
       "key_skills": [
@@ -410,6 +434,29 @@
       "role_type": "executive",
       "red_flags": [],
       "work_mode_derived": "remote"
+    },
+    "tech-lead--google-ku-google-90616026": {
+      "summary": "Tech Lead owns outcomes and decision making, solving ambiguous problems and influencing stakeholders with deep expertise in domain.",
+      "key_skills": [
+        "kubernetes",
+        "ai platform",
+        "distributed systems",
+        "cloud computing",
+        "machine learning",
+        "data analytics",
+        "gpu",
+        "tpu"
+      ],
+      "core_skills": [
+        "distributed systems",
+        "cloud computing",
+        "machine learning",
+        "data analytics"
+      ],
+      "seniority_signal": "senior",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "onsite"
     },
     "technical-program-ma-google-90616026": {
       "summary": "Drives progress, solves problems, and mentors junior team members while applying deep expertise in advanced analytics and data systems.",
@@ -478,6 +525,24 @@
         "technical",
         "program",
         "management"
+      ],
+      "seniority_signal": "senior",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "hybrid"
+    },
+    "senior-product-manag-google-90616026": {
+      "summary": "Senior Product Manager for AI Operations guides products from conception to launch by connecting technical and business worlds to improve access to information through AI solutions.",
+      "key_skills": [
+        "ai",
+        "product_management",
+        "operations",
+        "cloud"
+      ],
+      "core_skills": [
+        "product_management",
+        "ai",
+        "cloud_operations"
       ],
       "seniority_signal": "senior",
       "role_type": "ic",
@@ -795,6 +860,29 @@
       "red_flags": [],
       "work_mode_derived": "onsite"
     },
+    "software-engineering-google-54956730": {
+      "summary": "Manages project goals, contributes to product strategy, and guides engineering teams across multiple locations and product areas.",
+      "key_skills": [
+        "software engineering",
+        "google cloud",
+        "technical leadership",
+        "project management",
+        "fullstack development",
+        "distributed systems",
+        "ai/ml",
+        "cloud infrastructure"
+      ],
+      "core_skills": [
+        "technical leadership",
+        "project management",
+        "fullstack development",
+        "distributed systems"
+      ],
+      "seniority_signal": "senior",
+      "role_type": "manager",
+      "red_flags": [],
+      "work_mode_derived": "hybrid"
+    },
     "forward-deployed-eng-google-54956730": {
       "summary": "Builds and ships production-grade AI-driven solutions to external customers",
       "key_skills": [
@@ -810,6 +898,24 @@
       "role_type": "ic",
       "red_flags": [],
       "work_mode_derived": "hybrid"
+    },
+    "head-of-industry--re-google-54956730": {
+      "summary": "Owns outcomes and decision making, solving ambiguous problems and influencing stakeholders with deep expertise in retail domain.",
+      "key_skills": [
+        "advertising",
+        "sales",
+        "digital_marketing",
+        "consulting",
+        "media"
+      ],
+      "core_skills": [
+        "sales_management",
+        "stakeholder_influence"
+      ],
+      "seniority_signal": "senior",
+      "role_type": "executive",
+      "red_flags": [],
+      "work_mode_derived": "remote"
     },
     "senior-ux-engineer---google-54956730": {
       "summary": "Senior UX Engineer at Google Chrome AI Innovation develops and launches innovative user experiences through prototyping and collaboration with engineering and product teams.",
@@ -927,6 +1033,28 @@
       "red_flags": [],
       "work_mode_derived": "remote"
     },
+    "security-engineer-google-54956730": {
+      "summary": "Security Engineer drives progress, solves problems, and mentors junior team members with deeper expertise in security systems.",
+      "key_skills": [
+        "security",
+        "threat_modeling",
+        "systems_hardening",
+        "security_protocols",
+        "security_detection",
+        "security_response",
+        "security_incident_management"
+      ],
+      "core_skills": [
+        "threat_modeling",
+        "systems_hardening",
+        "security_protocols",
+        "security_incident_management"
+      ],
+      "seniority_signal": "mid",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "hybrid"
+    },
     "migration-architect--google-54956730": {
       "summary": "Owns cloud migration architecture for North America, designing solutions and advising on operational practices for customer-facing roles.",
       "key_skills": [
@@ -1006,6 +1134,29 @@
       "role_type": "ic",
       "red_flags": [],
       "work_mode_derived": "remote"
+    },
+    "staff-software-engin-google-54956731": {
+      "summary": "Develops next-generation technologies for handling massive information scale and user interactions",
+      "key_skills": [
+        "c++",
+        "java",
+        "python",
+        "kotlin",
+        "go",
+        "sql",
+        "etl",
+        "data warehousing"
+      ],
+      "core_skills": [
+        "software engineering",
+        "data analysis",
+        "software design",
+        "architecture"
+      ],
+      "seniority_signal": "staff",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "hybrid"
     },
     "engineering-analyst--google-54956731": {
       "summary": "Drives progress, solves problems, and mentors junior team members while applying deep expertise in data analysis and security.",
@@ -1208,6 +1359,29 @@
       "red_flags": [],
       "work_mode_derived": "remote"
     },
+    "senior-ux-quantitati-google-54956731": {
+      "summary": "Conducts quantitative user experience research to drive product decisions through empirical methods like logs analysis, survey research, and regression.",
+      "key_skills": [
+        "quantitative research",
+        "ux research",
+        "data analysis",
+        "python",
+        "r",
+        "statistics",
+        "machine learning",
+        "c++"
+      ],
+      "core_skills": [
+        "quantitative user experience research",
+        "statistical analysis",
+        "data manipulation",
+        "project management"
+      ],
+      "seniority_signal": "senior",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "hybrid"
+    },
     "tooling-policy-speci-google-54956731": {
       "summary": "Drives policy and legal content standards for Google's products while ensuring compliance and safety across platforms.",
       "key_skills": [
@@ -1225,6 +1399,29 @@
       ],
       "seniority_signal": "mid",
       "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "hybrid"
+    },
+    "senior-ux-design-man-google-54956731": {
+      "summary": "Owning product strategy and user experience for search ads UI at Google, driving user-centric design solutions and managing cross-functional teams.",
+      "key_skills": [
+        "ux design",
+        "product design",
+        "user experience",
+        "user interface",
+        "design leadership",
+        "design management",
+        "user research",
+        "human-computer interaction"
+      ],
+      "core_skills": [
+        "design leadership",
+        "user experience",
+        "product design",
+        "user research"
+      ],
+      "seniority_signal": "senior",
+      "role_type": "manager",
       "red_flags": [],
       "work_mode_derived": "hybrid"
     },
@@ -1246,6 +1443,29 @@
       ],
       "seniority_signal": "mid",
       "role_type": "manager",
+      "red_flags": [],
+      "work_mode_derived": "hybrid"
+    },
+    "launch-manager--trus-google-54956731": {
+      "summary": "Launch Manager drives progress, solves problems, and mentors junior team members while applying deep expertise in operations, trust and safety, and AI/ML operations.",
+      "key_skills": [
+        "operations",
+        "trust_and_safety",
+        "program_management",
+        "business_strategy",
+        "ai_ml_operations",
+        "sql",
+        "data_analysis",
+        "python"
+      ],
+      "core_skills": [
+        "program_management",
+        "business_strategy",
+        "ai_ml_operations",
+        "sql"
+      ],
+      "seniority_signal": "mid",
+      "role_type": "ic",
       "red_flags": [],
       "work_mode_derived": "hybrid"
     },
@@ -1352,6 +1572,29 @@
       "red_flags": [],
       "work_mode_derived": "onsite"
     },
+    "business-intelligenc-google-54956732": {
+      "summary": "Business Intelligence Analysts work on strategic advisory and lead analytical projects for Compute Trust and Safety, focusing on executive reporting, operational insights, and identifying operational improvement opportunities through data-driven analysis.",
+      "key_skills": [
+        "business intelligence",
+        "data analytics",
+        "python",
+        "r",
+        "statistical modeling",
+        "predictive modeling",
+        "prescriptive modeling",
+        "statistical programming"
+      ],
+      "core_skills": [
+        "business intelligence analysis",
+        "executive reporting",
+        "operational insights",
+        "analytical problem-solving"
+      ],
+      "seniority_signal": "mid",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "hybrid"
+    },
     "strategic-partner-de-google-54956732": {
       "summary": "Drives progress, solves problems, and mentors junior team members with deeper expertise in relevant areas",
       "key_skills": [
@@ -1369,6 +1612,29 @@
       "role_type": "executive",
       "red_flags": [],
       "work_mode_derived": "remote"
+    },
+    "senior-staff-develop-google-54956732": {
+      "summary": "Owning developer relations outcomes and decision making by collaborating with developers globally, advocating for their interests, and improving products through feedback and API design.",
+      "key_skills": [
+        "developer relations",
+        "internal developer relations",
+        "google cloud",
+        "software engineering",
+        "api design",
+        "developer advocacy",
+        "developer community management",
+        "developer support"
+      ],
+      "core_skills": [
+        "technical expertise",
+        "stakeholder influence",
+        "problem solving",
+        "communication"
+      ],
+      "seniority_signal": "senior",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "hybrid"
     },
     "senior-staff-softwar-google-54956732": {
       "summary": "Senior software engineer working on Google Cloud Compute projects, developing and maintaining scalable software solutions for massive data scale.",
@@ -1408,6 +1674,52 @@
       "role_type": "ic",
       "red_flags": [],
       "work_mode_derived": "unknown"
+    },
+    "senior-security-cons-google-54956732": {
+      "summary": "Manages technical account relationships and cloud solutions for customers.",
+      "key_skills": [
+        "technical account manager",
+        "google cloud",
+        "customer engineering",
+        "solutions engineering",
+        "software engineering",
+        "data science",
+        "ai",
+        "machine learning"
+      ],
+      "core_skills": [
+        "customer engineering",
+        "solutions engineering",
+        "software engineering",
+        "ai"
+      ],
+      "seniority_signal": "senior",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "remote"
+    },
+    "senior-ux-designer---google-54956732": {
+      "summary": "Senior UX Designer creates intuitive user experiences for billions of people by transforming complex tasks into easy-to-use interfaces through interaction design, visual design, and information architecture.",
+      "key_skills": [
+        "ux design",
+        "interaction design",
+        "visual design",
+        "information architecture",
+        "ai prototyping",
+        "front-end development",
+        "high-fidelity prototyping",
+        "cross-functional collaboration"
+      ],
+      "core_skills": [
+        "interaction design",
+        "visual design",
+        "information architecture",
+        "ai prototyping"
+      ],
+      "seniority_signal": "senior",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "remote"
     },
     "gecx-sales-specialis-google-54956732": {
       "summary": "Sells cloud AI solutions to enterprise clients, identifies use cases, and engages with executive leaders.",
