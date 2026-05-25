@@ -1,10 +1,33 @@
 {
   "meta": {
-    "built_at": "2026-05-24T09:12:43.475997+00:00",
-    "total_jobs": 470,
-    "enriched": 99
+    "built_at": "2026-05-25T09:15:51.817849+00:00",
+    "total_jobs": 475,
+    "enriched": 113
   },
   "jobs": {
+    "senior-product-marke-nintex-65682545": {
+      "summary": "Senior Product Marketing Manager leads market analysis, strategic planning, and go-to-market initiatives to drive product adoption and growth for Nintex's Agentic Business Orchestration portfolio.",
+      "key_skills": [
+        "product marketing",
+        "market analysis",
+        "strategic planning",
+        "competitive intelligence",
+        "go-to-market strategy",
+        "messaging",
+        "product strategy",
+        "market positioning"
+      ],
+      "core_skills": [
+        "market analysis",
+        "go-to-market strategy",
+        "competitive intelligence",
+        "strategic planning"
+      ],
+      "seniority_signal": "senior",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "unknown"
+    },
     "copy-of-commercial-s-spacex-65682545": {
       "summary": "Sells Starlink Mobile services, manages customer relationships, and develops new sales opportunities globally in designated regions or markets.",
       "key_skills": [
@@ -120,6 +143,29 @@
       "red_flags": [],
       "work_mode_derived": "remote"
     },
+    "software-engineer--b-stripe-65682545": {
+      "summary": "Designs, builds, and maintains scalable payment systems while mentoring junior engineers and ensuring API compatibility.",
+      "key_skills": [
+        "ruby",
+        "java",
+        "typescript",
+        "sql",
+        "grpc",
+        "rest",
+        "graphql",
+        "kafka"
+      ],
+      "core_skills": [
+        "api_design",
+        "system_architecture",
+        "technical_mentorship",
+        "quality_assurance"
+      ],
+      "seniority_signal": "mid",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "hybrid"
+    },
     "staff-software-engin-outreach-05743078": {
       "summary": "Builds and integrates AI solutions into the development lifecycle while driving engineering excellence through modern tooling and frameworks.",
       "key_skills": [
@@ -159,6 +205,26 @@
         "incident_response",
         "forensics",
         "automation"
+      ],
+      "seniority_signal": "mid",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "remote"
+    },
+    "operations-analyst-persona-05743078": {
+      "summary": "Designs, builds, and maintains incentive pay models for Sales and Post-Sales teams, tracking performance against plans and ensuring data accuracy, timely updates, and clean documentation.",
+      "key_skills": [
+        "excel",
+        "data_management",
+        "compensation_models",
+        "financial_analysis",
+        "sales_operations",
+        "go_to_market"
+      ],
+      "core_skills": [
+        "excel",
+        "data_management",
+        "compensation_models"
       ],
       "seniority_signal": "mid",
       "role_type": "ic",
@@ -233,6 +299,33 @@
       "role_type": "ic",
       "red_flags": [],
       "work_mode_derived": "hybrid"
+    },
+    "network-dev-engineer-amazon-90616026": {
+      "summary": "Network Dev Engineer II configures and troubleshoots network traffic using BGP/OSPF and large-scale network operations, while mentoring junior engineers.",
+      "key_skills": [
+        "ip networking",
+        "bgp",
+        "ospf",
+        "vlan",
+        "stp",
+        "ipv4",
+        "ipv6",
+        "tcp",
+        "http",
+        "dns",
+        "mpls",
+        "vpn",
+        "perl",
+        "python"
+      ],
+      "core_skills": [
+        "network traffic engineering",
+        "network troubleshooting"
+      ],
+      "seniority_signal": "mid",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "onsite"
     },
     "security-industry-sp-amazon-90616026": {
       "summary": "Partners with AWS Physical Security Teams, Management, and customers to implement physical security solutions, conduct facility evaluations, and enhance data facility security postures.",
@@ -883,6 +976,27 @@
       "red_flags": [],
       "work_mode_derived": "hybrid"
     },
+    "senior-software-engi-google-54956730": {
+      "summary": "Senior Software Engineer specializing in iOS mobile development for Google's platforms and devices, working on large-scale applications and infrastructure.",
+      "key_skills": [
+        "ios",
+        "mobile",
+        "software",
+        "engineering",
+        "platforms",
+        "devices"
+      ],
+      "core_skills": [
+        "c++",
+        "objective-c",
+        "swift",
+        "ios"
+      ],
+      "seniority_signal": "senior",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "hybrid"
+    },
     "forward-deployed-eng-google-54956730": {
       "summary": "Builds and ships production-grade AI-driven solutions to external customers",
       "key_skills": [
@@ -1009,6 +1123,26 @@
         "nonprofit sector"
       ],
       "seniority_signal": "entry",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "hybrid"
+    },
+    "finance-analyst--ai--google-54956730": {
+      "summary": "Financial Analysts ensure that Google makes sound financial decisions by modeling business scenarios and tracking performance metrics to support strategic company decisions.",
+      "key_skills": [
+        "finance",
+        "analysis",
+        "ai",
+        "cloud",
+        "product"
+      ],
+      "core_skills": [
+        "fpam",
+        "budgeting",
+        "forecasting",
+        "variance"
+      ],
+      "seniority_signal": "mid",
       "role_type": "ic",
       "red_flags": [],
       "work_mode_derived": "hybrid"
@@ -1339,6 +1473,29 @@
       "red_flags": [],
       "work_mode_derived": "hybrid"
     },
+    "senior-product-manag-google-54956731": {
+      "summary": "Senior Product Manager responsible for guiding technical products from conception to launch through cross-functional collaboration, focusing on storage capacity and business optimization.",
+      "key_skills": [
+        "product management",
+        "storage capacity",
+        "business optimization",
+        "infrastructure",
+        "technical products",
+        "product development",
+        "business case",
+        "roi"
+      ],
+      "core_skills": [
+        "product management",
+        "technical expertise",
+        "business optimization",
+        "cross-functional collaboration"
+      ],
+      "seniority_signal": "senior",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "hybrid"
+    },
     "open-career-opportun-google-54956731": {
       "summary": "Manages technical account relationships and customer engineering for Google Cloud services.",
       "key_skills": [
@@ -1446,6 +1603,25 @@
       "red_flags": [],
       "work_mode_derived": "hybrid"
     },
+    "senior-hardware-engi-google-54956731": {
+      "summary": "Owning outcomes and decision making, solving ambiguous problems, and influencing stakeholders while deepening expertise in hardware systems design and AI infrastructure.",
+      "key_skills": [
+        "hardware",
+        "engineering",
+        "manager",
+        "innovation",
+        "ai"
+      ],
+      "core_skills": [
+        "hardware",
+        "engineering",
+        "management"
+      ],
+      "seniority_signal": "senior",
+      "role_type": "manager",
+      "red_flags": [],
+      "work_mode_derived": "hybrid"
+    },
     "launch-manager--trus-google-54956731": {
       "summary": "Launch Manager drives progress, solves problems, and mentors junior team members while applying deep expertise in operations, trust and safety, and AI/ML operations.",
       "key_skills": [
@@ -1465,6 +1641,29 @@
         "sql"
       ],
       "seniority_signal": "mid",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "hybrid"
+    },
+    "network-capacity-pla-google-54956731": {
+      "summary": "Manages complex cloud network capacity planning projects across cross-functional teams to ensure scalable infrastructure for Google's global operations.",
+      "key_skills": [
+        "networking",
+        "capacity planning",
+        "cloud infrastructure",
+        "technical program management",
+        "project management",
+        "cross-functional collaboration",
+        "stakeholder management",
+        "cloud networking"
+      ],
+      "core_skills": [
+        "technical program management",
+        "cloud infrastructure",
+        "project management",
+        "cross-functional collaboration"
+      ],
+      "seniority_signal": "senior",
       "role_type": "ic",
       "red_flags": [],
       "work_mode_derived": "hybrid"
@@ -1511,6 +1710,27 @@
         "software development"
       ],
       "seniority_signal": "senior",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "hybrid"
+    },
+    "software-engineer--a-google-54956732": {
+      "summary": "Drives progress, solves problems, and mentors junior team members with deep expertise in applied AI and machine learning.",
+      "key_skills": [
+        "software",
+        "ai",
+        "machine_learning",
+        "generative_ai",
+        "llm",
+        "reinforcement_learning",
+        "speech_audio",
+        "ml_infrastructure"
+      ],
+      "core_skills": [
+        "software_engineering",
+        "ai_engineering"
+      ],
+      "seniority_signal": "mid",
       "role_type": "ic",
       "red_flags": [],
       "work_mode_derived": "hybrid"
@@ -1831,6 +2051,27 @@
       "red_flags": [],
       "work_mode_derived": "remote"
     },
+    "cloud-ai-senior-tech-google-54956732": {
+      "summary": "Owning outcomes and decision making, solving ambiguous problems, and influencing stakeholders while managing AI model training, testing, evaluation, and tuning processes.",
+      "key_skills": [
+        "cloud",
+        "ai",
+        "technical",
+        "program",
+        "manager",
+        "ii",
+        "senior"
+      ],
+      "core_skills": [
+        "program_management",
+        "ai_model_training",
+        "llm_release_cycles"
+      ],
+      "seniority_signal": "senior",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "remote"
+    },
     "social-support-lead--google-54956732": {
       "summary": "Social Support Lead drives progress, solves problems, and mentors junior team members while applying deep expertise in Trust and Safety operations.",
       "key_skills": [
@@ -1906,6 +2147,29 @@
       "role_type": "ic",
       "red_flags": [],
       "work_mode_derived": "hybrid"
+    },
+    "senior-systems-devel-google-54956732": {
+      "summary": "Senior Systems Development Engineer manages services and systems at scale, automating mundane tasks and reducing toil through engineering discipline.",
+      "key_skills": [
+        "systems",
+        "automation",
+        "design",
+        "implementation",
+        "infrastructure",
+        "reliability",
+        "observability",
+        "instrumentation"
+      ],
+      "core_skills": [
+        "systems",
+        "automation",
+        "infrastructure",
+        "reliability"
+      ],
+      "seniority_signal": "senior",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "remote"
     },
     "research-scientist---google-54956732": {
       "summary": "Research Scientist sets up large-scale tests and deploys promising ideas quickly and broadly, managing deadlines and deliverables while applying the latest theories to develop new and improved products, processes, or technologies.",
@@ -1995,6 +2259,29 @@
       "red_flags": [],
       "work_mode_derived": "onsite"
     },
+    "mechanical-engineer--google-40968326": {
+      "summary": "Designs and optimizes data center cooling systems using computational fluid dynamics and thermal digital twins to ensure energy efficiency and reliability.",
+      "key_skills": [
+        "mechanical engineering",
+        "cooling system design",
+        "computational fluid dynamics",
+        "energy modeling",
+        "hydraulic analysis",
+        "thermal digital twins",
+        "google product suite",
+        "design commissioning testing"
+      ],
+      "core_skills": [
+        "mechanical infrastructure systems",
+        "computational fluid dynamics",
+        "thermal analysis",
+        "data center cooling systems"
+      ],
+      "seniority_signal": "senior",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "remote"
+    },
     "readiness-lead--tech-google-40968326": {
       "summary": "Owning outcomes and decision making for technical program management in pre-construction, solving ambiguous problems, and influencing stakeholders with deep expertise in data center construction and electrical infrastructure.",
       "key_skills": [
@@ -2063,6 +2350,26 @@
       "role_type": "ic",
       "red_flags": [],
       "work_mode_derived": "onsite"
+    },
+    "senior-technical-pro-google-00324852": {
+      "summary": "Owns complex technical projects from start to finish, collaborates with cross-functional teams to plan requirements, identify risks, and manage project schedules while ensuring privacy and safety compliance.",
+      "key_skills": [
+        "technical program management",
+        "privacy",
+        "safety",
+        "ads",
+        "google cloud"
+      ],
+      "core_skills": [
+        "program management",
+        "cross-functional collaboration",
+        "stakeholder influence",
+        "technical expertise"
+      ],
+      "seniority_signal": "senior",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "hybrid"
     }
   }
 }
