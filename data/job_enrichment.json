@@ -1,8 +1,8 @@
 {
   "meta": {
-    "built_at": "2026-05-26T09:13:20.791735+00:00",
-    "total_jobs": 490,
-    "enriched": 124
+    "built_at": "2026-05-27T09:28:56.233596+00:00",
+    "total_jobs": 510,
+    "enriched": 135
   },
   "jobs": {
     "senior-product-marke-nintex-65682545": {
@@ -2380,6 +2380,29 @@
       "red_flags": [],
       "work_mode_derived": "onsite"
     },
+    "forward-deployed-eng-google-40968326": {
+      "summary": "Forward Deployed Engineer II, Applied AI, Google Cloud role involves driving progress, solving problems, and mentoring more junior team members with deeper expertise in AI systems and cloud infrastructure.",
+      "key_skills": [
+        "python",
+        "terraform",
+        "cloud",
+        "ai",
+        "machine_learning",
+        "software_development",
+        "full_stack",
+        "enterprise_it"
+      ],
+      "core_skills": [
+        "python",
+        "terraform",
+        "cloud",
+        "ai"
+      ],
+      "seniority_signal": "mid",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "hybrid"
+    },
     "mechanical-engineer--google-40968326": {
       "summary": "Designs and optimizes data center cooling systems using computational fluid dynamics and thermal digital twins to ensure energy efficiency and reliability.",
       "key_skills": [
@@ -2599,6 +2622,217 @@
       "role_type": "ic",
       "red_flags": [],
       "work_mode_derived": "remote"
+    },
+    "supervisor--precisio-spacex-18874385": {
+      "summary": "Supervisor leads precision machining team to produce high-tolerance parts while ensuring quality and resolving production issues.",
+      "key_skills": [
+        "cnc",
+        "machining",
+        "precision",
+        "quality",
+        "inspection",
+        "cmm",
+        "pc-dmis",
+        "macro"
+      ],
+      "core_skills": [
+        "leadership",
+        "troubleshooting",
+        "process_improvement"
+      ],
+      "seniority_signal": "senior",
+      "role_type": "manager",
+      "red_flags": [],
+      "work_mode_derived": "hybrid"
+    },
+    "senior-applied-scien-outreach-50202635": {
+      "summary": "Builds and deploys ai-powered systems that process voice streams and real-time transcriptions to extract structured intelligence and actionable insights for revenue teams.",
+      "key_skills": [
+        "agentic ai",
+        "nlp",
+        "machine learning",
+        "llm",
+        "text classification",
+        "entity recognition",
+        "dialog",
+        "real-time audio processing"
+      ],
+      "core_skills": [
+        "python",
+        "machine learning",
+        "nlp",
+        "agentic ai"
+      ],
+      "seniority_signal": "mid",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "unknown"
+    },
+    "communications-manag-google-74027173": {
+      "summary": "Collaborates with cross-functional teams to communicate with journalists and thought leaders, develop communications materials, and create thought leadership campaigns for Google Cloud's AI infrastructure.",
+      "key_skills": [
+        "communications",
+        "customer",
+        "partner",
+        "ai",
+        "infrastructure"
+      ],
+      "core_skills": [
+        "project_management",
+        "cross_functional_collaboration",
+        "stakeholder_management",
+        "narrative_crafting"
+      ],
+      "seniority_signal": "mid",
+      "role_type": "manager",
+      "red_flags": [],
+      "work_mode_derived": "hybrid"
+    },
+    "senior-technical-pro-google-74027173": {
+      "summary": "Owns outcomes and decision making for complex cloud capacity management projects, solving ambiguous problems and influencing stakeholders across technical and business domains.",
+      "key_skills": [
+        "technical program management",
+        "capacity management",
+        "cloud",
+        "ai/ml",
+        "genai",
+        "infrastructure",
+        "resource governance",
+        "forecasting"
+      ],
+      "core_skills": [
+        "program management",
+        "cross-functional collaboration",
+        "cloud infrastructure",
+        "enterprise customer engagement"
+      ],
+      "seniority_signal": "senior",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "hybrid"
+    },
+    "program-manager--ai--google-74027173": {
+      "summary": "Drives efforts associated with the development, deployment, and ongoing governance of AI/ML Trust and Safety operations",
+      "key_skills": [
+        "program management",
+        "ai/ml",
+        "trust and safety"
+      ],
+      "core_skills": [
+        "project management",
+        "cross-functional collaboration"
+      ],
+      "seniority_signal": "mid",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "hybrid"
+    },
+    "research-and-develop-google-74027173": {
+      "summary": "Research and Development Analyst on the Trust and Safety Monetization team focuses on predicting and mitigating emerging risks in Google's ad ecosystem by analyzing publisher data and identifying fraud trends.",
+      "key_skills": [
+        "data analysis",
+        "statistical modeling",
+        "fraud detection",
+        "risk management",
+        "quantitative modeling",
+        "advertising industry",
+        "machine learning",
+        "ai"
+      ],
+      "core_skills": [
+        "data analysis",
+        "statistical modeling",
+        "fraud detection",
+        "risk management"
+      ],
+      "seniority_signal": "mid",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "onsite"
+    },
+    "principal-engineer---google-74027173": {
+      "summary": "Principal Engineer responsible for setting technical strategy for GCP Data Analytics' stream data processing portfolio including PubSub and Google Managed Kafka.",
+      "key_skills": [
+        "distributed systems",
+        "managed services",
+        "large-scale data processing",
+        "customer empathy",
+        "technical innovation",
+        "cross-functional engineering",
+        "ideation",
+        "cross-platform shared code"
+      ],
+      "core_skills": [
+        "distributed systems",
+        "managed services",
+        "large-scale data processing",
+        "customer empathy"
+      ],
+      "seniority_signal": "principal",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "remote"
+    },
+    "senior-product-data--google-74027173": {
+      "summary": "Owning outcomes and decision making, solving ambiguous problems and influencing stakeholders with deep expertise in domain",
+      "key_skills": [
+        "product",
+        "data",
+        "science",
+        "android",
+        "machine",
+        "learning"
+      ],
+      "core_skills": [
+        "data",
+        "science",
+        "android",
+        "machine",
+        "learning"
+      ],
+      "seniority_signal": "senior",
+      "role_type": "manager",
+      "red_flags": [],
+      "work_mode_derived": "remote"
+    },
+    "software-engineer--d-google-74027173": {
+      "summary": "Develops next-generation technologies that handle massive information scale and interact with users globally",
+      "key_skills": [
+        "java",
+        "python",
+        "golang",
+        "c++",
+        "javascript",
+        "typescript",
+        "html",
+        "css"
+      ],
+      "core_skills": [
+        "cloud computing",
+        "relational databases",
+        "nosql databases",
+        "data modeling"
+      ],
+      "seniority_signal": "mid",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "onsite"
+    },
+    "ux-engineer--xr-google-74027173": {
+      "summary": "UX Engineer, XR works on developing products and prototypes using user insights to create industry-leading products in a fast-paced environment.",
+      "key_skills": [
+        "ux",
+        "engineer",
+        "xr"
+      ],
+      "core_skills": [
+        "ux",
+        "engineering"
+      ],
+      "seniority_signal": "mid",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "hybrid"
     }
   }
 }
