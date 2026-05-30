@@ -26,6 +26,7 @@ from datetime import date, datetime, timedelta, timezone
 sys.path.insert(0, os.path.dirname(__file__))
 from _common import (
     make_logger, acquire_lock, exa_search, load_existing_keys,
+    load_existing_urls,
     write_job, TODAY, OUTPUT_FILE,
 )
 
@@ -38,97 +39,10 @@ LOOKBACK_DATE = (date.today() - timedelta(days=60)).isoformat() + "T00:00:00.000
 log = make_logger(LOG_FILE)
 fetcher = Fetcher()
 
-SEED_SLUGS = [
-    # Seattle tech / SaaS
-    "convoy",           # Seattle freight marketplace
-    "expedia",          # Expedia Group Seattle HQ
-    "redfin",           # Redfin Seattle HQ
-    "tableau",          # Tableau (Salesforce) Seattle
-    "auth0",            # Auth0 (Okta) Bellevue
-    "f5",               # F5 Networks Seattle
-    "icertis",          # Icertis Bellevue
-    "outreach",         # Outreach Seattle
-    "pushpay",          # Pushpay Redmond
-    "rover",            # Rover Seattle
-    "remitly",          # Remitly Seattle HQ
-    "smartsheet",       # Smartsheet Bellevue
-    "synapse",          # Synapse Seattle
-    "zipwhip",          # Zipwhip (Twilio) Seattle
-    # Fintech / payments
-    "accolade",
-    "fundera",
-    "limelight",
-    "qumulo",
-    "sievert",
-    # Healthtech
-    "accolade",
-    "brightmd",
-    "healthsparq",
-    "iora",
-    "premera",          # Premera Blue Cross WA
-    "seagen",           # Seagen Bothell (oncology)
-    # E-commerce / retail tech
-    "chewy",
-    "ignitionone",
-    "lattice",
-    "mercato",
-    "ordermark",
-    # Enterprise / cloud
-    "apptio",           # Apptio Bellevue
-    "avalara",          # Avalara Seattle
-    "bizible",
-    "brightflag",
-    "concord",
-    "elevate",
-    "extrahop",         # ExtraHop Seattle
-    "highspot",         # Highspot Seattle
-    "jinni",
-    "limeade",          # Limeade Bellevue
-    "moz",              # Moz Seattle
-    "newmarket",
-    "nintex",           # Nintex Bellevue
-    "outbrain",
-    "payscale",         # PayScale Seattle
-    "pendo",
-    "percolate",
-    "premera",
-    "pushpay",
-    "qumulo",           # Qumulo Seattle
-    "samsara",
-    "seeq",
-    "synchroteam",
-    "tableau",
-    "tapcart",
-    "totvs",
-    "upbound",
-    "vindicia",
-    "walkme",
-    "wavecell",
-    "wildfireinteractive",
-    "xero",             # Xero US (Seattle office)
-    "zenreach",
-    "ziprecruiter",
-    # Gaming / entertainment
-    "bigfish",
-    "bungie",
-    "moz",
-    "nintendo",         # Nintendo of America Redmond
-    "pokemongo",
-    "valvecorporation",
-    # Biotech / pharma
-    "agilent",
-    "blueoriginllc",
-    "genoptix",
-    "immunomedics",
-    "integra",
-    "juno",
-    "lumos",
-    "nanostring",
-    "oncobiologics",
-    "seagen",
-    "ultragenyx",
-    "zymeworks",
-]
+# === Phase 4 seed loader (added 2026-05-27) ===
+sys.path.insert(0, os.path.expanduser('~/shared-scripts'))
+from hub_employer_seeds import load_lever_seeds
+SEED_SLUGS = load_lever_seeds('wa')
 
 
 DISCOVERY_QUERIES = [
@@ -289,6 +203,7 @@ def main():
 
     existing_keys = load_existing_keys()
     seen_keys = set(existing_keys)
+    seen_urls = load_existing_urls()
     os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
 
     total_found = 0
@@ -339,6 +254,8 @@ def main():
             vmin, vmax = salary
             job_id = job.get("id", "")
             abs_url = f"https://jobs.lever.co/{slug}/{job_id}" if job_id else ""
+            if abs_url and abs_url in seen_urls:
+                continue
 
             posted = TODAY
             created_ms = job.get("createdAt")
@@ -363,6 +280,7 @@ def main():
 
             write_job(OUTPUT_FILE, job_out)
             seen_keys.add(key)
+            seen_urls.add(abs_url)
             total_found += 1
             found_this += 1
             log(f"  FOUND: {title[:50]} | ${vmin:,}–${vmax:,} [{loc_name}]")

@@ -53,6 +53,47 @@ python3 "$SCRIPTS_DIR/search-browser.py" >> "$LOG_FILE" 2>&1
 log "browser done (exit $?)"
 
 
+# === Phase 3 discovery — hub: wa (added 2026-05-27) ===
+log "--- Phase 3 discovery: hub_search_jobs ---"
+python3 "$HOME/shared-scripts/hub_search_jobs.py" --hub "wa" >> "$LOG_FILE" 2>&1 || true
+log "hub_search_jobs done (exit $?)"
+log "--- Phase 3 discovery: hub_deep_search ---"
+python3 "$HOME/shared-scripts/hub_deep_search.py" --hub "wa" >> "$LOG_FILE" 2>&1 || true
+log "hub_deep_search done (exit $?)"
+log "--- Phase 3 discovery: hub_search_kpmg ---"
+python3 "$HOME/shared-scripts/hub_search_kpmg.py" --hub "wa" >> "$LOG_FILE" 2>&1 || true
+log "hub_search_kpmg done (exit $?)"
+log "--- Phase 3 discovery: hub_search_sap ---"
+python3 "$HOME/shared-scripts/hub_search_sap.py" --hub "wa" >> "$LOG_FILE" 2>&1 || true
+log "hub_search_sap done (exit $?)"
+log "--- Phase 3 discovery: hub_search_scout ---"
+python3 "$HOME/shared-scripts/hub_search_scout.py" --hub "wa" >> "$LOG_FILE" 2>&1 || true
+log "hub_search_scout done (exit $?)"
+
+# === Phase 5 classify — hub: wa (added 2026-05-28) ===
+log "--- Phase 5 classify_step ---"
+python3 "$HOME/shared-scripts/region_classifier/classify_step.py" \
+    --hub "wa" --no-llm >> "$LOG_FILE" 2>&1 || true
+log "classify_step done (exit $?)"
+# === Phase 5.5 publish gate — hub: wa (added 2026-05-28) ===
+# Filters today's raw to only classifier-claimed rows before update-jobs reads it.
+# Safety: gate refuses (exit 1) if drop_pct > 99.0%; on refuse the raw is quarantined (fail-closed, 0 new this run).
+GATE_RAW="$HOME/.openclaw/shared/wa-jobs-raw-$(date +%Y-%m-%d).txt"
+if [[ -f "$GATE_RAW" ]]; then
+    log "--- Phase 5.5 publish gate ---"
+    python3 "$HOME/shared-scripts/region_classifier/apply_classifier_gate.py" \
+        --hub "wa" \
+        --raw "$GATE_RAW" \
+        --max-drop-pct 99.0 >> "$LOG_FILE" 2>&1
+    GATE_RC=$?
+    log "publish gate done (exit $GATE_RC)"
+    if [[ $GATE_RC -ne 0 && -f "$GATE_RAW" ]]; then
+        mv "$GATE_RAW" "$GATE_RAW.refused.$(date +%s)"
+        log "gate refused (rc=$GATE_RC) -> raw quarantined; 0 new published this run"
+    fi
+fi
+
+
 log "--- update-jobs.py ---"
 python3 "$SCRIPTS_DIR/update-jobs.py" >> "$LOG_FILE" 2>&1
 log "update done (exit $?)"
@@ -64,7 +105,7 @@ python3 "$HOME/shared-scripts/hub_normalize_companies.py" --hub "$(basename $REP
 log "normalize done (exit $?)"
 
 log "--- healthcheck ---"
-python3 "$HOME/shared-scripts/hub_pipeline_healthcheck.py" --hub "wa" >> "$LOG_FILE" 2>&1
+python3 "$HOME/shared-scripts/hub_pipeline_healthcheck.py" --failure-only --hub "wa" >> "$LOG_FILE" 2>&1
 log "healthcheck done (exit $?)"
 log "--- salary-qa ---"
 python3 "$HOME/shared-scripts/hub_salary_qa.py" --hub "wa" --dry-run >> "$LOG_FILE" 2>&1
@@ -75,11 +116,23 @@ log "--- archive-jobs ---"
 python3 "$HOME/shared-scripts/hub_archive_jobs.py" --hub "wa" --limit 100 >> "$LOG_FILE" 2>&1
 log "archive done (exit $?)"
 log "--- skill-extract ---"
-python3 "$HOME/shared-scripts/hub_skill_extract.py" --hub "wa" --limit 30 >> "$LOG_FILE" 2>&1
+python3 "$HOME/shared-scripts/hub_skill_extract.py" --hub "wa" --limit 200 >> "$LOG_FILE" 2>&1
 log "skill-extract done (exit $?)"
 
 log "--- publish.sh ---"
 bash "$SCRIPTS_DIR/publish.sh" >> "$LOG_FILE" 2>&1
-log "publish done (exit $?)"
+PUBLISH_RC=$?  # Phase 2.1: capture real publish.sh rc
+log "publish done (exit $PUBLISH_RC)"
 
 log "=== WA nightly pipeline complete ==="
+
+
+# === Phase 2 healthcheck (added 2026-05-27, polished by Phase 2.1) ===
+# PUBLISH_RC is set right after the publish step (see above). PIPELINE_RC
+# falls back to $? for crash/kill paths where PUBLISH_RC is unset.
+# Reports daily-new shortfall + active-stock benchmark alerts via Discord;
+# --pipeline-exit-code surfaces explicit non-zero exits to a 🚨🚨 PIPELINE FAILED alert.
+PIPELINE_RC=${PUBLISH_RC:-$?}
+python3 "$HOME/shared-scripts/hub_pipeline_healthcheck.py" --failure-only \
+  --hub wa --pipeline-exit-code "$PIPELINE_RC" || true
+exit "$PIPELINE_RC"

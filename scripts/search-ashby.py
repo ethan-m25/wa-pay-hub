@@ -26,6 +26,7 @@ import urllib.error
 sys.path.insert(0, os.path.dirname(__file__))
 from _common import (
     make_logger, acquire_lock, exa_search, load_existing_keys,
+    load_existing_urls,
     write_job, TODAY, OUTPUT_FILE,
 )
 
@@ -39,15 +40,10 @@ UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/
 
 # Verified Ashby customers with WA presence (GQL-confirmed, returning > 0 postings)
 # WA has fewer Ashby-native startups; relies more on Exa discovery
-SEED_SLUGS = [
-    ("deel", "Deel"),
-    ("benchling", "Benchling"),
-    ("replit", "Replit"),
-    ("posthog", "PostHog"),
-    ("persona", "Persona"),
-    ("notion", "Notion"),
-    ("folio", "Folio"),
-]
+# === Phase 4 seed loader (added 2026-05-27) ===
+sys.path.insert(0, os.path.expanduser('~/shared-scripts'))
+from hub_employer_seeds import load_ashby_seeds
+SEED_SLUGS = load_ashby_seeds('wa')
 
 DISCOVERY_QUERIES = [
     'site:jobs.ashbyhq.com "Seattle" OR "Washington" salary 2026',
@@ -256,6 +252,7 @@ def main():
 
     existing_keys = load_existing_keys()
     seen_keys = set(existing_keys)
+    seen_urls = load_existing_urls()
     remote_claimed = _load_remote_claimed()
     os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
 
@@ -291,6 +288,9 @@ def main():
             if not title:
                 continue
 
+            ashby_url = f"https://jobs.ashbyhq.com/{slug}/{job.get('id', '')}"
+            if ashby_url in seen_urls:
+                continue
             key = f"{title.lower()}|{company_display.lower()}"
             if key in seen_keys:
                 continue
@@ -325,13 +325,14 @@ def main():
                 "min":             vmin,
                 "max":             vmax,
                 "location":        _parse_location(loc_name, is_remote),
-                "source_url":      f"https://jobs.ashbyhq.com/{slug}/{job.get('id', '')}",
+                "source_url":      ashby_url,
                 "posted":          posted,
                 "source_platform": "ashby",
             }
 
             write_job(OUTPUT_FILE, job_out)
             seen_keys.add(key)
+            seen_urls.add(ashby_url)
             total_found += 1
             found_this += 1
             log(f"  FOUND: {title[:50]} | ${vmin:,}–${vmax:,} [{loc_name}]")

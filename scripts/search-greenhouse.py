@@ -20,6 +20,7 @@ from datetime import date, timedelta
 sys.path.insert(0, os.path.dirname(__file__))
 from _common import (
     make_logger, acquire_lock, load_existing_keys,
+    load_existing_urls,
     write_job, TODAY, OUTPUT_FILE, WA_TERMS,
 )
 
@@ -32,68 +33,10 @@ LOOKBACK_DATE = (date.today() - timedelta(days=60)).isoformat() + "T00:00:00.000
 log = make_logger(LOG_FILE)
 fetcher = Fetcher()
 
-SEED_SLUGS = [
-    # ── Seattle Big Tech ──────────────────────────────────────────────────────
-    ("amazon", None),              # Amazon, Seattle HQ
-    ("microsoft", None),           # Microsoft, Redmond HQ
-    ("google", None),              # Google, Kirkland/Seattle
-    ("meta", None),                # Meta, Seattle office
-    ("apple", None),               # Apple, Seattle
-    ("salesforce", None),          # Salesforce, Seattle
-    # ── Seattle Native Tech ───────────────────────────────────────────────────
-    ("expedia", None),             # Expedia, Seattle HQ
-    ("zillow", None),              # Zillow, Seattle HQ
-    ("redfin", None),              # Redfin, Seattle HQ
-    ("outreach", None),            # Outreach, Seattle HQ
-    ("convoy", None),              # Convoy, Seattle
-    ("avalara", None),             # Avalara, Seattle
-    ("accolade", None),            # Accolade, Seattle
-    ("remitly", None),             # Remitly, Seattle HQ
-    ("rover", None),               # Rover, Seattle HQ
-    ("zulily", None),              # Zulily, Seattle
-    ("apptio", None),              # Apptio, Bellevue
-    ("pushpay", None),             # Pushpay, Redmond
-    ("isilon", None),              # Dell EMC Isilon, Seattle
-    ("formstack", None),           # Formstack, remote/WA
-    # ── Bellevue / Eastside ───────────────────────────────────────────────────
-    ("concur", None),              # SAP Concur, Bellevue
-    ("smartsheet", None),          # Smartsheet, Bellevue HQ
-    ("tableau", None),             # Tableau/Salesforce, Bellevue
-    ("valve", None),               # Valve, Bellevue
-    ("nintex", None),              # Nintex, Bellevue
-    # ── Aerospace / Defense ───────────────────────────────────────────────────
-    ("boeing", None),              # Boeing, Seattle/Renton HQ
-    ("blueorigin", None),          # Blue Origin, Kent/Seattle
-    ("spacex", None),              # SpaceX, Redmond (Starlink)
-    # ── Healthcare / Biotech ──────────────────────────────────────────────────
-    ("seagen", None),              # Seagen (now Pfizer), Bothell
-    ("iqvia", None),               # IQVIA, Seattle
-    ("providence", None),          # Providence Health, Renton
-    # ── Retail / Starbucks ────────────────────────────────────────────────────
-    ("starbucks", None),           # Starbucks, Seattle HQ
-    ("nordstrom", None),           # Nordstrom, Seattle HQ
-    ("costco", None),              # Costco, Issaquah HQ
-    ("rei", None),                 # REI, Bellevue/Kent
-    ("zulily", None),              # Zulily, Seattle
-    # ── Gaming ────────────────────────────────────────────────────────────────
-    ("bungie", None),              # Bungie, Bellevue HQ
-    ("pocketgems", None),          # Pocket Gems, Seattle
-    ("popupstudios", None),
-    # ── Fintech / Finance ─────────────────────────────────────────────────────
-    ("stripe", None),              # Stripe, Seattle office
-    ("robinhoodmarkets", None),    # Robinhood, remote/WA
-    ("plaid", None),               # Plaid, Seattle office
-    ("navan", None),               # Navan, remote/WA
-    # ── Cloud / Infrastructure ───────────────────────────────────────────────
-    ("hashicorp", None),           # HashiCorp, remote/Seattle
-    ("puppet", None),              # Puppet, Portland/Seattle area
-    ("databricks", None),          # Databricks, Seattle office
-    ("confluent", None),           # Confluent, Seattle
-    ("snowflake", None),           # Snowflake, Seattle
-    ("datadog", None),             # Datadog, Seattle
-    ("cloudflare", None),          # Cloudflare, Seattle
-    ("newrelic", None),            # New Relic, remote/WA
-]
+# === Phase 4 seed loader (added 2026-05-27) ===
+sys.path.insert(0, os.path.expanduser('~/shared-scripts'))
+from hub_employer_seeds import load_greenhouse_seeds
+SEED_SLUGS = load_greenhouse_seeds('wa')
 
 
 SALARY_PATTERNS = [
@@ -216,6 +159,7 @@ def main():
 
     log("=== WA Greenhouse scraper started ===")
     existing = load_existing_keys()
+    existing_urls = load_existing_urls()
     log(f"Existing dedup keys: {len(existing)}")
 
     new_count = 0
@@ -223,11 +167,14 @@ def main():
         log(f"[{slug}] fetching...")
         jobs = fetch_company_jobs(slug, name_override)
         for job in jobs:
+            if job.get("source_url") in existing_urls:
+                continue
             key = f"{job['role'].lower().strip()}|{job['company'].lower().strip()}"
             if key in existing:
                 continue
             write_job(OUTPUT_FILE, job)
             existing.add(key)
+            existing_urls.add(job.get("source_url", ""))
             new_count += 1
             log(f"  + {job['role']} @ {job['company']} | ${job['min']:,}–${job['max']:,} | {job['location']}")
         time.sleep(0.5)

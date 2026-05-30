@@ -4,3 +4,15 @@ data/jobs.json.bak
 *.pyc
 __pycache__/
 .DS_Store
+
+# --- runtime backups / state (added 2026-05-30) ---
+*.bak
+*.bak-*
+*.bak.*
+*.premeta
+*.workdayfixbak.*
+*.kpmgbak.*
+*.kpmgadminbak.*
+*.regiongatebak.*
+*.region_dropped.jsonl
+*.foreign_dropped.jsonl
