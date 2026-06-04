@@ -50,7 +50,7 @@ git push origin main
 
 # Deploy to Cloudflare Pages directly (covers case where GitHub auto-deploy isn't connected)
 export PATH="/Users/clawii/.npm-global/bin:$PATH"
-wrangler pages deploy . --project-name wa-pay-hub --branch main 2>&1 | tail -3 || true
+bash "$HOME/shared-scripts/deploy_web.sh" wa wa-pay-hub || true
 
 
 PORTAL_DIR="$HOME/payhub-portal"
