@@ -1,8 +1,8 @@
 {
   "meta": {
-    "built_at": "2026-06-03T08:52:11.687326+00:00",
+    "built_at": "2026-06-04T07:50:26.048170+00:00",
     "total_jobs": 1094,
-    "enriched": 893
+    "enriched": 890
   },
   "jobs": {
     "manager--marketing-a-nintex-65682545": {
@@ -17708,26 +17708,6 @@
       "red_flags": [],
       "work_mode_derived": "hybrid"
     },
-    "senior-software-engi-aircall-74488289": {
-      "summary": "Designs and implements production-grade Python services for AI-driven sales automation, focusing on distributed systems and agent orchestration.",
-      "key_skills": [
-        "python",
-        "fastapi",
-        "celery",
-        "postgresql",
-        "uv"
-      ],
-      "core_skills": [
-        "distributed systems",
-        "ai orchestration",
-        "ai agents",
-        "ai-augmented development"
-      ],
-      "seniority_signal": "senior",
-      "role_type": "ic",
-      "red_flags": [],
-      "work_mode_derived": "hybrid"
-    },
     "senior-application-s-artera-2-74488289": {
       "summary": "Application Security Engineer builds secure AI and LLM-powered features by threat-modeling agentic systems, hardening PHI/PII workflows, and implementing secure SDLC guardrails to protect federal-facing healthcare systems.",
       "key_skills": [
@@ -17941,440 +17921,6 @@
       "role_type": "ic",
       "red_flags": [],
       "work_mode_derived": "remote"
-    },
-    "construction-manager-crusoe-74488289": {
-      "summary": "Owns end-to-end delivery and integration of high-value, Owner-Furnished Contractor-Installed equipment for hyperscale data center campuses, ensuring seamless transition from factory to onsite energization.",
-      "key_skills": [
-        "ai infrastructure",
-        "data center",
-        "energy efficiency",
-        "modular systems",
-        "power systems",
-        "cooling systems",
-        "electrical engineering",
-        "construction management"
-      ],
-      "core_skills": [
-        "ofci",
-        "jits",
-        "bim coordination",
-        "qaqc"
-      ],
-      "seniority_signal": "mid",
-      "role_type": "manager",
-      "red_flags": [],
-      "work_mode_derived": "onsite"
-    },
-    "construction-special-crusoe-74488289": {
-      "summary": "Construction Project Specialist supports data center development and tenant improvement projects by managing daily site activities, coordinating with stakeholders, monitoring progress, and ensuring compliance with safety and quality standards.",
-      "key_skills": [
-        "construction",
-        "project_management",
-        "site_coordination",
-        "vendor_oversee",
-        "rfi_logs",
-        "submittal_reviews",
-        "risk_identification",
-        "quality_control"
-      ],
-      "core_skills": [
-        "construction",
-        "project_management"
-      ],
-      "seniority_signal": "entry",
-      "role_type": "ic",
-      "red_flags": [],
-      "work_mode_derived": "onsite"
-    },
-    "director--energy-inn-crusoe-74488289": {
-      "summary": "The Director creates strategic advantage for Crusoe by scouting, vetting and adopting new technologies to generate or access electricity for AI computing infrastructure, driving an incubation engine that converts new technology into scalable deployment.",
-      "key_skills": [
-        "energy",
-        "ai",
-        "infrastructure",
-        "commercialization",
-        "technology",
-        "scouting",
-        "vetting",
-        "incubation"
-      ],
-      "core_skills": [
-        "energy",
-        "ai",
-        "infrastructure"
-      ],
-      "seniority_signal": "senior",
-      "role_type": "executive",
-      "red_flags": [],
-      "work_mode_derived": "hybrid"
-    },
-    "global-supply-chain--crusoe-74488289": {
-      "summary": "Owns end-to-end global supply chain for compute infrastructure, managing GPU/CPU server allocations, OEM partnerships, and long-lead component strategies to ensure uninterrupted deployment across Crusoe's data centers.",
-      "key_skills": [
-        "supply chain management",
-        "gpu server",
-        "accelerator allocation",
-        "nvidia",
-        "amd",
-        "oem partnerships",
-        "long-lead components",
-        "capacity planning"
-      ],
-      "core_skills": [
-        "supply chain strategy",
-        "cross-functional leadership",
-        "risk management",
-        "inventory optimization"
-      ],
-      "seniority_signal": "senior",
-      "role_type": "ic",
-      "red_flags": [],
-      "work_mode_derived": "hybrid"
-    },
-    "manager--local-commu-crusoe-74488289": {
-      "summary": "Builds and maintains community trust through transparent communication, local government engagement, and community investment initiatives to ensure smooth infrastructure operations.",
-      "key_skills": [
-        "community engagement",
-        "local government relations",
-        "crisis communication",
-        "public affairs",
-        "community investment",
-        "workforce partnerships",
-        "local intelligence",
-        "content creation"
-      ],
-      "core_skills": [
-        "community relations",
-        "local government engagement",
-        "conflict resolution",
-        "communication"
-      ],
-      "seniority_signal": "mid",
-      "role_type": "manager",
-      "red_flags": [],
-      "work_mode_derived": "onsite"
-    },
-    "project-executive-crusoe-74488289": {
-      "summary": "Project Executive leads large-scale AI Data Center construction projects, manages complex teams, and ensures on-time, on-budget delivery of mission-critical infrastructure.",
-      "key_skills": [
-        "construction",
-        "project",
-        "management",
-        "data_center",
-        "hyperscale",
-        "budgeting",
-        "scheduling",
-        "quality_management"
-      ],
-      "core_skills": [
-        "construction_management",
-        "project_leadership",
-        "budgeting",
-        "scheduling"
-      ],
-      "seniority_signal": "senior",
-      "role_type": "ic",
-      "red_flags": [],
-      "work_mode_derived": "hybrid"
-    },
-    "senior-construction--crusoe-74488289": {
-      "summary": "Senior Construction Manager leads complex multi-phase construction projects for hyperscale AI data centers, overseeing civil, structural, MEP, and interior tenant improvements across large-scale facilities.",
-      "key_skills": [
-        "construction",
-        "project_management",
-        "data_center",
-        "structural_engineering",
-        "mechanical_engineering",
-        "electrical_engineering",
-        "civil_engineering",
-        "scheduling"
-      ],
-      "core_skills": [
-        "project_management",
-        "data_center",
-        "construction",
-        "scheduling"
-      ],
-      "seniority_signal": "senior",
-      "role_type": "ic",
-      "red_flags": [],
-      "work_mode_derived": "onsite"
-    },
-    "staff-commissioning--crusoe-74488289": {
-      "summary": "Serves as the primary point of accountability for commissioning activities across data center projects, ensuring electrical and EPMS systems meet design intent and operational readiness standards through full commissioning lifecycle oversight.",
-      "key_skills": [
-        "data center commissioning",
-        "electrical engineering",
-        "commissioning levels l1-l5",
-        "epms systems",
-        "factory witness testing",
-        "third-party commissioning agents",
-        "vendor management",
-        "power distribution"
-      ],
-      "core_skills": [
-        "commissioning lifecycle management",
-        "cross-functional coordination",
-        "technical documentation review",
-        "vendor accountability"
-      ],
-      "seniority_signal": "senior",
-      "role_type": "ic",
-      "red_flags": [],
-      "work_mode_derived": "onsite"
-    },
-    "staff-instrumentatio-crusoe-74488289": {
-      "summary": "Staff Instrumentation and Controls Engineer leads deployment and integration of BMS/EPMS/SCADA systems for hyperscale data centers, ensuring seamless automation and monitoring of critical infrastructure.",
-      "key_skills": [
-        "bms",
-        "epms",
-        "scada",
-        "plc",
-        "hvac",
-        "electrical",
-        "protocol",
-        "mqtt"
-      ],
-      "core_skills": [
-        "deployment",
-        "integration",
-        "scada",
-        "plc"
-      ],
-      "seniority_signal": "senior",
-      "role_type": "ic",
-      "red_flags": [],
-      "work_mode_derived": "onsite"
-    },
-    "administrative-assis-cape-74488289": {
-      "summary": "Owns operational details to allow leaders to focus on strategic priorities, managing calendars, travel logistics, and stakeholder communications for seamless business operations.",
-      "key_skills": [
-        "administrative",
-        "calendar_management",
-        "logistics",
-        "stakeholder_diplomacy",
-        "problem_solving",
-        "travel_expertise",
-        "project_management",
-        "technical_proficiency"
-      ],
-      "core_skills": [
-        "calendar_management",
-        "logistics",
-        "stakeholder_diplomacy",
-        "problem_solving"
-      ],
-      "seniority_signal": "mid",
-      "role_type": "manager",
-      "red_flags": [],
-      "work_mode_derived": "onsite"
-    },
-    "network-operations-s-cape-74488289": {
-      "summary": "Network Operations Specialist responsible for deploying and maintaining secure cellular networks globally, ensuring high standards of operation through troubleshooting, test case execution, and cross-functional collaboration.",
-      "key_skills": [
-        "network operations",
-        "cellular core",
-        "network troubleshooting",
-        "network deployment",
-        "network trace analysis",
-        "mop development",
-        "network outages",
-        "agile practices"
-      ],
-      "core_skills": [
-        "network operations",
-        "cellular core",
-        "network troubleshooting",
-        "network deployment"
-      ],
-      "seniority_signal": "mid",
-      "role_type": "ic",
-      "red_flags": [],
-      "work_mode_derived": "onsite"
-    },
-    "operations-analyst---cape-74488289": {
-      "summary": "Supports product operations for government and national security customers by managing fulfillment, customer service, and technical operations in a high-tempo environment.",
-      "key_skills": [
-        "government operations",
-        "technical operations",
-        "mission support",
-        "national security",
-        "clearance",
-        "product operations",
-        "fulfillment",
-        "customer service"
-      ],
-      "core_skills": [
-        "technical operations",
-        "mission support",
-        "national security",
-        "clearance"
-      ],
-      "seniority_signal": "mid",
-      "role_type": "ic",
-      "red_flags": [],
-      "work_mode_derived": "onsite"
-    },
-    "solutions-architect--cape-74488289": {
-      "summary": "Solutions Architects lead engagements with federal customers, deeply understanding privacy and security challenges to deploy Cape's technology while collaborating with cross-functional teams to solve complex problems.",
-      "key_skills": [
-        "solutions architecture",
-        "networking",
-        "customer engagement",
-        "technical implementation",
-        "federal systems",
-        "privacy compliance",
-        "network troubleshooting",
-        "wireshark"
-      ],
-      "core_skills": [
-        "networking fundamentals",
-        "technical implementation",
-        "customer engagement",
-        "federal systems"
-      ],
-      "seniority_signal": "mid",
-      "role_type": "ic",
-      "red_flags": [],
-      "work_mode_derived": "onsite"
-    },
-    "wireless-network-arc-cape-74488289": {
-      "summary": "Wireless Network Architect designs and delivers secure, privacy-focused cellular networks while collaborating with cross-functional teams to implement next-generation cloud-based core networks that support critical features like voice, data, and messaging without disrupting users.",
-      "key_skills": [
-        "wireless network architecture",
-        "ims",
-        "core network",
-        "5g",
-        "4g",
-        "packet core",
-        "hss",
-        "udm"
-      ],
-      "core_skills": [
-        "wireless core",
-        "ims",
-        "5g",
-        "4g"
-      ],
-      "seniority_signal": "senior",
-      "role_type": "ic",
-      "red_flags": [],
-      "work_mode_derived": "onsite"
-    },
-    "ai-adoption--content-openai-74488289": {
-      "summary": "Designs and delivers training and enablement for government users, builds and stewards government-specific communities, and owns government-focused content and messaging to drive AI adoption.",
-      "key_skills": [
-        "ai",
-        "chatgpt",
-        "government",
-        "training",
-        "enablement",
-        "community",
-        "content",
-        "storytelling"
-      ],
-      "core_skills": [
-        "community_management",
-        "content_creation",
-        "training",
-        "government_affairs"
-      ],
-      "seniority_signal": "mid",
-      "role_type": "manager",
-      "red_flags": [],
-      "work_mode_derived": "hybrid"
-    },
-    "government-account-d-openai-74488289": {
-      "summary": "Drives key opportunities in the defense sales cycle for national security customers, managing account plans and AI adoption journeys while collaborating with cross-functional teams.",
-      "key_skills": [
-        "ai",
-        "national_security",
-        "defense",
-        "intelligence",
-        "government_sales",
-        "revenue_management",
-        "account_management",
-        "customer_strategy"
-      ],
-      "core_skills": [
-        "government_contracts",
-        "security_clearances",
-        "technical_communication",
-        "strategic_planning"
-      ],
-      "seniority_signal": "senior",
-      "role_type": "ic",
-      "red_flags": [],
-      "work_mode_derived": "hybrid"
-    },
-    "national-security-le-openai-74488289": {
-      "summary": "Builds and sustains relationships with state and local homeland security, emergency management, cybersecurity, election security, and public safety leaders to develop and execute policy strategies on AI risks and benefits in critical infrastructure and public safety.",
-      "key_skills": [
-        "homeland security",
-        "emergency management",
-        "cybersecurity",
-        "critical infrastructure",
-        "election security",
-        "public safety",
-        "law enforcement",
-        "stakeholder engagement"
-      ],
-      "core_skills": [
-        "policy engagement",
-        "strategic planning",
-        "stakeholder relationship building",
-        "policy writing"
-      ],
-      "seniority_signal": "senior",
-      "role_type": "ic",
-      "red_flags": [],
-      "work_mode_derived": "onsite"
-    },
-    "senior-technical-adv-openai-74488289": {
-      "summary": "Serves as a senior technical-policy advisor to the National Security Policy team on frontier AI safety and governance issues, including CBRN, cyber, autonomous agents, and AI risk assessment.",
-      "key_skills": [
-        "ai safety",
-        "technical policy",
-        "national security policy",
-        "ai governance",
-        "cbnr",
-        "cyber",
-        "autonomous agents",
-        "ai risk assessment"
-      ],
-      "core_skills": [
-        "technical judgment",
-        "political acumen",
-        "strategic thinking",
-        "cross-functional coordination"
-      ],
-      "seniority_signal": "senior",
-      "role_type": "ic",
-      "red_flags": [],
-      "work_mode_derived": "hybrid"
-    },
-    "head-of-security-eng-suno-74488289": {
-      "summary": "Head of Security Engineering leads security strategy for Suno's applications, cloud infrastructure, AI systems, and internal environments, building high-performing security engineering teams and ensuring robust security practices across the organization.",
-      "key_skills": [
-        "cloud security",
-        "aws",
-        "gcp",
-        "identity access management",
-        "security operations",
-        "product security",
-        "agentic ai",
-        "security engineering"
-      ],
-      "core_skills": [
-        "cloud security",
-        "aws",
-        "gcp",
-        "identity access management"
-      ],
-      "seniority_signal": "senior",
-      "role_type": "executive",
-      "red_flags": [],
-      "work_mode_derived": "onsite"
     },
     "it-app-analyst-ii----amazon-74488289": {
       "summary": "IT App Analyst II transforms business requirements into financial system capabilities, designs and tests solutions for end-user experiences in Amazon's financial applications, and collaborates with engineering teams to ensure smooth integration and deployment.",
@@ -19208,6 +18754,377 @@
         "end-user training"
       ],
       "seniority_signal": "mid",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "onsite"
+    },
+    "senior-software-engi-aircall-58636004": {
+      "summary": "Designs and implements production-grade Python services for AI-driven sales automation, focusing on distributed systems and agent orchestration.",
+      "key_skills": [
+        "python",
+        "fastapi",
+        "celery",
+        "postgresql",
+        "uv"
+      ],
+      "core_skills": [
+        "distributed systems",
+        "ai orchestration",
+        "ai agents",
+        "ai-augmented development"
+      ],
+      "seniority_signal": "senior",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "hybrid"
+    },
+    "construction-manager-crusoe-58636004": {
+      "summary": "Owns end-to-end delivery and integration of high-value, Owner-Furnished Contractor-Installed equipment for hyperscale data center campuses, ensuring seamless transition from factory to onsite energization.",
+      "key_skills": [
+        "ai infrastructure",
+        "data center",
+        "energy efficiency",
+        "modular systems",
+        "power systems",
+        "cooling systems",
+        "electrical engineering",
+        "construction management"
+      ],
+      "core_skills": [
+        "ofci",
+        "jits",
+        "bim coordination",
+        "qaqc"
+      ],
+      "seniority_signal": "mid",
+      "role_type": "manager",
+      "red_flags": [],
+      "work_mode_derived": "onsite"
+    },
+    "construction-special-crusoe-58636004": {
+      "summary": "Construction Project Specialist supports data center development and tenant improvement projects through daily site coordination, scheduling, documentation, vendor oversight, and risk monitoring.",
+      "key_skills": [
+        "construction",
+        "project",
+        "management",
+        "scheduling",
+        "documentation",
+        "vendor",
+        "oversight",
+        "rfi"
+      ],
+      "core_skills": [
+        "construction",
+        "project",
+        "management"
+      ],
+      "seniority_signal": "entry",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "onsite"
+    },
+    "director--energy-inn-crusoe-58636004": {
+      "summary": "The Director creates strategic advantage for Crusoe by scouting, vetting and adopting new technologies to generate or access electricity for AI computing infrastructure, driving an incubation engine that converts new technology into scalable deployment.",
+      "key_skills": [
+        "energy",
+        "ai",
+        "infrastructure",
+        "commercialization",
+        "technology",
+        "scouting",
+        "vetting",
+        "incubation"
+      ],
+      "core_skills": [
+        "energy",
+        "ai",
+        "infrastructure"
+      ],
+      "seniority_signal": "senior",
+      "role_type": "executive",
+      "red_flags": [],
+      "work_mode_derived": "hybrid"
+    },
+    "global-supply-chain--crusoe-58636004": {
+      "summary": "Owns end-to-end global supply chain for compute infrastructure, managing GPU/CPU server allocations, OEM partnerships, and long-lead component strategies to ensure uninterrupted deployment across Crusoe's data centers.",
+      "key_skills": [
+        "supply chain management",
+        "gpu server",
+        "accelerator allocation",
+        "nvidia",
+        "amd",
+        "oem partnerships",
+        "long-lead components",
+        "capacity planning"
+      ],
+      "core_skills": [
+        "supply chain strategy",
+        "cross-functional leadership",
+        "risk management",
+        "inventory optimization"
+      ],
+      "seniority_signal": "senior",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "hybrid"
+    },
+    "manager--local-commu-crusoe-58636004": {
+      "summary": "Builds and maintains community trust through transparent communication, local government engagement, and community investment initiatives to ensure smooth infrastructure operations.",
+      "key_skills": [
+        "community engagement",
+        "local government relations",
+        "crisis communication",
+        "public affairs",
+        "community investment",
+        "workforce partnerships",
+        "local intelligence",
+        "content creation"
+      ],
+      "core_skills": [
+        "community relations",
+        "local government engagement",
+        "conflict resolution",
+        "communication"
+      ],
+      "seniority_signal": "mid",
+      "role_type": "manager",
+      "red_flags": [],
+      "work_mode_derived": "onsite"
+    },
+    "project-executive-crusoe-58636004": {
+      "summary": "Project Executive leads large-scale AI Data Center construction projects, manages complex teams, and ensures on-time, on-budget delivery of mission-critical infrastructure.",
+      "key_skills": [
+        "construction",
+        "project",
+        "management",
+        "data_center",
+        "hyperscale",
+        "budgeting",
+        "scheduling",
+        "quality_management"
+      ],
+      "core_skills": [
+        "construction_management",
+        "project_leadership",
+        "budgeting",
+        "scheduling"
+      ],
+      "seniority_signal": "senior",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "hybrid"
+    },
+    "senior-construction--crusoe-58636004": {
+      "summary": "Senior Construction Manager leads complex multi-phase construction projects for hyperscale AI data centers, overseeing civil, structural, MEP, and interior tenant improvements across large-scale facilities.",
+      "key_skills": [
+        "construction",
+        "project_management",
+        "data_center",
+        "structural_engineering",
+        "mechanical_engineering",
+        "electrical_engineering",
+        "civil_engineering",
+        "scheduling"
+      ],
+      "core_skills": [
+        "project_management",
+        "data_center",
+        "construction",
+        "scheduling"
+      ],
+      "seniority_signal": "senior",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "onsite"
+    },
+    "senior-engineer--loa-crusoe-58636004": {
+      "summary": "Senior Engineer for Load Interconnection & Model Development focuses on expanding energy infrastructure and integrating large-load facilities into the electric grid through grid integration studies, transmission injection processes, and POI strategy.",
+      "key_skills": [
+        "power systems",
+        "grid integration",
+        "transmission topology",
+        "miso",
+        "spp",
+        "load deliverability",
+        "grid code compliance",
+        "power system simulation"
+      ],
+      "core_skills": [
+        "power systems",
+        "grid integration",
+        "transmission topology",
+        "miso"
+      ],
+      "seniority_signal": "senior",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "remote"
+    },
+    "staff-commissioning--crusoe-58636004": {
+      "summary": "Serves as the primary point of accountability for commissioning activities across data center projects, ensuring electrical and EPMS systems meet design intent and operational readiness standards through full commissioning lifecycle oversight.",
+      "key_skills": [
+        "data center commissioning",
+        "electrical engineering",
+        "commissioning levels l1-l5",
+        "epms systems",
+        "factory witness testing",
+        "third-party commissioning agents",
+        "vendor management",
+        "power distribution"
+      ],
+      "core_skills": [
+        "commissioning lifecycle management",
+        "cross-functional coordination",
+        "technical documentation review",
+        "vendor accountability"
+      ],
+      "seniority_signal": "senior",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "onsite"
+    },
+    "staff-instrumentatio-crusoe-58636004": {
+      "summary": "Staff Instrumentation and Controls Engineer leads deployment and integration of BMS/EPMS/SCADA systems for hyperscale data centers, ensuring seamless automation and monitoring of critical infrastructure.",
+      "key_skills": [
+        "bms",
+        "epms",
+        "scada",
+        "plc",
+        "hvac",
+        "electrical",
+        "protocol",
+        "mqtt"
+      ],
+      "core_skills": [
+        "deployment",
+        "integration",
+        "scada",
+        "plc"
+      ],
+      "seniority_signal": "staff",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "onsite"
+    },
+    "senior-financial-ana-google-58636004": {
+      "summary": "Senior Financial Analyst drives financial planning and analysis for Google Cloud, executing full-cycle financial planning, forecasting, variance analysis, and modeling within a multinational company setting while collaborating with cross-functional teams.",
+      "key_skills": [
+        "financial analysis",
+        "budgeting",
+        "forecasting",
+        "variance analysis",
+        "modeling",
+        "data infrastructure",
+        "reporting solutions",
+        "strategic planning"
+      ],
+      "core_skills": [
+        "financial planning",
+        "data analysis",
+        "strategic decision making",
+        "resource allocation"
+      ],
+      "seniority_signal": "senior",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "hybrid"
+    },
+    "software-engineer--p-google-58636004": {
+      "summary": "Software engineer working on parallel file systems and AI/ML storage infrastructure for extreme-scale data-intensive workloads like generative AI and real-time inference.",
+      "key_skills": [
+        "golang",
+        "java",
+        "c++",
+        "distributed systems",
+        "storage systems",
+        "data structures",
+        "algorithms",
+        "accessible technologies"
+      ],
+      "core_skills": [
+        "distributed systems",
+        "storage systems",
+        "data structures",
+        "algorithms"
+      ],
+      "seniority_signal": "mid",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "onsite"
+    },
+    "finance-manager-google-58636004": {
+      "summary": "Owns financial planning and analysis functions including budgeting, forecasting, variance analysis, and modeling for multinational companies while leveraging data to drive strategic decisions.",
+      "key_skills": [
+        "finance",
+        "analysis",
+        "budgeting",
+        "forecasting",
+        "variance",
+        "modeling",
+        "sql",
+        "data"
+      ],
+      "core_skills": [
+        "financial planning",
+        "strategic decision making",
+        "cross-functional collaboration",
+        "data-driven analysis"
+      ],
+      "seniority_signal": "senior",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "hybrid"
+    },
+    "transportation-analy-boeing-58636004": {
+      "summary": "Monitors designated business traveler's logistics, generates expense reports and assists in reconciling corporate credit card charges to ensure timely and... ",
+      "key_skills": [
+        "microsoft outlook",
+        "front desk",
+        "leadership",
+        "communication skills"
+      ],
+      "core_skills": [
+        "leadership"
+      ],
+      "seniority_signal": "entry",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "remote"
+    },
+    "western-express-cdl--western-express-58636004": {
+      "summary": "Drives company trucks for freight delivery with training support for new drivers",
+      "key_skills": [
+        "cdl-a",
+        "truck-driving",
+        "freight"
+      ],
+      "core_skills": [
+        "cdl-a"
+      ],
+      "seniority_signal": "entry",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "onsite"
+    },
+    "vp-of-product---ente-sap-58636004": {
+      "summary": "VP of Product responsible for shaping SAP's AI-first product strategy and driving delivery of trusted, enterprise-ready agent-powered capabilities with focus on security, compliance, and scalable adoption.",
+      "key_skills": [
+        "ai",
+        "product",
+        "compliance",
+        "enterprise",
+        "agentic",
+        "llm",
+        "ml",
+        "ops"
+      ],
+      "core_skills": [
+        "ai",
+        "product",
+        "compliance",
+        "enterprise"
+      ],
+      "seniority_signal": "vp",
       "role_type": "ic",
       "red_flags": [],
       "work_mode_derived": "onsite"
