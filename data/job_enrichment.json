@@ -1,8 +1,8 @@
 {
   "meta": {
-    "built_at": "2026-06-05T07:59:41.669253+00:00",
-    "total_jobs": 1103,
-    "enriched": 903
+    "built_at": "2026-06-06T07:46:33.552332+00:00",
+    "total_jobs": 1108,
+    "enriched": 907
   },
   "jobs": {
     "manager--marketing-a-nintex-65682545": {
@@ -19071,26 +19071,6 @@
       "red_flags": [],
       "work_mode_derived": "hybrid"
     },
-    "senior-software-engi-aircall-45727816": {
-      "summary": "Designs and implements production-grade Python services for AI-driven customer communication platforms, focusing on scalable distributed systems and autonomous sales workflows.",
-      "key_skills": [
-        "python",
-        "fastapi",
-        "celery",
-        "postgresql",
-        "uv"
-      ],
-      "core_skills": [
-        "distributed systems",
-        "ai orchestration",
-        "ai agents",
-        "ai-augmented development"
-      ],
-      "seniority_signal": "senior",
-      "role_type": "ic",
-      "red_flags": [],
-      "work_mode_derived": "hybrid"
-    },
     "senior-flight-dynami-cowboyspace-45727816": {
       "summary": "Senior Flight Dynamics Engineer develops and analyzes spacecraft trajectories, orbital maneuvers, and mission design while interfacing with flight software teams to validate autonomous control systems.",
       "key_skills": [
@@ -19114,73 +19094,6 @@
       "red_flags": [],
       "work_mode_derived": "onsite"
     },
-    "construction-manager-crusoe-45727816": {
-      "summary": "Owns end-to-end delivery and integration of high-value, Owner-Furnished Contractor-Installed equipment for hyperscale data center campuses, ensuring seamless transition from factory to onsite energization.",
-      "key_skills": [
-        "ai infrastructure",
-        "data center",
-        "energy efficiency",
-        "modular systems",
-        "power systems",
-        "cooling systems",
-        "electrical engineering",
-        "construction management"
-      ],
-      "core_skills": [
-        "ofci",
-        "jits",
-        "bim coordination",
-        "qaqc"
-      ],
-      "seniority_signal": "mid",
-      "role_type": "manager",
-      "red_flags": [],
-      "work_mode_derived": "onsite"
-    },
-    "construction-special-crusoe-45727816": {
-      "summary": "Construction Project Specialist supports data center development and tenant improvement projects through daily site coordination, scheduling, vendor oversight, and documentation.",
-      "key_skills": [
-        "construction",
-        "project",
-        "management",
-        "scheduling",
-        "documentation",
-        "vendor",
-        "oversight",
-        "rfi"
-      ],
-      "core_skills": [
-        "construction",
-        "project",
-        "management"
-      ],
-      "seniority_signal": "entry",
-      "role_type": "ic",
-      "red_flags": [],
-      "work_mode_derived": "onsite"
-    },
-    "director--energy-inn-crusoe-45727816": {
-      "summary": "The Director creates strategic advantage for Crusoe by scouting, vetting, and adopting new technologies to generate or access electricity for AI computing infrastructure, driving an incubation engine that converts frontier energy technologies into scalable deployments.",
-      "key_skills": [
-        "energy",
-        "ai",
-        "infrastructure",
-        "commercialization",
-        "technology",
-        "scouting",
-        "vetting",
-        "incubation"
-      ],
-      "core_skills": [
-        "energy",
-        "ai",
-        "infrastructure"
-      ],
-      "seniority_signal": "senior",
-      "role_type": "executive",
-      "red_flags": [],
-      "work_mode_derived": "hybrid"
-    },
     "global-supply-chain--crusoe-45727816": {
       "summary": "Owns end-to-end global supply chain for compute infrastructure, managing GPU/CPU server allocations, OEM partnerships, and long-lead component strategies to ensure uninterrupted deployment across Crusoe's data centers.",
       "key_skills": [
@@ -19203,121 +19116,6 @@
       "role_type": "ic",
       "red_flags": [],
       "work_mode_derived": "hybrid"
-    },
-    "manager--local-commu-crusoe-45727816": {
-      "summary": "Builds and maintains community trust through transparent communication, local government engagement, and targeted investments to ensure smooth infrastructure projects and positive community relations.",
-      "key_skills": [
-        "community engagement",
-        "local government relations",
-        "crisis communication",
-        "public affairs",
-        "community investment",
-        "workforce partnerships",
-        "local intelligence",
-        "content creation"
-      ],
-      "core_skills": [
-        "community relations",
-        "local government engagement",
-        "conflict resolution",
-        "communication"
-      ],
-      "seniority_signal": "mid",
-      "role_type": "manager",
-      "red_flags": [],
-      "work_mode_derived": "onsite"
-    },
-    "project-executive-crusoe-45727816": {
-      "summary": "Project Executive leads large-scale AI Data Center construction projects, manages complex teams, and ensures on-time, on-budget delivery of mission-critical infrastructure.",
-      "key_skills": [
-        "construction",
-        "project",
-        "management",
-        "data_center",
-        "hyperscale",
-        "budgeting",
-        "scheduling",
-        "quality_management"
-      ],
-      "core_skills": [
-        "construction_management",
-        "project_leadership",
-        "budget_control",
-        "quality_assurance"
-      ],
-      "seniority_signal": "senior",
-      "role_type": "ic",
-      "red_flags": [],
-      "work_mode_derived": "hybrid"
-    },
-    "senior-construction--crusoe-45727816": {
-      "summary": "Senior Construction Manager leads complex multi-phase construction projects for hyperscale AI data centers, overseeing civil, structural, MEP, and interior tenant improvements across large-scale facilities.",
-      "key_skills": [
-        "construction",
-        "project_management",
-        "data_center",
-        "structural_engineering",
-        "mechanical_engineering",
-        "electrical_engineering",
-        "civil_engineering",
-        "scheduling"
-      ],
-      "core_skills": [
-        "project_management",
-        "data_center",
-        "construction",
-        "scheduling"
-      ],
-      "seniority_signal": "senior",
-      "role_type": "ic",
-      "red_flags": [],
-      "work_mode_derived": "onsite"
-    },
-    "staff-commissioning--crusoe-45727816": {
-      "summary": "Serves as the primary point of accountability for commissioning activities across data center projects, ensuring electrical and EPMS systems meet design intent and operational readiness standards through full commissioning lifecycle oversight.",
-      "key_skills": [
-        "data center commissioning",
-        "electrical engineering",
-        "commissioning levels l1-l5",
-        "epms systems",
-        "factory witness testing",
-        "third-party commissioning agents",
-        "vendor management",
-        "power distribution"
-      ],
-      "core_skills": [
-        "commissioning lifecycle management",
-        "technical documentation review",
-        "cross-functional coordination",
-        "vendor accountability"
-      ],
-      "seniority_signal": "senior",
-      "role_type": "ic",
-      "red_flags": [],
-      "work_mode_derived": "onsite"
-    },
-    "staff-instrumentatio-crusoe-45727816": {
-      "summary": "Staff Instrumentation and Controls Engineer leads deployment and integration of BMS/EPMS/SCADA systems for hyperscale data centers, ensuring seamless automation and monitoring of critical infrastructure.",
-      "key_skills": [
-        "bms",
-        "epms",
-        "scada",
-        "plc",
-        "hvac",
-        "electrical",
-        "protocol",
-        "mqtt"
-      ],
-      "core_skills": [
-        "deployment",
-        "integration",
-        "scada",
-        "plc"
-      ],
-      "seniority_signal": "senior",
-      "role_type": "ic",
-      "red_flags": [],
-      "work_mode_derived": "onsite"
     },
     "senior-software-engi-google-45727816": {
       "summary": "Drives progress, solves problems, and mentors junior team members with deep expertise in infrastructure and distributed systems",
@@ -19426,6 +19224,294 @@
       "role_type": "ic",
       "red_flags": [],
       "work_mode_derived": "hybrid"
+    },
+    "senior-software-engi-aircall-31520406": {
+      "summary": "Designs and implements production-grade Python services for AI-driven customer communication platforms, focusing on scalable distributed systems and autonomous sales workflows.",
+      "key_skills": [
+        "python",
+        "fastapi",
+        "celery",
+        "postgresql",
+        "uv"
+      ],
+      "core_skills": [
+        "distributed systems",
+        "ai orchestration",
+        "ai agents",
+        "ai-augmented development"
+      ],
+      "seniority_signal": "senior",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "hybrid"
+    },
+    "construction-manager-crusoe-31520406": {
+      "summary": "Owns end-to-end delivery and integration of high-value, Owner-Furnished Contractor-Installed equipment for hyperscale data center campuses, ensuring seamless transition from factory to onsite energization.",
+      "key_skills": [
+        "ai infrastructure",
+        "data center",
+        "energy efficiency",
+        "modular systems",
+        "power systems",
+        "cooling systems",
+        "electrical engineering",
+        "construction management"
+      ],
+      "core_skills": [
+        "ofci",
+        "jits",
+        "bim coordination",
+        "qaqc"
+      ],
+      "seniority_signal": "mid",
+      "role_type": "manager",
+      "red_flags": [],
+      "work_mode_derived": "onsite"
+    },
+    "construction-special-crusoe-31520406": {
+      "summary": "Construction Project Specialist supports data center development and tenant improvement projects through daily site coordination, scheduling, vendor oversight, and documentation.",
+      "key_skills": [
+        "construction",
+        "project",
+        "management",
+        "scheduling",
+        "documentation",
+        "vendor",
+        "oversight",
+        "rfi"
+      ],
+      "core_skills": [
+        "construction",
+        "project",
+        "management"
+      ],
+      "seniority_signal": "entry",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "onsite"
+    },
+    "director--energy-inn-crusoe-31520406": {
+      "summary": "The Director creates strategic advantage for Crusoe by scouting, vetting, and adopting new technologies to generate or access electricity for AI computing infrastructure, driving an incubation engine that converts frontier energy technologies into scalable deployments.",
+      "key_skills": [
+        "energy",
+        "ai",
+        "infrastructure",
+        "commercialization",
+        "technology",
+        "scouting",
+        "vetting",
+        "incubation"
+      ],
+      "core_skills": [
+        "energy",
+        "ai",
+        "infrastructure"
+      ],
+      "seniority_signal": "senior",
+      "role_type": "executive",
+      "red_flags": [],
+      "work_mode_derived": "hybrid"
+    },
+    "manager--local-commu-crusoe-31520406": {
+      "summary": "Builds and maintains community trust through transparent communication, local government engagement, and targeted investments to ensure smooth infrastructure projects and positive community relations.",
+      "key_skills": [
+        "community engagement",
+        "local government relations",
+        "crisis communication",
+        "public affairs",
+        "community investment",
+        "workforce partnerships",
+        "local intelligence",
+        "content creation"
+      ],
+      "core_skills": [
+        "community relations",
+        "local government engagement",
+        "conflict resolution",
+        "communication"
+      ],
+      "seniority_signal": "mid",
+      "role_type": "manager",
+      "red_flags": [],
+      "work_mode_derived": "onsite"
+    },
+    "project-executive-crusoe-31520406": {
+      "summary": "Project Executive leads large-scale AI Data Center construction projects, manages complex teams, and ensures on-time, on-budget delivery of mission-critical infrastructure.",
+      "key_skills": [
+        "construction",
+        "project",
+        "management",
+        "data_center",
+        "hyperscale",
+        "budgeting",
+        "scheduling",
+        "quality_management"
+      ],
+      "core_skills": [
+        "construction_management",
+        "project_leadership",
+        "budget_control",
+        "quality_assurance"
+      ],
+      "seniority_signal": "senior",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "hybrid"
+    },
+    "senior-construction--crusoe-31520406": {
+      "summary": "Senior Construction Manager leads complex multi-phase construction projects for hyperscale AI data centers, overseeing civil, structural, MEP, and interior tenant improvements across large-scale facilities.",
+      "key_skills": [
+        "construction",
+        "project_management",
+        "data_center",
+        "structural_engineering",
+        "mechanical_engineering",
+        "electrical_engineering",
+        "civil_engineering",
+        "scheduling"
+      ],
+      "core_skills": [
+        "project_management",
+        "data_center",
+        "construction",
+        "scheduling"
+      ],
+      "seniority_signal": "senior",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "onsite"
+    },
+    "staff-commissioning--crusoe-31520406": {
+      "summary": "Serves as the primary point of accountability for commissioning activities across data center projects, ensuring electrical and EPMS systems meet design intent and operational readiness standards through full commissioning lifecycle oversight.",
+      "key_skills": [
+        "data center commissioning",
+        "electrical engineering",
+        "commissioning levels l1-l5",
+        "epms systems",
+        "factory witness testing",
+        "third-party commissioning agents",
+        "vendor management",
+        "power distribution"
+      ],
+      "core_skills": [
+        "commissioning lifecycle management",
+        "technical documentation review",
+        "cross-functional coordination",
+        "vendor accountability"
+      ],
+      "seniority_signal": "senior",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "onsite"
+    },
+    "staff-instrumentatio-crusoe-31520406": {
+      "summary": "Staff Instrumentation and Controls Engineer leads deployment and integration of BMS/EPMS/SCADA systems for hyperscale data centers, ensuring seamless automation and monitoring of critical infrastructure.",
+      "key_skills": [
+        "bms",
+        "epms",
+        "scada",
+        "plc",
+        "hvac",
+        "electrical",
+        "protocol",
+        "mqtt"
+      ],
+      "core_skills": [
+        "deployment",
+        "integration",
+        "scada",
+        "plc"
+      ],
+      "seniority_signal": "senior",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "onsite"
+    },
+    "senior-staff-softwar-google-31520406": {
+      "summary": "Owns outcomes and decision making, solves ambiguous problems, and influences stakeholders while leveraging deep expertise in domain-specific technologies.",
+      "key_skills": [
+        "c++",
+        "java",
+        "go",
+        "python",
+        "distributed systems",
+        "big data",
+        "high-throughput data processing",
+        "algorithms"
+      ],
+      "core_skills": [
+        "technical leadership",
+        "project management",
+        "cross-functional collaboration",
+        "complex system design"
+      ],
+      "seniority_signal": "senior",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "onsite"
+    },
+    "engineering-manager--google-31520406": {
+      "summary": "Manages engineering teams and leads technical projects in search and database systems at Google.",
+      "key_skills": [
+        "engineering",
+        "manager",
+        "spanner",
+        "search",
+        "google"
+      ],
+      "core_skills": [
+        "distributed",
+        "systems",
+        "database",
+        "internals"
+      ],
+      "seniority_signal": "senior",
+      "role_type": "manager",
+      "red_flags": [],
+      "work_mode_derived": "onsite"
+    },
+    "software-engineer--c-google-31520406": {
+      "summary": "Secures Google's production hardware by anchoring Google's silicon security infrastructure",
+      "key_skills": [
+        "cloud",
+        "infrastructure",
+        "cryptography",
+        "security",
+        "firmware",
+        "hardware"
+      ],
+      "core_skills": [
+        "cryptography",
+        "cloud",
+        "infrastructure"
+      ],
+      "seniority_signal": "mid",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "onsite"
+    },
+    "staff-software-engin-google-31520406": {
+      "summary": "Owning outcomes and decision making, solving ambiguous problems, and influencing stakeholders while deepening expertise in the domain.",
+      "key_skills": [
+        "java",
+        "c++",
+        "data_structures",
+        "algorithms",
+        "testing",
+        "software_design",
+        "architecture",
+        "software_products"
+      ],
+      "core_skills": [
+        "software_engineering",
+        "technical_architecture",
+        "engineering_management",
+        "mentoring"
+      ],
+      "seniority_signal": "senior",
+      "role_type": "ic",
+      "red_flags": [],
+      "work_mode_derived": "onsite"
     }
   }
 }
