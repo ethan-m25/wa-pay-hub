@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>WA Pay Hub — Pay Intelligence & Salary Insights 2026</title>
+<link rel="canonical" href="https://wa.payhub.fyi/insights.html">
 <meta name="description" content="What WA employers are disclosing: pay range patterns, employer benchmarks, and salary signals under the Pay Transparency Law, WA RCW 49.58.110.">
 <link rel="icon" type="image/png" href="/favicon.png?v=2">
 <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2">
@@ -656,10 +657,10 @@ thead th,.results-header{background:#0a0e16 !important}
   <div class="masthead-inner">
     <div class="masthead-kicker">Pay Intelligence · WA RCW 49.58.110</div>
     <h1>See what WA employers <em>disclose.</em></h1>
-    <div class="masthead-sub">Analysis of <span id="mastheadCount">1,133</span> salary disclosures from WA job postings under the WA Pay Transparency Law, effective January 1, 2023.</div>
+    <div class="masthead-sub">Analysis of <span id="mastheadCount">1,142</span> salary disclosures from WA job postings under the WA Pay Transparency Law, effective January 1, 2023.</div>
     <div class="masthead-meta">
-      <span>Dataset: <strong id="metaTotal">—</strong> job postings</span>
-      <span><strong id="metaCompanies">—</strong> employers</span>
+      <span>Dataset: <strong id="metaTotal">1,008</strong> job postings</span>
+      <span><strong id="metaCompanies">92</strong> employers</span>
       <span>Updated daily</span>
       <span>Washington State</span>
     </div>
@@ -697,17 +698,17 @@ thead th,.results-header{background:#0a0e16 !important}
       <div class="cbar-legend">
         <div class="cbl-item cbl-compliant">
           <div class="cbl-label">Precise range</div>
-          <div class="cbl-num" id="pctCompliant">—</div>
+          <div class="cbl-num" id="pctCompliant">21%</div>
           <div class="cbl-desc">Range width ≤ $50k — employer has a well-defined compensation band for this role.</div>
         </div>
         <div class="cbl-item cbl-nc">
           <div class="cbl-label">Broad range</div>
-          <div class="cbl-num" id="pctNonCompliant">—</div>
+          <div class="cbl-num" id="pctNonCompliant">44%</div>
           <div class="cbl-desc">Range width &gt; $50k — may reflect multiple seniority levels or unsettled pay planning.</div>
         </div>
         <div class="cbl-item cbl-federal cbl-muted">
           <div class="cbl-label">National/remote mix</div>
-          <div class="cbl-num" id="pctFederal">—</div>
+          <div class="cbl-num" id="pctFederal">35%</div>
           <div class="cbl-desc">National or remote postings — may not be clearly attributable to this state's posting rule. Disclosures are kept as market signals.</div>
         </div>
       </div>
@@ -860,10 +861,10 @@ thead th,.results-header{background:#0a0e16 !important}
 <footer>
   <div class="footer-note">
     Data sourced from publicly advertised WA job postings under the <em>Pay Transparency Law</em>, WA RCW 49.58.110 (effective January 1, 2023).
-    Analysis covers <span id="footerTotal">—</span> postings from <span id="footerCompanies">—</span> employers.
+    Analysis covers <span id="footerTotal">1,008</span> postings from <span id="footerCompanies">92</span> employers.
     All salary figures in USD. Updated daily. · <a href="/jobs.html">Browse all jobs →</a>
   </div>
-  <div class="network-back">wa.payhub.fyi &middot; Part of <a href="https://payhub.fyi">PayHub</a> &mdash; 5 jurisdictions</div>
+  <div class="network-back">wa.payhub.fyi &middot; Part of <a href="https://payhub.fyi">PayHub</a> &mdash; 20 jurisdictions</div>
 </footer>
 
 <script>
@@ -897,7 +898,7 @@ async function main() {
   }
 
   // Filter to valid salary entries
-  const valid = jobs.filter(j => j.min > 0 && j.max > 0 && j.max >= j.min);
+  const valid = jobs.filter(j => j.min > 0 && j.max > 0 && j.max >= j.min&&(j.status||'active')!=='archived'&&(j.status||'active')!=='inactive');
   const N = valid.length;
   const companies = new Set(valid.map(j => j.company)).size;
 
@@ -914,7 +915,7 @@ async function main() {
     j._mid = (j.max + j.min) / 2;
     j._widthPct = j._mid > 0 ? (j._width / j._mid) * 100 : 0;
     j._spread = j._widthPct; // alias — range spread ratio = width / midpoint * 100
-    j._federal = FEDERAL_EMPLOYERS.has(normCompany(j.company));
+    j._federal=(String(j.work_mode||'').toLowerCase()==='remote')||/remote/i.test(String(j.location||''));/* national/remote mix — matches the bucket label */
     j._compliant = !j._federal && j._width <= 50000;
     j._nonCompliant = !j._federal && j._width > 50000;
     j._exempt = false;
@@ -1444,7 +1445,8 @@ function normCompany(name) {
   let n = name.trim()
     .replace(/^\S*\d\S*\s+/, '')                                                     // strip leading ID tokens: "0000050383 RBC..." → "RBC..."
     .replace(/\s*\([^)]+\)\s*$/, '')                                                 // strip trailing parentheticals: "(BMO)", "(Canada)"
-    .replace(/\s+(Inc\.?|Ltd\.?|Corp\.?|Co\.?|LLP|ULC|Canada)(?=\s|$)/gi, '')       // legal suffixes (lookahead keeps trailing space)
+    .replace(/\s+(Inc\.?|Ltd\.?|Corp\.?|Co\.?|LLP|ULC)(?=\s|$)/gi, '')
+    .replace(/\s+Canada$/i, '')       // legal suffixes (lookahead keeps trailing space)
     .replace(/\s+/g,' ').trim();
 
   // Canonical aliases — merge known alternate names / abbreviations

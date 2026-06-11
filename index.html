@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>WA Pay Hub — Pay Intelligence & Salary Insights 2026</title>
+<link rel="canonical" href="https://wa.payhub.fyi/">
 <meta name="description" content="What WA employers disclose: pay range patterns, employer benchmarks, and skill salary signals under Washington's Equal Pay and Opportunities Act (RCW 49.58.110).">
 <link rel="icon" type="image/png" href="/favicon.png?v=2">
 <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2">
@@ -458,6 +459,7 @@ thead th,.results-header{background:#0a0e16 !important}
 .ph-orb::after{content:var(--ph-region-code,"");position:absolute;left:var(--ph-orb-pin-x,50%);top:var(--ph-orb-pin-y,50%);transform:translate(-50%,-50%) rotate(var(--ph-orb-label-rotate,0deg));font:700 10px/1 var(--font-mono, var(--mono, monospace));letter-spacing:.08em;color:#f2f7fb;background:rgba(232,68,90,.24);border:1px solid rgba(255,118,136,.72);border-radius:999px;padding:6px 7px;box-shadow:0 0 0 5px rgba(232,68,90,.10),0 0 24px rgba(232,68,90,.45),0 0 42px rgba(128,188,238,.20);text-shadow:0 1px 8px rgba(0,0,0,.65);}
 @media(max-width:760px){.ph-orb{left:78%;top:66%;width:104vh;height:104vh}.ph-orb::after{font-size:9px;padding:5px 6px}}
 </style>
+<script type="application/ld+json" data-payhub="dataset">{"@context": "https://schema.org", "@type": "Dataset", "name": "Washington State Pay Hub salary transparency dataset", "description": "Washington State Pay Hub tracks 1,142 public postings with disclosed pay in Washington State, including 1,008 active postings. Salary ranges, employers, and range quality, refreshed daily.", "url": "https://wa.payhub.fyi/", "creator": {"@type": "Organization", "name": "Washington State Pay Hub"}, "spatialCoverage": {"@type": "Place", "name": "Washington State"}, "keywords": ["salary range", "pay transparency", "Washington State", "USD", "job postings"], "distribution": [{"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://wa.payhub.fyi/data/jobs.json"}]}</script>
 </head>
 <body>
 <div class="ph-sky" aria-hidden="true"></div><div class="ph-orb" data-region="WA" aria-hidden="true"></div>
@@ -484,10 +486,10 @@ thead th,.results-header{background:#0a0e16 !important}
     <div>
       <div class="masthead-kicker">Pay Intelligence · WA RCW 49.58.110</div>
       <h1>See what WA employers <em>disclose.</em></h1>
-      <p class="masthead-sub">Analysis of <span id="mastheadCount">1,133</span> salary disclosures from WA job postings under the Washington Equal Pay and Opportunities Act, effective January 1, 2023.</p>
+      <p class="masthead-sub">Analysis of <span id="mastheadCount">1,142</span> salary disclosures from WA job postings under the Washington Equal Pay and Opportunities Act, effective January 1, 2023.</p>
       <div class="masthead-meta">
-        <span class="meta-chip"><strong id="metaTotal">—</strong> job postings</span>
-        <span class="meta-chip"><strong id="metaCompanies">—</strong> employers</span>
+        <span class="meta-chip"><strong id="metaTotal">1,008</strong> job postings</span>
+        <span class="meta-chip"><strong id="metaCompanies">92</strong> employers</span>
         <span class="meta-chip">Updated daily</span>
         <span class="meta-chip">Washington State</span>
       </div>
@@ -495,7 +497,7 @@ thead th,.results-header{background:#0a0e16 !important}
     <div class="masthead-cta">
       <div class="masthead-cta-label">For job seekers</div>
       <div class="masthead-cta-headline">Find jobs with real disclosed pay</div>
-      <div class="masthead-cta-sub">Search <span id="ctaJobCount">1,133</span> WA postings, filter by salary, category, and work mode.</div>
+      <div class="masthead-cta-sub">Search <span id="ctaJobCount">1,142</span> WA postings, filter by salary, category, and work mode.</div>
       <a class="masthead-cta-btn" href="/jobs">
         Browse Jobs
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -535,17 +537,17 @@ thead th,.results-header{background:#0a0e16 !important}
         <div class="cbar-legend" style="grid-template-columns:repeat(3,1fr)">
           <div class="cbl-item cbl-compliant">
             <div class="cbl-label">Precise range</div>
-            <div class="cbl-num" id="pctCompliant">—</div>
+            <div class="cbl-num" id="pctCompliant">21%</div>
             <div class="cbl-desc">Range width ≤ $50k — employer has a well-defined compensation band for this role.</div>
           </div>
           <div class="cbl-item cbl-nc">
             <div class="cbl-label">Broad range</div>
-            <div class="cbl-num" id="pctNonCompliant">—</div>
+            <div class="cbl-num" id="pctNonCompliant">44%</div>
             <div class="cbl-desc">Range width &gt; $50k — may reflect multiple seniority levels or unsettled pay planning.</div>
           </div>
           <div class="cbl-item cbl-federal cbl-muted">
             <div class="cbl-label">National/remote mix</div>
-            <div class="cbl-num" id="pctFederal">—</div>
+            <div class="cbl-num" id="pctFederal">35%</div>
             <div class="cbl-desc">National or remote postings — may not be clearly attributable to this state's posting rule. Disclosures are kept as market signals.</div>
           </div>
         </div>
@@ -628,8 +630,8 @@ thead th,.results-header{background:#0a0e16 !important}
             <div class="law-rule">
               <div class="law-rule-icon">45</div>
               <div>
-                <strong>Internal posting parity</strong>
-                <span>Washington requires employers to post internal transfer and promotion opportunities to all qualified employees — helping prevent quiet pay advancement gaps.</span>
+                <strong>Internal transfer disclosure</strong>
+                <span>Employees offered an internal transfer or promotion must, on request, be given the new position's wage scale or salary range (RCW 49.58.110(2)).</span>
               </div>
             </div>
           </div>
@@ -786,7 +788,7 @@ thead th,.results-header{background:#0a0e16 !important}
       <div class="masthead-meta" style="margin-bottom:20px">
         <span class="meta-chip" id="metaTotalJobs" style="background:var(--surface2);border-color:var(--border);color:var(--text3)">— postings with skill data</span>
         <span class="meta-chip" id="metaCategories" style="background:var(--surface2);border-color:var(--border);color:var(--text3)">— categories</span>
-        <span class="meta-chip" id="metaGenerated" style="background:var(--surface2);border-color:var(--border);color:var(--text3)">—</span>
+        <span class="meta-chip" id="metaGenerated" style="background:var(--surface2);border-color:var(--border);color:var(--text3)">Updated 2026-06-11</span>
       </div>
       <div class="cat-tabs-wrap">
         <div class="cat-tabs-label">Select category</div>
@@ -817,10 +819,10 @@ thead th,.results-header{background:#0a0e16 !important}
 <footer>
   <div class="footer-note">
     Data sourced from publicly advertised WA job postings under the <em>Pay Transparency Law</em>, WA RCW 49.58.110 (effective January 1, 2023).
-    Analysis covers <span id="footerTotal">—</span> postings from <span id="footerCompanies">—</span> employers. All salary figures in USD. Updated daily.
+    Analysis covers <span id="footerTotal">1,008</span> postings from <span id="footerCompanies">92</span> employers. All salary figures in USD. Updated daily.
     · <a href="/jobs">Browse all jobs →</a>
   </div>
-  <div class="network-back">wa.payhub.fyi &middot; Part of <a href="https://payhub.fyi">PayHub</a> &mdash; 5 jurisdictions</div>
+  <div class="network-back">wa.payhub.fyi &middot; Part of <a href="https://payhub.fyi">PayHub</a> &mdash; 20 jurisdictions</div>
 </footer>
 
 <script>
@@ -875,7 +877,8 @@ function normCompany(name){
   let n=name.trim()
     .replace(/^\S*\d\S*\s+/,'')
     .replace(/\s*\([^)]+\)\s*$/,'')
-    .replace(/\s+(Inc\.?|Ltd\.?|Corp\.?|Co\.?|LLP|ULC|Canada)(?=\s|$)/gi,'')
+    .replace(/\s+(Inc\.?|Ltd\.?|Corp\.?|Co\.?|LLP|ULC)(?=\s|$)/gi,'')
+    .replace(/\s+Canada$/i,'')
     .replace(/\s+/g,' ').trim();
   const aliases={
     'The Toronto-Dominion Bank':'TD Bank','TD General':'TD Bank',
@@ -928,7 +931,7 @@ async function main(){
     (oj.jobs||[]).forEach(o=>{ if(o.status==='excluded_usd'||o.status==='archived') excludedIds.add(String(o.id)); });
   }catch(e){}
 
-  const valid=jobs.filter(j=>j.min>0&&j.max>0&&j.max>=j.min&&!excludedIds.has(String(j.id)));
+  const valid=jobs.filter(j=>j.min>0&&j.max>0&&j.max>=j.min&&!excludedIds.has(String(j.id))&&(j.status||'active')!=='archived'&&(j.status||'active')!=='inactive');
   const N=valid.length;
   const companies=new Set(valid.map(j=>j.company)).size;
 
@@ -939,7 +942,7 @@ async function main(){
     j._spread=j._widthPct;
     const co=normCompany(j.company);
     j._co=co;
-    j._federal=FEDERAL_EMPLOYERS.has(co.toLowerCase());
+    j._federal=(String(j.work_mode||'').toLowerCase()==='remote')||/remote/i.test(String(j.location||''));/* national/remote mix — matches the bucket label */
     j._compliant=!j._federal&&j._width<=50000;
     j._nonCompliant=!j._federal&&j._width>50000;
     j._exempt=false;
