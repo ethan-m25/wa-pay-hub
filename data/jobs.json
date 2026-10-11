@@ -1,10 +1,10 @@
 {
   "meta": {
-    "count": 6129,
+    "count": 6130,
     "active": 4579,
-    "new_today": 45,
-    "links_newly_archived": 0,
-    "updated": "2026-10-10T04:52:46Z",
+    "new_today": 1,
+    "links_newly_archived": 1,
+    "updated": "2026-10-11T04:48:38Z",
     "state": "Washington State",
     "law": "WA RCW 49.58.110",
     "currency": "USD"
@@ -1503,7 +1503,7 @@
       "_federal": false,
       "category": "Engineering",
       "id": "senior-product-secur-the-boeing-comp-92520606",
-      "status": "active",
+      "status": "archived",
       "date_added": "2026-05-18",
       "currency": "USD",
       "region": "WA",
@@ -1519,7 +1519,8 @@
       "category_provisional": false,
       "category_title": "Engineering",
       "classifier_version": "gemma4:12b|codex-v1.0|p2",
-      "category_legacy": "Engineering"
+      "category_legacy": "Engineering",
+      "archived_date": "2026-10-11"
     },
     {
       "role": "Industrial Engineering Senior Manager",
@@ -178981,6 +178982,33 @@
       "last_seen": "2026-10-10",
       "location_display": "Seattle, WA",
       "location_city": "Seattle"
+    },
+    {
+      "role": "Staff Software Engineer – Engineering Systems, Continuous Integration Team",
+      "company": "Snowflake",
+      "min": 236000,
+      "max": 339200,
+      "location": "Bellevue, WA",
+      "source_url": "https://jobs.ashbyhq.com/snowflake/f38ad1b0-00a6-490d-afcf-80a78c8b8aed",
+      "posted": "2026-10-11",
+      "source_platform": "ashby",
+      "currency": "USD",
+      "region": "WA",
+      "_width": 103200,
+      "_compliant": false,
+      "_nonCompliant": true,
+      "_exempt": false,
+      "_federal": false,
+      "category": "Engineering",
+      "work_mode": "hybrid",
+      "salary_type": "annual",
+      "id": "staff-software-engin-snowflake-94118211",
+      "status": "active",
+      "date_added": "2026-10-11",
+      "scraped": "2026-10-11",
+      "last_seen": "2026-10-11",
+      "location_display": "Bellevue, WA",
+      "location_city": "Bellevue"
     }
   ]
 }
