@@ -657,10 +657,10 @@ thead th,.results-header{background:#0a0e16 !important}
   <div class="masthead-inner">
     <div class="masthead-kicker">Pay Intelligence · WA RCW 49.58.110</div>
     <h1>See what WA employers <em>disclose.</em></h1>
-    <div class="masthead-sub">Analysis of <span id="mastheadCount">6,689</span> salary disclosures from WA job postings under the WA Pay Transparency Law, effective January 1, 2023.</div>
+    <div class="masthead-sub">Analysis of <span id="mastheadCount">6,858</span> salary disclosures from WA job postings under the WA Pay Transparency Law, effective January 1, 2023.</div>
     <div class="masthead-meta">
-      <span>Dataset: <strong id="metaTotal">4,780</strong> job postings</span>
-      <span><strong id="metaCompanies">261</strong> employers</span>
+      <span>Dataset: <strong id="metaTotal">4,848</strong> job postings</span>
+      <span><strong id="metaCompanies">282</strong> employers</span>
       <span>Updated daily</span>
       <span>Washington State</span>
     </div>
@@ -671,6 +671,7 @@ thead th,.results-header{background:#0a0e16 !important}
 <nav class="section-nav" aria-label="Page sections">
   <div class="snav-inner">
     <a class="snav-pill active" href="#s-compliance" data-section="s-compliance">Compliance</a>
+    <a class="snav-pill" href="#s-minwage" data-section="s-minwage">Minimum Wage</a>
     <a class="snav-pill" href="#s-companies" data-section="s-companies">Employers</a>
     <a class="snav-pill" href="#s-signals" data-section="s-signals">Market Signals</a>
     <a class="snav-pill" href="#s-distribution" data-section="s-distribution">Range Width</a>
@@ -698,7 +699,7 @@ thead th,.results-header{background:#0a0e16 !important}
       <div class="cbar-legend">
         <div class="cbl-item cbl-compliant">
           <div class="cbl-label">Precise range</div>
-          <div class="cbl-num" id="pctCompliant">30%</div>
+          <div class="cbl-num" id="pctCompliant">31%</div>
           <div class="cbl-desc">Range width ≤ $50k — employer has a well-defined compensation band for this role.</div>
         </div>
         <div class="cbl-item cbl-nc">
@@ -708,7 +709,7 @@ thead th,.results-header{background:#0a0e16 !important}
         </div>
         <div class="cbl-item cbl-federal cbl-muted">
           <div class="cbl-label">National/remote mix</div>
-          <div class="cbl-num" id="pctFederal">17%</div>
+          <div class="cbl-num" id="pctFederal">16%</div>
           <div class="cbl-desc">National or remote postings — may not be clearly attributable to this state's posting rule. Disclosures are kept as market signals.</div>
         </div>
       </div>
@@ -718,6 +719,36 @@ thead th,.results-header{background:#0a0e16 !important}
       <p><strong>Note:</strong> All three groups add to 100% of current postings. "Precise" and "Broad" are data observations about range width — not legal compliance judgements, since WA sets no range-width cap. Source: Pay Transparency Law, WA RCW 49.58.110.</p>
     </div>
   </section>
+
+  <!-- PH-MINWAGE:START -->
+  <section class="insight-section ph-mw" id="s-minwage">
+    <div class="section-header">
+      <div class="section-kicker">Minimum Wage</div>
+      <div class="section-title">The legal pay floor in Washington</div>
+      <div class="section-desc">The lowest wage most employers may pay. Useful as a baseline when reading the disclosed ranges above.</div>
+    </div>
+    <style>
+.ph-mw{--mw-text:var(--text,#f2f7fb);--mw-muted:var(--text2,var(--muted,#b1c0d2));--mw-dim:var(--text3,var(--dim,#7f91a6));--mw-line:var(--border,var(--line,rgba(255,255,255,.1)));--mw-mono:var(--font-mono,var(--mono,monospace))}
+.ph-mw-card{border:1px solid var(--mw-line);background:rgba(10,15,22,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-radius:20px;padding:24px;margin-top:18px}
+.ph-mw-head{font-family:var(--mw-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent,#e8445a);margin-bottom:10px}
+.ph-mw-title{font-size:20px;font-weight:700;letter-spacing:-.02em;color:var(--mw-text);margin:0 0 18px}
+.ph-mw-hero{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 18px;margin-bottom:6px}
+.ph-mw-rate{font-family:var(--mw-mono);font-size:44px;font-weight:700;letter-spacing:-.05em;color:var(--mw-text);line-height:1}
+.ph-mw-rate small{font-size:16px;color:var(--mw-muted);letter-spacing:0;margin-left:4px}
+.ph-mw-sub{color:var(--mw-muted);font-size:14px;line-height:1.6}
+.ph-mw-annual{font-family:var(--mw-mono);font-size:12px;color:var(--mw-dim);margin-bottom:18px}
+.ph-mw-rows{display:grid;gap:0;margin:0 0 14px;padding:0;list-style:none}
+.ph-mw-rows li{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px solid var(--mw-line);color:var(--mw-muted);font-size:14px}
+.ph-mw-rows li strong{font-family:var(--mw-mono);color:var(--mw-text);font-weight:600;white-space:nowrap}
+.ph-mw-next{display:inline-block;margin:4px 0 14px;padding:7px 12px;border-radius:999px;font-family:var(--mw-mono);font-size:12px;color:var(--mw-text);border:1px solid color-mix(in srgb,var(--accent,#e8445a) 45%,var(--mw-line));background:color-mix(in srgb,var(--accent,#e8445a) 10%,transparent)}
+.ph-mw-note{color:var(--mw-muted);font-size:13px;line-height:1.7;margin:8px 0 0}
+.ph-mw-src{color:var(--mw-dim);font-family:var(--mw-mono);font-size:11px;line-height:1.8;margin-top:14px}
+.ph-mw-src a{color:var(--mw-muted)}
+@media(max-width:620px){.ph-mw-rate{font-size:36px}.ph-mw-rows li{flex-direction:column;gap:2px}}
+</style>
+    <div class="ph-mw-card"><div class="ph-mw-hero"><div class="ph-mw-rate">$17.13<small>/hr</small></div><div class="ph-mw-sub">In force since Jan 1, 2026 · Most workers</div></div><div class="ph-mw-annual">≈ $35,630/yr full-time (40 h/week × 52)</div><div class="ph-mw-next">Next: $17.73/hr from Jan 1, 2027 · Most workers · announced</div><ul class="ph-mw-rows"><li><span>14- and 15-year-olds</span><strong>$14.56/hr</strong></li><li><span>Seattle (local ordinance)</span><strong>$21.30/hr</strong></li><li><span>Salary floor for overtime exemption · Executive, administrative &amp; professional employees (all employers)</span><strong>$1,541.70/wk (≈ $80,168/yr)</strong></li></ul><p class="ph-mw-note">Adjusts: Annual CPI-W adjustment each January 1.</p><p class="ph-mw-note">No tip credit applies in Washington. Seattle and some other cities set higher local rates; Seattle reaches $22.14 on 2027-01-01.</p><div class="ph-mw-src">Source: <a href="https://lni.wa.gov/workers-rights/wages/minimum-wage/" target="_blank" rel="noopener">Washington L&amp;I minimum wage</a> · <a href="https://lni.wa.gov/news-events/article/25-27" target="_blank" rel="noopener">Washington L&amp;I 2026 rate and salary threshold</a> · <a href="https://www.seattle.gov/laborstandards/ordinances/minimum-wage" target="_blank" rel="noopener">Seattle Office of Labor Standards minimum wage</a> · As of Nov 1, 2026</div></div>
+  </section>
+  <!-- PH-MINWAGE:END -->
 
   <!-- SECTION 2: EMPLOYER SCATTER -->
   <section class="insight-section" id="s-companies">
@@ -861,7 +892,7 @@ thead th,.results-header{background:#0a0e16 !important}
 <footer>
   <div class="footer-note">
     Data sourced from publicly advertised WA job postings under the <em>Pay Transparency Law</em>, WA RCW 49.58.110 (effective January 1, 2023).
-    Analysis covers <span id="footerTotal">4,780</span> postings from <span id="footerCompanies">261</span> employers.
+    Analysis covers <span id="footerTotal">4,848</span> postings from <span id="footerCompanies">282</span> employers.
     All salary figures in USD. Updated daily. · <a href="/jobs.html">Browse all jobs →</a>
   </div>
   <div class="network-back">wa.payhub.fyi &middot; Part of <a href="https://payhub.fyi">PayHub</a> &mdash; 20 jurisdictions</div>
